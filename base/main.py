@@ -15,7 +15,7 @@ from pywinauto import application, WindowSpecification
 class Main:
     # 安装路径
     _page_path = ""
-    _page_process = 5220
+    _page_process = 1480
 
 
     def __init__(self, dlg: WindowSpecification = None):
@@ -83,12 +83,19 @@ class Main:
                     else:
                         return False
 
-    #找到
+    #找到控件点击
     def click(self, index=None, isall=True, **kwargs):
         if self.find(index, isall, **kwargs):
             self.find(index, isall, **kwargs).click_input()
         else:
             return "控件不存在或其他异常"
+
+    #截图保存
+    def capture_image(self,control,path):
+        control.capture_as_image().save(path)
+        return f"{path}已保存"
+
+
 
     def is_english(self):
         # dlg2 = self._app["SettingGroupBox"]

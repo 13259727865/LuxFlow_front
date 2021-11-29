@@ -57,18 +57,29 @@ class MainPage(Main):
 
     # 设置菜单-打开设置弹框
     def menu_set(self):
+        set_text = {}
         self.click(title="设置", control_type="MenuItem")
         self.click(title="设置", control_type="MenuItem", auto_id="FormMain.widgetTitle.wMenuBar.actionSetting")
-        self._dlg.print_control_identifiers()
+        set_text["title"] = self._dlg.child_window(title="设置", auto_id="FormMain.widgetTitle.FormSoftSetting.widgetTitle.popTitle",
+                                       control_type="Text").texts()[0]
+        set_text["language"] = self._dlg.child_window(title="语言", auto_id="FormMain.widgetTitle.FormSoftSetting.labelLanguage",
+                                          control_type="Text").texts()[0]
+        set_text["ipset"] = self._dlg.child_window(title="IP 设置", auto_id="FormMain.widgetTitle.FormSoftSetting.labelIpsetting",
+                                       control_type="Text").texts()[0]
+        set_text["ipport"] = self._dlg.child_window(title="IP 端口", auto_id="FormMain.widgetTitle.FormSoftSetting.labelPortSetting",
+                                        control_type="Text").texts()[0]
+        set_text["software"] = self._dlg.child_window(title="软件版本", auto_id="FormMain.widgetTitle.FormSoftSetting.labelSoftware",
+                                          control_type="Text").texts()[0]
+        set_text["version"] = self._dlg["Static6"].texts()[0]
+        return set_text,FrameSet(self._dlg)
 
-        return FrameSet(self._dlg)
+
 
     # 菜单栏选择设备-打开弹框
     def terminal(self):
         # 设备图标
         terminal_lcon = self.find(auto_id="FormMain.toolWidgte.labelDevice", control_type="Text")
-        default_terminal = \
-            self.find(auto_id="FormMain.toolWidgte.pbDevice", control_type="CheckBox", isall=False).texts()[0]
+        default_terminal = self.find(auto_id="FormMain.toolWidgte.pbDevice", control_type="CheckBox", isall=False).texts()[0]
         self.click(auto_id="FormMain.toolWidgte.pbDevice", isall=False)
         self._dlg.print_control_identifiers()
 
@@ -115,7 +126,8 @@ class MainPage(Main):
         send_keys("{VK_RETURN}")
         savefile.child_window(class_name="Edit").click()
         send_keys(save_name)
-        savefile.child_window(class_name="Button").click()
+        # savefile["保存文件Button"].click()
+        savefile["Button"].click()
         save_result = self.find(auto_id="FormMain.openGLWidget.MyMessageBox.labelMessageText", control_type="Text",isall=False,text=True)
         self.click(title="好的", auto_id="FormMain.openGLWidget.MyMessageBox.pbConfirm", control_type="CheckBox")
         return save_result
@@ -128,8 +140,7 @@ class MainPage(Main):
         """
         self._dlg.print_control_identifiers()
         modle_list_lcon = self.find(auto_id="FormMain.leftWidget.FormPartList.label", control_type="Text")
-        modle_list_text = \
-            self.find(auto_id="FormMain.leftWidget.FormPartList.labelModelList", control_type="Text",
+        modle_list_text = self.find(auto_id="FormMain.leftWidget.FormPartList.labelModelList", control_type="Text",
                       isall=True).texts()[0]
         modle_list = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List").children()
 
@@ -227,11 +238,17 @@ class MainPage(Main):
 
 
     def print_dlg(self):
-        self._dlg.print_control_identifiers()
+        # self._dlg.print_control_identifiers()
         # self.win_desktop("Dialog").print_control_identifiers()
+        a = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbpara", control_type="ComboBox")\
+            .texts()
+        # a = self._dlg.child_window(
+        #     auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents", control_type="Group").children()[2].texts()
+        return a
 
 if __name__ == '__main__':
     a = MainPage()
     # a.openfile("E:\model\model","20211116.stx")
-    a.print_dlg()
-    # a.save_file()
+    print(a.jump_button("支撑").return_all_parameter())
+    # a.save_file("E:\model\model","12354")
+    # print(a.menu_set()[1].set_language("日"))
