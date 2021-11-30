@@ -15,7 +15,7 @@ from pywinauto import application, WindowSpecification
 class Main:
     # 安装路径
     _page_path = ""
-    _page_process = 1480
+    _page_process = 996
 
 
     def __init__(self, dlg: WindowSpecification = None):
@@ -46,6 +46,7 @@ class Main:
         :param index: 随机序列名，部分控件容易变化
         :param isall: True and False，判断kwargs是否是想查找的全部，False会对未填字段至 ”“
         :param kwargs: child_window内容
+        :param control:控件Wrapper
         :return: pywinauto.application控件
         """
         if index:
@@ -54,6 +55,7 @@ class Main:
             else:
                 return False
         else:
+            print(isall,kwargs)
             if isall:
                 if kwargs.get("title") == None or kwargs.get("auto_id") == "":
                     kwargs["title"] = ""
@@ -84,9 +86,12 @@ class Main:
                         return False
 
     #找到控件点击
-    def click(self, index=None, isall=True, **kwargs):
-        if self.find(index, isall, **kwargs):
-            self.find(index, isall, **kwargs).click_input()
+    def click(self,control=None, **kwargs):
+        isfind:WindowSpecification = self.find(**kwargs)
+        if isfind:
+            isfind.click_input()
+        elif control:
+            control.click_input()
         else:
             return "控件不存在或其他异常"
 
@@ -94,6 +99,26 @@ class Main:
     def capture_image(self,control,path):
         control.capture_as_image().save(path)
         return f"{path}已保存"
+
+    #下拉框选中
+    def listbox_choice(self, click_index=1,parent=1,**kwargs):
+        """
+        :param click_index: 下拉框index
+        :param parent:1父级、2层父级 3层父级
+        :return:
+        """
+        print("click")
+        self.click(**kwargs)
+
+        application_child = self._dlg.children()
+        if parent == 1 :
+            self.click(control=application_child[click_index])
+        elif parent == 2:
+            self.click(control=application_child[0].children()[click_index])
+        elif parent == 3:
+            self.click(control=application_child[0].children()[0].children()[click_index])
+
+
 
 
 

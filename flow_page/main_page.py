@@ -214,7 +214,7 @@ class MainPage(Main):
 
     #下方跳转按钮
     def jump_button(self,oper="切片"):
-        if oper == "切片":
+        if oper == "打开":
             #打开
             self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLoad.pushButton", control_type="CheckBox")
         elif oper == "支撑":
@@ -248,7 +248,6 @@ class MainPage(Main):
 
 if __name__ == '__main__':
     a = MainPage()
-    # a.openfile("E:\model\model","20211116.stx")
-    print(a.jump_button("支撑").return_all_parameter())
-    # a.save_file("E:\model\model","12354")
-    # print(a.menu_set()[1].set_language("日"))
+    # auto_id = "FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbScene"
+    # control_type = "ComboBox"
+    a.jump_button(oper="支撑").choice_application()
