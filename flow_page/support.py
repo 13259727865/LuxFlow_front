@@ -169,7 +169,11 @@ class Support(Main):
         self.click(index=oper)
 
     # 输入参数值
-    def input_parameter(self,oper_text,oper_value):
+    def input_parameter(self,kwargs):
+        """
+        :param kwargs: {"抬升高度"：10.8，“角度”：45}
+        :return:
+        """
         outside = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport", control_type="Group")
         switch_parent = {"Basics_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic",
                          "reinforce_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintReinforce",
@@ -181,31 +185,30 @@ class Support(Main):
         }
         for key,value in switch_parent.items():
             if self.find(auto_id=value,isall=False)==False:
-                print(switch_button[key])
                 switch = self.find(auto_id=switch_button[key],isall=False)
                 self.is_in_outside(outside=outside,control=switch)
                 self.click(control=switch)
 
-        oper_control = self.find(index=oper_text)
-        parent = oper_control.parent()
-        children = parent.children()
+        for oper_key,oper_value in kwargs.items():
+            oper_control = self.find(index=oper_key)
+            parent = oper_control.parent()
+            children = parent.children()
 
-        if oper_control :
-            oper_auto_id=oper_control.get_properties()["automation_id"]
-        else:
-            return "未找到"
+            if oper_control :
+                oper_auto_id=oper_control.get_properties()["automation_id"]
+            else:
+                return f"未找到{oper_key}"
 
-        for i in range(len(children)):
-            auto_id = children[i].get_properties()["automation_id"]
-            if auto_id == oper_auto_id:
-                # print(self.find(auto_id=parent[i + 1].get_properties()["automation_id"], isall=False).is_visible(),"是否可见")
-                # mouse.scroll(coords=(3654, 477), wheel_dist=-2)
-                control = self.find(auto_id=children[i+1].get_properties()["automation_id"],isall=False)
-                self.is_in_outside(outside=parent.parent().parent(),control=control)
-                self.click(control=control)
-                send_keys("^a")
-                print(str(oper_value),123)
-                send_keys(str(oper_value))
+            for i in range(len(children)):
+                auto_id = children[i].get_properties()["automation_id"]
+                if auto_id == oper_auto_id:
+                    # print(self.find(auto_id=parent[i + 1].get_properties()["automation_id"], isall=False).is_visible(),"是否可见")
+                    # mouse.scroll(coords=(3654, 477), wheel_dist=-2)
+                    control = self.find(auto_id=children[i+1].get_properties()["automation_id"],isall=False)
+                    self.is_in_outside(outside=parent.parent().parent(),control=control)
+                    self.click(control=control)
+                    send_keys("^a")
+                    send_keys(str(oper_value))
 
 
 

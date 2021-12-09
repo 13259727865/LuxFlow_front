@@ -16,7 +16,7 @@ from pywinauto import application, WindowSpecification, mouse
 class Main:
     # 安装路径
     _page_path = ""
-    _page_process = 11760
+    _page_process = 7276
 
 
     def __init__(self, dlg: WindowSpecification = None):
@@ -89,7 +89,7 @@ class Main:
                         return False
             else:
                 exists = self._dlg.child_window(**kwargs).exists()
-                print(exists)
+
                 if text == False:
                     if exists:
                         return self._dlg.child_window(**kwargs)

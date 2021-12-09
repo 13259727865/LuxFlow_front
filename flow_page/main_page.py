@@ -266,8 +266,8 @@ if __name__ == '__main__':
     a = MainPage()
     # auto_id = "FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbScene"
     # control_type = "ComboBox"
-
-    b = a.jump_button(oper="支撑").input_parameter(oper_value=2,oper_text="底座高度")
+    dict = {"底座高度":2.8,"支撑点直径":2.8,"支撑头长度":2.8,"支撑柱直径":2.8,"支撑点间距":2.8,"临界角":280}
+    b = a.jump_button(oper="支撑").input_parameter(dict)
     # print(a.print_dlg())
 #
 
