@@ -7,15 +7,16 @@ import time
 import os
 
 import pywinauto
+from pywinauto.keyboard import send_keys
 
 os.environ.update({"__COMPAT_LAYER": "RUnAsInvoker"})
-from pywinauto import application, WindowSpecification
+from pywinauto import application, WindowSpecification, mouse
 
 
 class Main:
     # 安装路径
     _page_path = ""
-    _page_process = 996
+    _page_process = 11760
 
 
     def __init__(self, dlg: WindowSpecification = None):
@@ -25,20 +26,31 @@ class Main:
                 # self._app.start(self._page_path)
                 # time.sleep(15)
                 self._app.connect(process=self._page_process)
-                self._dlg = self._app["Dialog"]
+                self._dlg = self._app["LuxCreo"]
 
         else:
             self._dlg = dlg
 
     #打开windows弹框
-    def win_desktop(self,title):
+    def win_desktop(self,win_title,path_bar,path,filename,**kwargs):
         """
-        :param title: 弹框名
+        :param title: 弹框title
+        :param path: 文件路径
+        :param filename: 文件名
+        :param kwargs: 确认按钮child_windows()
         :return:
         """
         self.win = pywinauto.Desktop()
-        return self.win[title]
-
+        openconf = self.win[win_title]
+        openconf.print_control_identifiers()
+        # openconf = self.win_desktop(title="保存配置文件")
+        openconf[path_bar].click()
+        send_keys(path)
+        send_keys("{VK_RETURN}")
+        file = openconf.child_window(class_name="Edit")
+        file.click()
+        send_keys(filename)
+        openconf.child_window(**kwargs).click()
 
 
     def find(self, index=None, isall=True, text=False, **kwargs):
@@ -46,54 +58,91 @@ class Main:
         :param index: 随机序列名，部分控件容易变化
         :param isall: True and False，判断kwargs是否是想查找的全部，False会对未填字段至 ”“
         :param kwargs: child_window内容
-        :param control:控件Wrapper
         :return: pywinauto.application控件
         """
+
         if index:
-            if self._dlg.exists():
+            title = self._dlg[index]
+            if title.exists():
                 return self._dlg[index]
             else:
                 return False
         else:
-            print(isall,kwargs)
+
             if isall:
-                if kwargs.get("title") == None or kwargs.get("auto_id") == "":
+                if kwargs.get("title") == None or kwargs.get("title") == "":
                     kwargs["title"] = ""
-                if kwargs.get("control_type") == None or kwargs.get("auto_id") == "":
+                if kwargs.get("control_type") == None or kwargs.get("control_type") == "":
                     kwargs["control_type"] = ""
                 if kwargs.get("auto_id") == None or kwargs.get("auto_id") == "":
                     kwargs["auto_id"] = ""
+                exists = self._dlg.child_window(**kwargs).exists()
                 if text == False:
-                    if self._dlg.child_window(**kwargs).exists():
+                    if exists:
                         return self._dlg.child_window(**kwargs)
                     else:
                         return False
                 elif text == True:
-                    if self._dlg.exists():
+                    if exists:
                         return self._dlg.child_window(**kwargs).texts()[0]
                     else:
                         return False
             else:
+                exists = self._dlg.child_window(**kwargs).exists()
+                print(exists)
                 if text == False:
-                    if self._dlg.exists():
+                    if exists:
                         return self._dlg.child_window(**kwargs)
                     else:
                         return False
                 elif text == True:
-                    if self._dlg.exists():
+                    if exists:
                         return self._dlg.child_window(**kwargs).texts()[0]
                     else:
                         return False
 
     #找到控件点击
-    def click(self,control=None, **kwargs):
-        isfind:WindowSpecification = self.find(**kwargs)
-        if isfind:
-            isfind.click_input()
-        elif control:
-            control.click_input()
+    def click(self,control=None,button='left',double=False, **kwargs):
+        """
+        :param control: 控件
+        :param button: 按钮**单击鼠标按钮。左键、右键中的一个，“middle”或“x”（默认值为“left”，“move”为特例）
+        :param double:双击**是否双击（默认为False）
+        :param wheel_dist:滚轮距离**移动鼠标滚轮的距离（默认值：0）
+        :param kwargs:
+        :return:
+        """
+
+        if control:
+            control.click_input(button=button,double=double)
+        elif kwargs:
+            isfind: WindowSpecification = self.find(**kwargs)
+            isfind.click_input(button=button,double=double)
+            return isfind
         else:
             return "控件不存在或其他异常"
+
+    #判断control是否在outside里面
+    def is_in_outside(self,outside=None,control=None):
+        outside_left = outside.rectangle().left
+        outside_top = outside.rectangle().top
+        outside_right = outside.rectangle().right
+        outside_bottom = outside.rectangle().bottom
+        control_left = control.rectangle().left
+        control_top = control.rectangle().top
+        control_right = control.rectangle().right
+        control_bottom = control.rectangle().bottom
+
+        if control_top >= outside_top and control_bottom <= outside_bottom:
+            return True
+        elif control_bottom < outside_top:
+            mouse.scroll(coords=(outside_left+((outside_right-outside_left)//2), outside_top+((outside_bottom-outside_top)//2)), wheel_dist=2)
+            return(self.is_in_outside(outside=outside,control=control))
+        elif control_top > outside_bottom:
+            mouse.scroll(coords=(3654, 477), wheel_dist=-2)
+            return (self.is_in_outside(outside=outside, control=control))
+        else:
+            return False
+
 
     #截图保存
     def capture_image(self,control,path):
@@ -101,20 +150,18 @@ class Main:
         return f"{path}已保存"
 
     #下拉框选中
-    def listbox_choice(self, click_index=1,parent=1,**kwargs):
+    def listbox_choice(self, click_index=1,parent=2,**kwargs):
         """
         :param click_index: 下拉框index
         :param parent:1父级、2层父级 3层父级
         :return:
         """
-        print("click")
-        self.click(**kwargs)
-
-        application_child = self._dlg.children()
+        application_child = self.click(**kwargs).children()
         if parent == 1 :
             self.click(control=application_child[click_index])
         elif parent == 2:
-            self.click(control=application_child[0].children()[click_index])
+            control=application_child[0].children()[click_index]
+            self.click(control=control)
         elif parent == 3:
             self.click(control=application_child[0].children()[0].children()[click_index])
 

@@ -16,11 +16,8 @@ from flow_page.support import Support
 from flow_page.terminal_frame import TerminalFrame
 
 
-
 class MainPage(Main):
-
-    _page_path = r"D:\Program Files(x86)\Luxflows\LuxFlow1103\dev\LuxFlow\LuxFlow.exe"
-
+    _page_path = r"D:\Program Files(x86)\Luxflows\LuxFlow1116\LuxFlow\LuxFlow.exe"
 
     # 零件破损检测提示
     def modle_check_tips(self, oper="忽略"):
@@ -53,33 +50,35 @@ class MainPage(Main):
         except Exception as e:
             print("报错处理", e)
 
-
-
     # 设置菜单-打开设置弹框
     def menu_set(self):
         set_text = {}
         self.click(title="设置", control_type="MenuItem")
         self.click(title="设置", control_type="MenuItem", auto_id="FormMain.widgetTitle.wMenuBar.actionSetting")
-        set_text["title"] = self._dlg.child_window(title="设置", auto_id="FormMain.widgetTitle.FormSoftSetting.widgetTitle.popTitle",
-                                       control_type="Text").texts()[0]
-        set_text["language"] = self._dlg.child_window(title="语言", auto_id="FormMain.widgetTitle.FormSoftSetting.labelLanguage",
-                                          control_type="Text").texts()[0]
-        set_text["ipset"] = self._dlg.child_window(title="IP 设置", auto_id="FormMain.widgetTitle.FormSoftSetting.labelIpsetting",
-                                       control_type="Text").texts()[0]
-        set_text["ipport"] = self._dlg.child_window(title="IP 端口", auto_id="FormMain.widgetTitle.FormSoftSetting.labelPortSetting",
-                                        control_type="Text").texts()[0]
-        set_text["software"] = self._dlg.child_window(title="软件版本", auto_id="FormMain.widgetTitle.FormSoftSetting.labelSoftware",
-                                          control_type="Text").texts()[0]
+        set_text["title"] = \
+            self._dlg.child_window(title="设置", auto_id="FormMain.widgetTitle.FormSoftSetting.widgetTitle.popTitle",
+                                   control_type="Text").texts()[0]
+        set_text["language"] = \
+            self._dlg.child_window(title="语言", auto_id="FormMain.widgetTitle.FormSoftSetting.labelLanguage",
+                                   control_type="Text").texts()[0]
+        set_text["ipset"] = \
+            self._dlg.child_window(title="IP 设置", auto_id="FormMain.widgetTitle.FormSoftSetting.labelIpsetting",
+                                   control_type="Text").texts()[0]
+        set_text["ipport"] = \
+            self._dlg.child_window(title="IP 端口", auto_id="FormMain.widgetTitle.FormSoftSetting.labelPortSetting",
+                                   control_type="Text").texts()[0]
+        set_text["software"] = \
+            self._dlg.child_window(title="软件版本", auto_id="FormMain.widgetTitle.FormSoftSetting.labelSoftware",
+                                   control_type="Text").texts()[0]
         set_text["version"] = self._dlg["Static6"].texts()[0]
-        return set_text,FrameSet(self._dlg)
-
-
+        return set_text, FrameSet(self._dlg)
 
     # 菜单栏选择设备-打开弹框
     def terminal(self):
         # 设备图标
         terminal_lcon = self.find(auto_id="FormMain.toolWidgte.labelDevice", control_type="Text")
-        default_terminal = self.find(auto_id="FormMain.toolWidgte.pbDevice", control_type="CheckBox", isall=False).texts()[0]
+        default_terminal = \
+            self.find(auto_id="FormMain.toolWidgte.pbDevice", control_type="CheckBox", isall=False).texts()[0]
         self.click(auto_id="FormMain.toolWidgte.pbDevice", isall=False)
         self._dlg.print_control_identifiers()
 
@@ -117,8 +116,8 @@ class MainPage(Main):
 
         return openfile_text
 
-    #保存文件
-    def save_file(self,save_path,save_name):
+    # 保存文件
+    def save_file(self, save_path, save_name):
         self.click(auto_id="FormMain.toolWidgte.pbTSave", control_type="Button")
         savefile = self.win_desktop("保存文件")
         savefile["Toolbar4"].click()
@@ -128,10 +127,10 @@ class MainPage(Main):
         send_keys(save_name)
         # savefile["保存文件Button"].click()
         savefile["Button"].click()
-        save_result = self.find(auto_id="FormMain.openGLWidget.MyMessageBox.labelMessageText", control_type="Text",isall=False,text=True)
+        save_result = self.find(auto_id="FormMain.openGLWidget.MyMessageBox.labelMessageText", control_type="Text",
+                                isall=False, text=True)
         self.click(title="好的", auto_id="FormMain.openGLWidget.MyMessageBox.pbConfirm", control_type="CheckBox")
         return save_result
-
 
     # 模型列表
     def modle_list(self):
@@ -141,7 +140,7 @@ class MainPage(Main):
         self._dlg.print_control_identifiers()
         modle_list_lcon = self.find(auto_id="FormMain.leftWidget.FormPartList.label", control_type="Text")
         modle_list_text = self.find(auto_id="FormMain.leftWidget.FormPartList.labelModelList", control_type="Text",
-                      isall=True).texts()[0]
+                                    isall=True).texts()[0]
         modle_list = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List").children()
 
         return modle_list_lcon, modle_list_text, modle_list
@@ -190,7 +189,6 @@ class MainPage(Main):
             control_type="Text", isall=False, text=True)
         return model_info_dict
 
-
     # 按钮下一步
     def next_step(self):
         """
@@ -198,7 +196,6 @@ class MainPage(Main):
         """
         self.click(title="下一步", auto_id="FormMain.nextStepWidget.pbNextStep", control_type="Button")
         return Support(self._dlg)
-
 
     # 退出Luxflow
     def main_quit(self, oper='不保存'):
@@ -210,44 +207,67 @@ class MainPage(Main):
         if self.find(auto_id="FormMain.FormSaveModel.widgetTitle", control_type="Group"):
             self.click(index=oper)
 
-
-
-    #下方跳转按钮
-    def jump_button(self,oper="切片"):
+    # 下方跳转按钮
+    def jump_button(self, oper="切片"):
         if oper == "打开":
-            #打开
-            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLoad.pushButton", control_type="CheckBox")
+            # 打开
+            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLoad.pushButton",
+                       control_type="CheckBox")
         elif oper == "支撑":
-            #支撑
-            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbSupport.pushButton", control_type="CheckBox")
+            # 支撑
+            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbSupport.pushButton",
+                       control_type="CheckBox")
             return Support(self._dlg)
         elif oper == "布局":
-            #布局
-            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLayout.pushButton", control_type="CheckBox")
+            # 布局
+            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLayout.pushButton",
+                       control_type="CheckBox")
             return Batch(self._dlg)
         elif oper == "编码":
-            #编码
-            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbCoding.pushButton", control_type="CheckBox")
+            # 编码
+            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbCoding.pushButton",
+                       control_type="CheckBox")
             return Marking(self._dlg)
         elif oper == "切片":
-            #切片
-            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbPrintSet.pushButton", control_type="CheckBox")
+            # 切片
+            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbPrintSet.pushButton",
+                       control_type="CheckBox")
             return Slice(self._dlg)
         else:
             print("oper有误！！")
 
-
     def print_dlg(self):
         # self._dlg.print_control_identifiers()
         # self.win_desktop("Dialog").print_control_identifiers()
-        a = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbpara", control_type="ComboBox")\
-            .texts()
-        # a = self._dlg.child_window(
-        #     auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents", control_type="Group").children()[2].texts()
-        return a
+        # a = self.find(
+        #     auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbpara",
+        #     control_type="ComboBox") \
+        #     .texts()
+        # # a = self._dlg.child_window(
+        # #     auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents", control_type="Group").children()[2].texts()
+        # return a
+        a = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport", control_type="Group")
+        b = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbScene", control_type="ComboBox")
+
+        # print(self.is_in_outside(a,b))
+        # self.click(control=b)
+        # self.find(index="打印参数编辑").print_control_identifiers()
+        # self._dlg["打印参数编辑"].print_control_identifiers()
+        self._dlg.child_window(auto_id="FormMain").print_control_identifiers()
+        # a.click_input()
+        # # self.click(auto_id=a.children()[0].get_properties()["automation_id"],isall=False)
+        # print(a.children()[0].children())
+        # print(dir(str))
+        # return self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic",isall=False)
+        # self._dlg.child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic")
+
 
 if __name__ == '__main__':
     a = MainPage()
     # auto_id = "FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbScene"
     # control_type = "ComboBox"
-    a.jump_button(oper="支撑").choice_application()
+
+    b = a.jump_button(oper="支撑").input_parameter(oper_value=2,oper_text="底座高度")
+    # print(a.print_dlg())
+#
+
