@@ -16,7 +16,7 @@ from pywinauto import application, WindowSpecification, mouse
 class Main:
     # 安装路径
     _page_path = ""
-    _page_process = 7276
+    _page_process = 12756
 
 
     def __init__(self, dlg: WindowSpecification = None):
@@ -35,6 +35,7 @@ class Main:
     def win_desktop(self,win_title,path_bar,path,filename,**kwargs):
         """
         :param title: 弹框title
+        :param path_bar: path输入框
         :param path: 文件路径
         :param filename: 文件名
         :param kwargs: 确认按钮child_windows()
@@ -42,7 +43,6 @@ class Main:
         """
         self.win = pywinauto.Desktop()
         openconf = self.win[win_title]
-        openconf.print_control_identifiers()
         # openconf = self.win_desktop(title="保存配置文件")
         openconf[path_bar].click()
         send_keys(path)
@@ -50,7 +50,8 @@ class Main:
         file = openconf.child_window(class_name="Edit")
         file.click()
         send_keys(filename)
-        openconf.child_window(**kwargs).click()
+        # openconf.child_window(**kwargs).click()
+        self.click(openconf["打开"])
 
 
     def find(self, index=None, isall=True, text=False, **kwargs):
@@ -67,6 +68,7 @@ class Main:
                 return self._dlg[index]
             else:
                 return False
+
         else:
 
             if isall:
@@ -165,11 +167,12 @@ class Main:
         elif parent == 3:
             self.click(control=application_child[0].children()[0].children()[click_index])
 
+    #等待出现
+    def wait(self, timeout=9999, **kwargs):
+        self.find(**kwargs).wait(wait_for="exists enabled visible ready", timeout=timeout)
 
 
-
-
-    def is_english(self):
-        # dlg2 = self._app["SettingGroupBox"]
-        dlg2 = self._app["LuxCreo"]
-        return dlg2["SettingGroupBox"].children()
+    #等待消失
+    def wait_not(self,timeout=9999,**kwargs):
+        self._dlg.print_control_identifiers()
+        self.find(**kwargs).wait_not(wait_for_not="exists enabled visible ready",timeout=timeout)

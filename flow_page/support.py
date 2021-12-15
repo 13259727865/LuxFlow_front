@@ -34,6 +34,13 @@ class Support(Main):
 
     # 返回支撑页：应用、支撑设置栏文本字典
     def return_all_parameter(self):
+        """
+        :return: {'support1': '支撑', 'support2': '应用', 'support3': ['齿科产品', '鞋类产品', '眼镜产品', '其他产品'],
+        'support4': '支撑设置', 'support5': '推荐参数', 'support6': '基础设置', 'support7': '抬升高度', 'support8': '2.50 mm',
+        'support9': '支撑点直径', 'support10': '1.20 mm', 'support11': '支撑头长度', 'support12': '2.00 mm', 'support13': '支撑柱直径',
+         'support14': '1.20 mm', 'support15': '支撑点间距', 'support16': '4.00 mm', 'support17': '临界角', 'support18': '70.00 °',
+          'support19': '加固设置', 'support20': '底座设置', 'support21': '生 成', 'support22': '删 除', 'support23': '编辑'}
+        """
         support_static_dict = {}
         support_child = self.support_parent()
         s = 0
@@ -58,6 +65,7 @@ class Support(Main):
                             if support_child[i].children()[j].texts()[0]:
                                 s += 1
                                 support_static_dict[f"support{s}"] = support_child[i].children()[j].texts()[0]
+        print(support_static_dict)
         return support_static_dict
 
     # 选择应用
@@ -174,20 +182,14 @@ class Support(Main):
         :param kwargs: {"抬升高度"：10.8，“角度”：45}
         :return:
         """
-        outside = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport", control_type="Group")
-        switch_parent = {"Basics_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic",
-                         "reinforce_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintReinforce",
-                         "base_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBase"}
-        switch_button = {"Basics_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBasic",
-                         "reinforce_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarReinforce",
-                         "base_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBase"
-
-        }
-        for key,value in switch_parent.items():
-            if self.find(auto_id=value,isall=False)==False:
-                switch = self.find(auto_id=switch_button[key],isall=False)
-                self.is_in_outside(outside=outside,control=switch)
-                self.click(control=switch)
+        switch_button = {"Basics_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBasic.pushButtonBasic",
+                         "reinforce_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarReinforce.pushButtonReinforce",
+                         "base_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBase.pushButtonBase"
+                        }
+        for value in switch_button.values():
+            checkbox = self.find(auto_id=value,isall=False)
+            if checkbox.get_toggle_state() == 0:
+                checkbox.click()
 
         for oper_key,oper_value in kwargs.items():
             oper_control = self.find(index=oper_key)
@@ -210,5 +212,7 @@ class Support(Main):
                     send_keys("^a")
                     send_keys(str(oper_value))
 
+    def checkbox(self,oper):
+        pass
 
 

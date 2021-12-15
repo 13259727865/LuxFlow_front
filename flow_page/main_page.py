@@ -4,6 +4,7 @@
 # @time:  2021/11/9:11:00
 # @email: 13259727865@163.com
 import pywinauto
+from pywinauto.controls.uia_controls import ButtonWrapper
 from pywinauto.keyboard import send_keys
 
 from base.main import Main
@@ -17,7 +18,7 @@ from flow_page.terminal_frame import TerminalFrame
 
 
 class MainPage(Main):
-    _page_path = r"D:\Program Files(x86)\Luxflows\LuxFlow1116\LuxFlow\LuxFlow.exe"
+    _page_path = r"D:\Program Files(x86)\Luxflows\LuxFLow1215\LuxFlow\LuxFlow.exe"
 
     # 零件破损检测提示
     def modle_check_tips(self, oper="忽略"):
@@ -105,14 +106,15 @@ class MainPage(Main):
         self.click(title="本地打开", auto_id="FormMain.rightwidget.stackedWidget.FormLoad.pbLocal", control_type="Button")
         # win = pywinauto.Desktop()
         # win["打开文件"].print_control_identifiers()
-        openfile = self.win_desktop("打开文件")
-        openfile["Toolbar3"].click()
-        send_keys(path)
-        send_keys("{VK_RETURN}")
-        filename = self.win_desktop("打开文件").child_window(class_name="Edit")
-        filename.click()
-        send_keys(model)
-        self.win_desktop("打开文件").child_window(title="打开(&O)", class_name="Button").click()
+        self.win_desktop(win_title="打开文件",path_bar="Toolbar3",path=path,filename=model)
+        # openfile = self.win_desktop("打开文件")
+        # openfile["Toolbar3"].click()
+        # send_keys(path)
+        # send_keys("{VK_RETURN}")
+        # filename = self.win_desktop("打开文件").child_window(class_name="Edit")
+        # filename.click()
+        # send_keys(model)
+        # self.win_desktop("打开文件").child_window(title="打开(&O)", class_name="Button").click()
 
         return openfile_text
 
@@ -132,16 +134,15 @@ class MainPage(Main):
         self.click(title="好的", auto_id="FormMain.openGLWidget.MyMessageBox.pbConfirm", control_type="CheckBox")
         return save_result
 
-    # 模型列表
+    # 零件列表
     def modle_list(self):
         """
         :return: 列表lcon，列表名称，列表内容列表
         """
-        self._dlg.print_control_identifiers()
         modle_list_lcon = self.find(auto_id="FormMain.leftWidget.FormPartList.label", control_type="Text")
         modle_list_text = self.find(auto_id="FormMain.leftWidget.FormPartList.labelModelList", control_type="Text",
-                                    isall=True).texts()[0]
-        modle_list = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List").children()
+                                    isall=False).texts()[0]
+        modle_list = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List")
 
         return modle_list_lcon, modle_list_text, modle_list
 
@@ -238,6 +239,11 @@ class MainPage(Main):
 
     def print_dlg(self):
         # self._dlg.print_control_identifiers()
+        # button = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBase.pushButtonBase",
+        #                  control_type="CheckBox").WrapperObject
+        # self._dlg.print_control_identifiers()
+        # checkbox = self._dlg.child_window(title="支撑加底座", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBase.checkBox_SupportBase", control_type="CheckBox")
+        # return checkbox.get_toggle_state()
         # self.win_desktop("Dialog").print_control_identifiers()
         # a = self.find(
         #     auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbpara",
@@ -246,28 +252,31 @@ class MainPage(Main):
         # # a = self._dlg.child_window(
         # #     auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents", control_type="Group").children()[2].texts()
         # return a
-        a = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport", control_type="Group")
-        b = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbScene", control_type="ComboBox")
-
-        # print(self.is_in_outside(a,b))
-        # self.click(control=b)
-        # self.find(index="打印参数编辑").print_control_identifiers()
-        # self._dlg["打印参数编辑"].print_control_identifiers()
-        self._dlg.child_window(auto_id="FormMain").print_control_identifiers()
+        # a = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport", control_type="Group")
+        # b = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbScene", control_type="ComboBox")
+        #
+        # # print(self.is_in_outside(a,b))
+        # # self.click(control=b)
+        # # self.find(index="打印参数编辑").print_control_identifiers()
+        # # self._dlg["打印参数编辑"].print_control_identifiers()
+        # self._dlg.child_window(auto_id="FormMain").print_control_identifiers()
         # a.click_input()
         # # self.click(auto_id=a.children()[0].get_properties()["automation_id"],isall=False)
         # print(a.children()[0].children())
         # print(dir(str))
         # return self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic",isall=False)
         # self._dlg.child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic")
-
+        self._dlg.print_control_identifiers()
+        self.wait_not(title="Dialog", auto_id="FormMain.openGLWidget.MyMessageBox", control_type="Window")
 
 if __name__ == '__main__':
     a = MainPage()
     # auto_id = "FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbScene"
     # control_type = "ComboBox"
-    dict = {"底座高度":2.8,"支撑点直径":2.8,"支撑头长度":2.8,"支撑柱直径":2.8,"支撑点间距":2.8,"临界角":280}
-    b = a.jump_button(oper="支撑").input_parameter(dict)
-    # print(a.print_dlg())
-#
+    a.print_dlg()
+    # dict = {"底座高度":2.8,"支撑点直径":2.8,"支撑头长度":2.8,"支撑柱直径":2.8,"支撑点间距":2.8,"临界角":280}
+    # b = a.jump_button(oper="支撑").return_all_parameter()
+    # print(b)
+
+
 
