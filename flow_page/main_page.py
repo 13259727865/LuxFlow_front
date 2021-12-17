@@ -3,22 +3,21 @@
 # @author:Gemini
 # @time:  2021/11/9:11:00
 # @email: 13259727865@163.com
-import pywinauto
-from pywinauto.controls.uia_controls import ButtonWrapper
 from pywinauto.keyboard import send_keys
 
+from base.io import JsonIO
 from base.main import Main
 from flow_page.batch import Batch
 from flow_page.marking import Marking
-from flow_page.material_frame import MaterialFrame
-from flow_page.set_frame import FrameSet
+from flow_frame.material_frame import MaterialFrame
+from flow_frame.set_frame import FrameSet
 from flow_page.slice import Slice
 from flow_page.support import Support
-from flow_page.terminal_frame import TerminalFrame
+from flow_frame.terminal_frame import TerminalFrame
 
 
 class MainPage(Main):
-    _page_path = r"D:\Program Files(x86)\Luxflows\LuxFLow1215\LuxFlow\LuxFlow.exe"
+    _page_path = JsonIO().read_json()["path"]
 
     # 零件破损检测提示
     def modle_check_tips(self, oper="忽略"):
@@ -81,7 +80,6 @@ class MainPage(Main):
         default_terminal = \
             self.find(auto_id="FormMain.toolWidgte.pbDevice", control_type="CheckBox", isall=False).texts()[0]
         self.click(auto_id="FormMain.toolWidgte.pbDevice", isall=False)
-        self._dlg.print_control_identifiers()
 
         return terminal_lcon, default_terminal, TerminalFrame(self._dlg)
 
@@ -142,53 +140,24 @@ class MainPage(Main):
         modle_list_lcon = self.find(auto_id="FormMain.leftWidget.FormPartList.label", control_type="Text")
         modle_list_text = self.find(auto_id="FormMain.leftWidget.FormPartList.labelModelList", control_type="Text",
                                     isall=False).texts()[0]
-        modle_list = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List")
+        modle_list = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List").children()
 
         return modle_list_lcon, modle_list_text, modle_list
 
     # 选中模型的模型参数
     def model_info(self):
         """
-        :return:字典--名称、参数
+        :return:字典--名称、参数 {'零件信息': {'长:': '43.64 mm', '宽:': '22.82 mm', '高:': '100.00 mm', '体积:': '19.19 ml', '面积:': '996.04 mm²'}}
         """
         model_info_dict = {}
-        model_info_dict["modle_info_lcon"] = self.find(
-            auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.label_2",
-            control_type="Text")
-        model_info_dict["modle_info_text"] = self.find(
-            auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelPartInfo",
-            control_type="Text", isall=False, text=True)
-        model_info_dict["modle_length_text"] = self.find(
-            auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelLenth",
-            control_type="Text", isall=False, text=True)
-        model_info_dict["modle_length"] = self.find(
-            auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.lengthInfo",
-            control_type="Text", isall=False, text=True)
-        model_info_dict["modle_width_text"] = self.find(
-            auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.lengthInfo",
-            control_type="Text", isall=False, text=True)
-        model_info_dict["modle_width"] = self.find(
-            auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.lengthInfo",
-            control_type="Text", isall=False, text=True)
-        model_info_dict["modle_height_text"] = self.find(
-            auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelWidth",
-            control_type="Text", isall=False, text=True)
-        model_info_dict["modle_height"] = self.find(
-            auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widthInfo",
-            control_type="Text", isall=False, text=True)
-        model_info_dict["modle_volume_text"] = self.find(
-            auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelHeight",
-            control_type="Text", isall=False, text=True)
-        model_info_dict["modle_volume"] = self.find(
-            auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.heightInfo",
-            control_type="Text", isall=False, text=True)
-        model_info_dict["modle_area_text"] = self.find(
-            auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelArea",
-            control_type="Text", isall=False, text=True)
-        model_info_dict["modle_area"] = self.find(
-            auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.areaInfo",
-            control_type="Text", isall=False, text=True)
+        model_info = self.find(auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents", control_type="Group").children()
+        model_info_text = model_info[1].texts()[0]
+        model_info_dict[model_info_text]={}
+        for i in range(2,len(model_info),2):
+            model_info_dict[model_info_text][model_info[i].texts()[0]]=model_info[i+1].texts()[0]
         return model_info_dict
+
+
 
     # 按钮下一步
     def next_step(self):
@@ -210,39 +179,38 @@ class MainPage(Main):
 
     # 下方跳转按钮
     def jump_button(self, oper="切片"):
+        button_parent=self.find(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget", control_type="Group").children()
         if oper == "打开":
             # 打开
-            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLoad.pushButton",
-                       control_type="CheckBox")
+            self.click(control=button_parent[0])
         elif oper == "支撑":
             # 支撑
-            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbSupport.pushButton",
-                       control_type="CheckBox")
+            self.click(control=button_parent[2])
             return Support(self._dlg)
         elif oper == "布局":
             # 布局
-            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLayout.pushButton",
-                       control_type="CheckBox")
+            self.click(control=button_parent[4])
             return Batch(self._dlg)
         elif oper == "编码":
             # 编码
-            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbCoding.pushButton",
-                       control_type="CheckBox")
+            self.click(control=button_parent[6])
             return Marking(self._dlg)
         elif oper == "切片":
             # 切片
-            self.click(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbPrintSet.pushButton",
-                       control_type="CheckBox")
+            self.click(control=button_parent[8])
             return Slice(self._dlg)
         else:
             print("oper有误！！")
 
     def print_dlg(self):
-        # self._dlg.print_control_identifiers()
+        # print(type(self._dlg.print_control_identifiers()))
+        self._dlg.print_control_identifiers()
+        # self._dlg.child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbpara", control_type="ComboBox").texts()
         # button = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBase.pushButtonBase",
         #                  control_type="CheckBox").WrapperObject
         # self._dlg.print_control_identifiers()
         # checkbox = self._dlg.child_window(title="支撑加底座", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBase.checkBox_SupportBase", control_type="CheckBox")
+        # checkbox = self.find(title="支撑加底座", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBase.checkBox_SupportBase", control_type="CheckBox")
         # return checkbox.get_toggle_state()
         # self.win_desktop("Dialog").print_control_identifiers()
         # a = self.find(
@@ -266,17 +234,23 @@ class MainPage(Main):
         # print(dir(str))
         # return self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic",isall=False)
         # self._dlg.child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic")
-        self._dlg.print_control_identifiers()
-        self.wait_not(title="Dialog", auto_id="FormMain.openGLWidget.MyMessageBox", control_type="Window")
+        # self._dlg.print_control_identifiers()
+        # self.wait_not(title="Dialog", auto_id="FormMain.openGLWidget.MyMessageBox", control_type="Window")
+        # self.read_json()
+
+
 
 if __name__ == '__main__':
     a = MainPage()
     # auto_id = "FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbScene"
     # control_type = "ComboBox"
+    # print(a.model_info())
+    # dict = {"抬升高度":0.10,"是否加固":False,"起始高度":0.05,"仅底座":False}
+    #
+    # b = a.jump_button(oper="支撑").input_parameter(dict)
+    # # print(b)
+    # a.menu_set()[1].set_language(language="中")
     a.print_dlg()
-    # dict = {"底座高度":2.8,"支撑点直径":2.8,"支撑头长度":2.8,"支撑柱直径":2.8,"支撑点间距":2.8,"临界角":280}
-    # b = a.jump_button(oper="支撑").return_all_parameter()
-    # print(b)
 
 
 

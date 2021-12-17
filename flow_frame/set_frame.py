@@ -24,6 +24,8 @@ class FrameSet(Main):
         :param language: "英""日""中"
         :return: 下拉框内容列表：['En', '日本語', '中']
         """
+        self._dlg.print_control_identifiers()
+
         self.click(auto_id="FormMain.widgetTitle.FormSoftSetting.cbLanguage", control_type="ComboBox")
         children_texts = self.find(index="ListBox").texts()
 

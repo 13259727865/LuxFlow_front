@@ -6,17 +6,17 @@
 from typing import List
 
 from pywinauto import WindowSpecification, mouse
-from pywinauto.controls.uia_controls import StaticWrapper
 from pywinauto.keyboard import send_keys
 
 from base.main import Main
-from flow_frame.support_frame import SaveFrame
+from flow_frame.support_frame import SupportFrame
+from flow_page.batch import Batch
 
 
 class Support(Main):
 
     #获取支撑页父级目录
-    def support_parent(self, index=None):
+    def support_parent(self, index=None,sonindex=None):
         """
         :param index: 父级目录下index
         :return:
@@ -25,21 +25,45 @@ class Support(Main):
             auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents",
             control_type="Group").children()
         if index:
-            auto_id = support_parent[index].get_properties()["automation_id"]
-            #返回父目录下第index个子控件的auto_id
+            if sonindex:
+                # 返回父目录下第index个子控件的第sunindex个子空间的auto_id
+                print(support_parent[index].get_properties())
+                auto_id = support_parent[index].children()[sonindex].get_properties()["automation_id"]
+            else:
+                # 返回父目录下第index个子控件的auto_id
+                auto_id = support_parent[index].get_properties()["automation_id"]
             return auto_id
         else:
             #返回父控件
             return support_parent
 
+
+    #基础设置、加固设置、底座设置是否全部展开。如果有未展开的，点击展开
+    def support_is_open(self):
+        switch_button = {
+            "Basics_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBasic.pushButtonBasic",
+            "reinforce_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarReinforce.pushButtonReinforce",
+            "base_auto_id": "FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBase.pushButtonBase"
+            }
+        for value in switch_button.values():
+            checkbox = self.find(auto_id=value, isall=False)
+            if checkbox.get_toggle_state() == 0:
+                checkbox.click()
+
+
     # 返回支撑页：应用、支撑设置栏文本字典
-    def return_all_parameter(self):
+    def return_all_texts(self):
         """
         :return: {'support1': '支撑', 'support2': '应用', 'support3': ['齿科产品', '鞋类产品', '眼镜产品', '其他产品'],
-        'support4': '支撑设置', 'support5': '推荐参数', 'support6': '基础设置', 'support7': '抬升高度', 'support8': '2.50 mm',
-        'support9': '支撑点直径', 'support10': '1.20 mm', 'support11': '支撑头长度', 'support12': '2.00 mm', 'support13': '支撑柱直径',
-         'support14': '1.20 mm', 'support15': '支撑点间距', 'support16': '4.00 mm', 'support17': '临界角', 'support18': '70.00 °',
-          'support19': '加固设置', 'support20': '底座设置', 'support21': '生 成', 'support22': '删 除', 'support23': '编辑'}
+        'support4': '支撑设置', 'support5': ['推荐参数', '123'], 'support6': '基础设置', 'support7': '抬升高度',
+        'support8': '2.50 mm', 'support9': '支撑点直径', 'support10': '1.20 mm', 'support11': '支撑头长度',
+        'support12': '2.00 mm', 'support13': '支撑柱直径', 'support14': '1.20 mm', 'support15': '支撑点间距',
+        'support16': '4.00 mm', 'support17': '临界角', 'support18': '70.00 °', 'support19': '加固设置',
+        'support20': '是否加固', 'support21': 0, 'support22': '起始高度', 'support23': '0.01 mm', 'support24': '角度',
+        'support25': '45.00 °', 'support26': '底座设置', 'support27': '支撑加底座', 'support28': 0, 'support29': '仅底座',
+         'support30': 0, 'support31': '底座高度', 'support32': '0.30 mm', 'support33': '生 成', 'support34': '删 除',
+          'support35': '编辑'}
+
         """
         support_static_dict = {}
         support_child = self.support_parent()
@@ -50,6 +74,8 @@ class Support(Main):
                     s += 1
                     if len(support_child[i].texts()) < 2:
                         support_static_dict[f"support{s}"] = support_child[i].texts()[0]
+                        # s += 1
+                        # support_static_dict[f"support{s}"] = support_child[i].texts()[0]
                     elif len(support_child[i].texts()) > 1:
                         support_static_dict[f"support{s}"] = support_child[i].texts()
             elif i >= 11:
@@ -62,14 +88,26 @@ class Support(Main):
                 elif support_child[i].texts()[0] == "":
                     if len(support_child[i].children()) > 0:
                         for j in range(0, len(support_child[i].children())):
-                            if support_child[i].children()[j].texts()[0]:
-                                s += 1
-                                support_static_dict[f"support{s}"] = support_child[i].children()[j].texts()[0]
+                            text=support_child[i].children()[j].texts()[0]
+                            if text:
+                                if text=="是否加固" or text=="支撑加底座" or text=="仅底座":
+                                    s += 1
+                                    support_static_dict[f"support{s}"] = support_child[i].children()[j].texts()[0]
+                                    s += 1
+                                    support_static_dict[f"support{s}"] = support_child[i].children()[j].get_toggle_state()
+                                else:
+                                    s += 1
+                                    support_static_dict[f"support{s}"] = support_child[i].children()[j].texts()[0]
         print(support_static_dict)
         return support_static_dict
 
+    #支撑页当前状态（包括下拉框已选择，复选框选中状态）
+    def return_support_parameter(self):
+        self.support_is_open()
+
+
     # 选择应用
-    def choice_application(self, click_index=1, parent=2):
+    def choice_application(self, click_index, parent=2):
         """
         :param click_index: 下拉框index
         :param parents: 通过第几层父级查找
@@ -79,8 +117,9 @@ class Support(Main):
         application_parent = self.support_parent(index=2)
         self.listbox_choice(parent=parent, click_index=click_index, isall=False, auto_id=application_parent)
 
+
     # 支撑设置按钮操作
-    def support_set_button(self, oper="保存", **kwargs):
+    def support_set_button(self, oper,path=None,conffile=None,whether=True,isclose=False):
         """
         :param oper_index: 按钮类型：保存-导入-导出-刷新-删除
         :return:
@@ -88,82 +127,27 @@ class Support(Main):
         if oper == "保存":
             auto_id = self.support_parent(index=5)
             self.click(isall=False, auto_id=auto_id)
-            return SaveFrame(self._dlg)
+            return SupportFrame(self._dlg)
         elif oper == "导入":
             auto_id = self.support_parent(index=6)
             self.click(isall=False, auto_id=auto_id)
-            return self.import_export_parameter(oper, **kwargs)
+            return SupportFrame(self._dlg).import_export_parameter(oper=oper,path=path,conf=conffile)
         elif oper == "导出":
             auto_id = self.support_parent(index=7)
             self.click(isall=False, auto_id=auto_id)
-            return self.import_export_parameter(oper, **kwargs)
+            # return self.import_export_parameter(oper, **kwargs)
+            return SupportFrame(self._dlg).import_export_parameter(oper=oper,path=path,conf=conffile)
         elif oper == "刷新":
             auto_id = self.support_parent(index=8)
             self.click(isall=False, auto_id=auto_id)
-            return self.support_is_frame(oper)
+            return SupportFrame(self._dlg).support_is_frame(is_oper=whether,isclose=isclose)
         elif oper == "删除":
             auto_id = self.support_parent(index=9)
             self.click(isall=False, auto_id=auto_id)
-            return self.support_is_frame(oper)
+            return SupportFrame(self._dlg).support_is_frame(is_oper=whether,isclose=isclose)
         else:
             print("输入有误")
 
-    # 保存参数弹框
-    def save_frame(self, close=False, value=None, save_oper="保存"):
-        """
-        :param close: 是否直接关闭
-        :param value: 输入的名称
-        :param oper: 保存（default）、取消
-        :return:
-        """
-
-        if close :
-            self.click(auto_id="FormSupportCfgSaveName.widget.pbPopClose", control_type="Button")
-            return "关闭弹框"
-        if value:
-            self.click(auto_id="FormSupportCfgSaveName.lineEdit", control_type="Edit")
-            send_keys(value)
-
-        if save_oper == "保存":
-            self.click(auto_id="FormSupportCfgSaveName.pushButtonSave", control_type="Button",isall=False)
-            self._dlg.print_control_identifiers()
-        elif save_oper == "取消":
-            self.click(auto_id="FormSupportCfgSaveName.pushButtonCancel", control_type="Button",isall=False)
-        else:
-            print("oper参数有误")
-
-    #刷新和删除弹框提示
-    def support_is_frame(self,is_oper=True,close=False):
-        """
-        :param is_oper: True（default） or Flase :是 与 否
-        :param close: 是否直接关闭弹框
-        :return:
-        """
-        message=self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.MyMessageBox", control_type="Window",isall=False).children()
-        print(message)
-        if close:
-            self.click(auto_id = message[0].children()[1].get_properties()["automation_id"])
-            return
-        elif is_oper:
-            self.click(auto_id=message[4].get_properties()["automation_id"],isall=False)
-        elif is_oper == False:
-            self.click(control=message[3].get_properties()["automation_id"],isall=False)
-        return
-
-
-    #导入导出操作
-    def import_export_parameter(self, oper="导入", path=None, conf=None):
-        """
-        :param path: 文件路径
-        :param conf: 支撑配置文件名
-        :param oper: 操作：导入（default）、导出
-        :return:
-        """
-        if oper == "导入":
-            self.win_desktop(win_title="打开配置文件",path_bar="Toolbar3",path=path,filename=conf,title="打开(&O)", class_name="Button")
-            self._dlg.print_control_identifiers()
-        elif oper == "导出":
-            self.win_desktop(win_title="保存配置文件",path_bar="Toolbar4", path = path,filename=conf,title="保存(&S)", class_name="Button")
 
 
     # 推荐参数下拉框选择
@@ -176,26 +160,23 @@ class Support(Main):
     def basic_setup_open(self, oper="基础设置"):
         self.click(index=oper)
 
+
     # 输入参数值
-    def input_parameter(self,kwargs):
+    def input_parameter(self,kwargs,):
         """
-        :param kwargs: {"抬升高度"：10.8，“角度”：45}
+        :param kwargs: {"抬升高度"：10.8，“角度”：45,"是否加固":False,"支撑加底座":True}
         :return:
         """
-        switch_button = {"Basics_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBasic.pushButtonBasic",
-                         "reinforce_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarReinforce.pushButtonReinforce",
-                         "base_auto_id":"FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBase.pushButtonBase"
-                        }
-        for value in switch_button.values():
-            checkbox = self.find(auto_id=value,isall=False)
-            if checkbox.get_toggle_state() == 0:
-                checkbox.click()
-
+        self.support_is_open()
         for oper_key,oper_value in kwargs.items():
             oper_control = self.find(index=oper_key)
             parent = oper_control.parent()
             children = parent.children()
-
+            if oper_key == "是否加固" or oper_key == "支撑加底座" or oper_key == "仅底座":
+                state = self.find(index=oper_key).get_toggle_state()
+                if (oper_value and state==0) or (oper_value ==False and state==1) :
+                    print(oper_value,state,"jinbulai")
+                    self.click(index=oper_key)
             if oper_control :
                 oper_auto_id=oper_control.get_properties()["automation_id"]
             else:
@@ -212,7 +193,16 @@ class Support(Main):
                     send_keys("^a")
                     send_keys(str(oper_value))
 
-    def checkbox(self,oper):
-        pass
+    #生成-删除-编辑
+    def support_oper(self,oper="生成"):
+            self.click(index=oper)
+
+
+    def next_step(self):
+        """
+        :return: 下一页控件类
+        """
+        self.click(title="下一步", auto_id="FormMain.nextStepWidget.pbNextStep", control_type="Button")
+        return Batch(self._dlg)
 
 

@@ -3,11 +3,14 @@
 # @author:Gemini
 # @time:  2021/11/9:10:10
 # @email: 13259727865@163.com
+import json
 import time
 import os
 
 import pywinauto
 from pywinauto.keyboard import send_keys
+
+from base.io import JsonIO
 
 os.environ.update({"__COMPAT_LAYER": "RUnAsInvoker"})
 from pywinauto import application, WindowSpecification, mouse
@@ -15,17 +18,20 @@ from pywinauto import application, WindowSpecification, mouse
 
 class Main:
     # 安装路径
+    _jsonio = JsonIO().read_json()
     _page_path = ""
-    _page_process = 12756
+    _page_process = _jsonio["process"]
 
 
     def __init__(self, dlg: WindowSpecification = None):
         if dlg is None:
             self._app = application.Application(backend='uia')
             if self._page_path != "":
-                # self._app.start(self._page_path)
-                # time.sleep(15)
-                self._app.connect(process=self._page_process)
+                if self._jsonio["action"]=="start":
+                    self._app.start(self._page_path)
+                    time.sleep(10)
+                elif self._jsonio["action"]=="connet":
+                    self._app.connect(process=self._page_process)
                 self._dlg = self._app["LuxCreo"]
 
         else:
@@ -169,10 +175,12 @@ class Main:
 
     #等待出现
     def wait(self, timeout=9999, **kwargs):
-        self.find(**kwargs).wait(wait_for="exists enabled visible ready", timeout=timeout)
-
+        # self.find(**kwargs).wait(wait_for="exists enabled visible ready", timeout=timeout)
+        self._dlg.child_window(**kwargs).wait(wait_for="exists enabled visible ready", timeout=timeout)
 
     #等待消失
     def wait_not(self,timeout=9999,**kwargs):
         self._dlg.print_control_identifiers()
         self.find(**kwargs).wait_not(wait_for_not="exists enabled visible ready",timeout=timeout)
+
+
