@@ -3,15 +3,14 @@
 # @author:Gemini
 # @time:  2021/11/9:10:10
 # @email: 13259727865@163.com
-import json
 import time
 import os
+from datetime import datetime
 
 import pywinauto
 from pywinauto.keyboard import send_keys
-
-from base.io import JsonIO
-
+from common.io import JsonIO
+from common.logger import LogRoot
 os.environ.update({"__COMPAT_LAYER": "RUnAsInvoker"})
 from pywinauto import application, WindowSpecification, mouse
 
@@ -165,6 +164,7 @@ class Main:
         :return:
         """
         application_child = self.click(**kwargs).children()
+        LogRoot.info("选择应用")
         if parent == 1 :
             self.click(control=application_child[click_index])
         elif parent == 2:
@@ -183,4 +183,16 @@ class Main:
         self._dlg.print_control_identifiers()
         self.find(**kwargs).wait_not(wait_for_not="exists enabled visible ready",timeout=timeout)
 
+    #点击下一步按钮
+    def click_next_button(self):
+        self.click(title="下一步", auto_id="FormMain.nextStepWidget.pbNextStep", control_type="Button")
 
+    #控件从出现到消失的总时长
+    def wait_time(self,**kwargs):
+        self.wait(**kwargs,timeout=10)
+        start_time = datetime.now().replace(microsecond=0)
+        self.wait_not(**kwargs,timeout=10)
+        end_time = datetime.now().replace(microsecond=0)
+        time = end_time-start_time
+        LogRoot.info(f"存在时长{time}")
+        return time

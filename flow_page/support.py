@@ -9,6 +9,7 @@ from pywinauto import WindowSpecification, mouse
 from pywinauto.keyboard import send_keys
 
 from base.main import Main
+from common.logger import LogRoot
 from flow_frame.support_frame import SupportFrame
 from flow_page.batch import Batch
 
@@ -27,7 +28,6 @@ class Support(Main):
         if index:
             if sonindex:
                 # 返回父目录下第index个子控件的第sunindex个子空间的auto_id
-                print(support_parent[index].get_properties())
                 auto_id = support_parent[index].children()[sonindex].get_properties()["automation_id"]
             else:
                 # 返回父目录下第index个子控件的auto_id
@@ -52,7 +52,7 @@ class Support(Main):
 
 
     # 返回支撑页：应用、支撑设置栏文本字典
-    def return_all_texts(self):
+    def return_all_texts(self,open=True):
         """
         :return: {'support1': '支撑', 'support2': '应用', 'support3': ['齿科产品', '鞋类产品', '眼镜产品', '其他产品'],
         'support4': '支撑设置', 'support5': ['推荐参数', '123'], 'support6': '基础设置', 'support7': '抬升高度',
@@ -66,6 +66,8 @@ class Support(Main):
 
         """
         support_static_dict = {}
+        if open:
+            self.support_is_open()
         support_child = self.support_parent()
         s = 0
         for i in range(0, len(support_child)):
@@ -98,12 +100,10 @@ class Support(Main):
                                 else:
                                     s += 1
                                     support_static_dict[f"support{s}"] = support_child[i].children()[j].texts()[0]
-        print(support_static_dict)
+        LogRoot.info(f"返回支撑页参数{support_static_dict}")
         return support_static_dict
 
-    #支撑页当前状态（包括下拉框已选择，复选框选中状态）
-    def return_support_parameter(self):
-        self.support_is_open()
+
 
 
     # 选择应用
@@ -118,6 +118,7 @@ class Support(Main):
         self.listbox_choice(parent=parent, click_index=click_index, isall=False, auto_id=application_parent)
 
 
+
     # 支撑设置按钮操作
     def support_set_button(self, oper,path=None,conffile=None,whether=True,isclose=False):
         """
@@ -127,26 +128,31 @@ class Support(Main):
         if oper == "保存":
             auto_id = self.support_parent(index=5)
             self.click(isall=False, auto_id=auto_id)
+            LogRoot.info("点击保存，进入弹框")
             return SupportFrame(self._dlg)
         elif oper == "导入":
             auto_id = self.support_parent(index=6)
             self.click(isall=False, auto_id=auto_id)
+            LogRoot.info("点击导入，进入弹框")
             return SupportFrame(self._dlg).import_export_parameter(oper=oper,path=path,conf=conffile)
         elif oper == "导出":
             auto_id = self.support_parent(index=7)
             self.click(isall=False, auto_id=auto_id)
+            LogRoot.info("点击导出，进入弹框")
             # return self.import_export_parameter(oper, **kwargs)
             return SupportFrame(self._dlg).import_export_parameter(oper=oper,path=path,conf=conffile)
         elif oper == "刷新":
             auto_id = self.support_parent(index=8)
             self.click(isall=False, auto_id=auto_id)
+            LogRoot.info("点击刷新，进入弹框")
             return SupportFrame(self._dlg).support_is_frame(is_oper=whether,isclose=isclose)
         elif oper == "删除":
             auto_id = self.support_parent(index=9)
             self.click(isall=False, auto_id=auto_id)
+            LogRoot.info("点击删除，进入弹框")
             return SupportFrame(self._dlg).support_is_frame(is_oper=whether,isclose=isclose)
         else:
-            print("输入有误")
+            LogRoot.info("输入有误")
 
 
 
@@ -162,11 +168,12 @@ class Support(Main):
 
 
     # 输入参数值
-    def input_parameter(self,kwargs,):
+    def input_parameter(self,kwargs):
         """
         :param kwargs: {"抬升高度"：10.8，“角度”：45,"是否加固":False,"支撑加底座":True}
         :return:
         """
+        LogRoot.info(f"输入参数{kwargs}")
         self.support_is_open()
         for oper_key,oper_value in kwargs.items():
             oper_control = self.find(index=oper_key)
@@ -175,12 +182,12 @@ class Support(Main):
             if oper_key == "是否加固" or oper_key == "支撑加底座" or oper_key == "仅底座":
                 state = self.find(index=oper_key).get_toggle_state()
                 if (oper_value and state==0) or (oper_value ==False and state==1) :
-                    print(oper_value,state,"jinbulai")
                     self.click(index=oper_key)
             if oper_control :
                 oper_auto_id=oper_control.get_properties()["automation_id"]
             else:
-                return f"未找到{oper_key}"
+                LogRoot.error(f"未找到{oper_key}")
+                return
 
             for i in range(len(children)):
                 auto_id = children[i].get_properties()["automation_id"]
@@ -195,14 +202,17 @@ class Support(Main):
 
     #生成-删除-编辑
     def support_oper(self,oper="生成"):
-            self.click(index=oper)
+        LogRoot.info(oper)
+        self.click(index=oper)
 
-
+    #下一步
     def next_step(self):
         """
         :return: 下一页控件类
         """
-        self.click(title="下一步", auto_id="FormMain.nextStepWidget.pbNextStep", control_type="Button")
+        self.click_next_button()
+        # 跳转支撑页
+        LogRoot.info("进入布局页")
         return Batch(self._dlg)
 
 

@@ -14,16 +14,14 @@
 # app.UntitledNotepad.编辑.type_keys("Hi from Python interactive prompt %s" % str(dir()), with_spaces = True)
 # app.UntitledNotepad.menu_select("File -> Exit")
 # app.Notepad.DontSave.click()
-def fun2(a,b,c):
-    print(a,b,c)
 
+import datetime
+from datetime import datetime
+import time
 
-def atest(**kwargs):
-    fun2()
-
-
-
-a = {"a":1,"b":2,"c":3}
-atest(**a)
-
+a = datetime.now().replace(microsecond=0)
+for i in range(3):
+    time.sleep(2)
+b = datetime.now().replace( microsecond=0)
+print(b - a)
 
