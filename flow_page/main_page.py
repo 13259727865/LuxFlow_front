@@ -3,18 +3,17 @@
 # @author:Gemini
 # @time:  2021/11/9:11:00
 # @email: 13259727865@163.com
+from pywinauto import mouse
 
 from common.io import JsonIO
 from base.main import Main
 from common.logger import LogRoot
+from flow_frame.main_frame import FrameSet, TerminalFrame, MaterialFrame
 from flow_page.batch import Batch
 from flow_page.marking import Marking
-from flow_frame.material_frame import MaterialFrame
-from flow_frame.set_frame import FrameSet
-from flow_page.open import Open
 from flow_page.slice import Slice
 from flow_page.support import Support
-from flow_frame.terminal_frame import TerminalFrame
+
 
 
 class MainPage(Main):
@@ -50,7 +49,7 @@ class MainPage(Main):
                         LogRoot.info("取消")
                         self.click(index="取消")
                     elif oper == "切片":
-                        LogRoot.info("片")
+                        LogRoot.info("切片")
                         self.click(index="切片")
                     return
                 else:
@@ -80,7 +79,7 @@ class MainPage(Main):
             self.find(title="软件版本", auto_id="FormMain.widgetTitle.FormSoftSetting.labelSoftware",
                       control_type="Text").texts()[0]
         set_text["version"] = self._dlg["Static6"].texts()[0]
-        LogRoot.info(f"返回（{set_text}，设置弹框类）")
+        # LogRoot.info(f"返回（{set_text}，设置弹框类）")
         return set_text, FrameSet(self._dlg)
 
     # 菜单栏选择设备-打开弹框
@@ -113,7 +112,7 @@ class MainPage(Main):
             save_result = self.find(auto_id="FormMain.openGLWidget.MyMessageBox.labelMessageText", control_type="Text",
                                     isall=False, text=True)
             self.click(title="好的", auto_id="FormMain.openGLWidget.MyMessageBox.pbConfirm", control_type="CheckBox")
-            LogRoot.info("返回保存成功提示")
+            LogRoot.info(f"返回保存后提示{save_result}")
             return save_result
         except Exception as e:
             LogRoot.error("报错处理", e)
@@ -154,6 +153,26 @@ class MainPage(Main):
                 model_info_dict[model_info_text][model_info[i].texts()[0]] = model_info[i + 1].texts()[0]
             LogRoot.info(f"返回选中零件得信息{model_info_dict}")
             return model_info_dict
+        except Exception as e:
+            LogRoot.error("报错处理", e)
+
+    #打开零件
+    def openfile(self, path, model):
+        """
+        :param path: 模型路径
+        :param model: 模型名称，多模型例 '"格子收纳盒.stl""heart.stl"'
+        :return: 按钮文本
+        """
+        try:
+            openfile_text = self.find(title="本地打开", auto_id="FormMain.rightwidget.stackedWidget.FormLoad.pbLocal",
+                                      control_type="Button").texts()[0]
+            self.click(title="本地打开", auto_id="FormMain.rightwidget.stackedWidget.FormLoad.pbLocal",
+                       control_type="Button")
+            LogRoot.info("点击本地打开按钮")
+            self.win_desktop(win_title="打开文件", path_bar="Toolbar3", path=path, filename=model)
+            LogRoot.info("操作打开文件win弹窗")
+            LogRoot.info("返回按钮text")
+            return openfile_text
         except Exception as e:
             LogRoot.error("报错处理", e)
 
@@ -198,7 +217,7 @@ class MainPage(Main):
             elif oper == "支撑":
                 # 支撑
                 self.click(control=button_parent[2])
-                LogRoot.info("进入打开页")
+                LogRoot.info("进入支撑页")
                 return Support(self._dlg)
             elif oper == "布局":
                 # 布局
@@ -223,18 +242,22 @@ class MainPage(Main):
     def print_dlg(self):
         # print(type(self._dlg.print_control_identifiers()))
         self._dlg.print_control_identifiers()
+        # self._dlg.capture_as_image().save("./111.png")
+        #材料温度设置
+        # self._dlg.child_window(auto_id="FormMain.FormEditParameter").print_control_identifiers()
+        # self.click(control=self._dlg.child_window(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.deviceList", control_type="List").children()[2])
+
         # self._dlg.child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.
         # qt_scrollarea_viewport.scrollAreaWidgetContents.cbpara", control_type="ComboBox").texts()
         # button = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.
         # scrollAreaWidgetContents.widgetBarBase.pushButtonBase",
+        # auto_id="FormMain.FormEditParameter.FormSaveModel.widgetTitle.popTitle"
 
 
 if __name__ == '__main__':
     a = MainPage()
-    # auto_id = "FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.
-    # scrollAreaWidgetContents.cbScene"
-    # control_type = "ComboBox"
-    # print(a.model_info())
-    # dict = {"抬升高度":0.10,"是否加固":True,"起始高度":0.05,"仅底座":False}
-
+    # a.is_isappear_outside(choice_index=7,outside=a.find(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.deviceList", control_type="List"))
+    # a.capture_image(img_doc="test")
+    # dict1 = {"X轴":100,"Y轴":100,"外轮廓":0.2654,"内轮廓":0.2654}
+    # a.jump_button().slice().slice_time()
     a.print_dlg()

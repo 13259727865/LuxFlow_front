@@ -8,4 +8,5 @@ from base.main import Main
 
 
 class Upload(Main):
-    pass
+    def texts(self):
+        pass

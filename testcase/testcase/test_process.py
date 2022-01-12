@@ -12,6 +12,7 @@ import allure
 # @pytest.fixture(scope='module')
 # def setup_module(self):
 #     self.main = MainPage()
+import pytest
 
 
 @allure.feature("测试类")
@@ -25,11 +26,13 @@ class TestOpen:
         with allure.step("打开零件"):
             start_flow.jump_button(oper="打开")
             openfile = start_flow.openfile(r"E:\model\model", '"孔洞花瓶.stl" "heart.stl"')
-            assert openfile == "本地打开"
+            pytest.assume(openfile == "本地打开")
             start_flow.modle_check_tips(oper="上传修复")
             start_flow.wait(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List")
-            time.sleep(3)
-            assert len(start_flow.modle_list()[2]) == 2
+            time.sleep(2)
+            pytest.assume(len(start_flow.modle_list()[2]) == 2)
+            start_flow.capture_image("打开零件")
+
 
     # 支撑应用选择
     @allure.story("支撑应用选择")

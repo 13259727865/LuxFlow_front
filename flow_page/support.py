@@ -54,6 +54,7 @@ class Support(Main):
     # 返回支撑页：应用、支撑设置栏文本字典
     def return_all_texts(self,open=True):
         """
+        open: 是否需要全部展开
         :return: {'support1': '支撑', 'support2': '应用', 'support3': ['齿科产品', '鞋类产品', '眼镜产品', '其他产品'],
         'support4': '支撑设置', 'support5': ['推荐参数', '123'], 'support6': '基础设置', 'support7': '抬升高度',
         'support8': '2.50 mm', 'support9': '支撑点直径', 'support10': '1.20 mm', 'support11': '支撑头长度',
@@ -100,7 +101,7 @@ class Support(Main):
                                 else:
                                     s += 1
                                     support_static_dict[f"support{s}"] = support_child[i].children()[j].texts()[0]
-        LogRoot.info(f"返回支撑页参数{support_static_dict}")
+        # LogRoot.info(f"返回支撑页参数{support_static_dict}")
         return support_static_dict
 
 
@@ -116,6 +117,7 @@ class Support(Main):
         """
         application_parent = self.support_parent(index=2)
         self.listbox_choice(parent=parent, click_index=click_index, isall=False, auto_id=application_parent)
+        LogRoot.info(f"选择第{click_index}项应用")
 
 
 
@@ -157,14 +159,15 @@ class Support(Main):
 
 
     # 推荐参数下拉框选择
-    def choice_recommend(self, click_index=1, parent=2):
+    def choice_recommend(self, click_index=1):
         application_parent = self.support_parent(10)
-        self.listbox_choice(parent=parent, click_index=click_index, isall=False, auto_id=application_parent)
-
+        self.listbox_choice(parent=2, click_index=click_index, isall=False, auto_id=application_parent)
+        LogRoot.info(f"选择第{click_index}项推荐参数")
 
     # 支撑设置展开/关闭
     def basic_setup_open(self, oper="基础设置"):
         self.click(index=oper)
+        LogRoot.info("展开/关闭oper")
 
 
     # 输入参数值
@@ -183,6 +186,7 @@ class Support(Main):
                 state = self.find(index=oper_key).get_toggle_state()
                 if (oper_value and state==0) or (oper_value ==False and state==1) :
                     self.click(index=oper_key)
+                    LogRoot.info(f"点击{oper_key}")
             if oper_control :
                 oper_auto_id=oper_control.get_properties()["automation_id"]
             else:
@@ -202,8 +206,8 @@ class Support(Main):
 
     #生成-删除-编辑
     def support_oper(self,oper="生成"):
-        LogRoot.info(oper)
         self.click(index=oper)
+        LogRoot.info(oper)
 
     #下一步
     def next_step(self):

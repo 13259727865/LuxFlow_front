@@ -18,10 +18,15 @@
 import datetime
 from datetime import datetime
 import time
+#
+# a = datetime.now().replace(microsecond=0)
+# for i in range(3):
+#     time.sleep(2)
+# b = datetime.now().replace( microsecond=0)
+# print(b - a)
 
-a = datetime.now().replace(microsecond=0)
-for i in range(3):
-    time.sleep(2)
-b = datetime.now().replace( microsecond=0)
-print(b - a)
+a = []
+for i in a:
+    print(123)
+print(345)
 

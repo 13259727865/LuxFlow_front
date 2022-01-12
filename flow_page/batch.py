@@ -85,7 +85,7 @@ class Batch(Main):
     def layout(self):
         self.click(self.batch_parent_children()[7])
         LogRoot.info("开始布局")
-        return Batch(self._dlg)
+        return Marking(self._dlg)
 
 
 

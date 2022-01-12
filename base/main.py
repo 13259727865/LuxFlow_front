@@ -5,8 +5,12 @@
 # @email: 13259727865@163.com
 import time
 import os
-from datetime import datetime
 
+import allure
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = curPath[:curPath.find("LuxFlow_front\\")+len("LuxFlow_front\\")]  # 获取LuxFlow_front，也就是项目的根路径
+from datetime import datetime
 import pywinauto
 from pywinauto.keyboard import send_keys
 from common.io import JsonIO
@@ -29,9 +33,9 @@ class Main:
                 if self._jsonio["action"]=="start":
                     self._app.start(self._page_path)
                     time.sleep(10)
-                elif self._jsonio["action"]=="connet":
+                elif self._jsonio["action"]=="connect":
                     self._app.connect(process=self._page_process)
-                self._dlg = self._app["LuxCreo"]
+                self._dlg = self._app["Dialog"]
 
         else:
             self._dlg = dlg
@@ -128,17 +132,29 @@ class Main:
         else:
             return "控件不存在或其他异常"
 
+    #输入框填写信息
+    def insert(self,value,**kwargs):
+        self.click(**kwargs)
+        send_keys("^a")
+        send_keys(str(value))
+
     #判断control是否在outside里面
     def is_in_outside(self,outside=None,control=None):
-        outside_left = outside.rectangle().left
-        outside_top = outside.rectangle().top
-        outside_right = outside.rectangle().right
-        outside_bottom = outside.rectangle().bottom
-        control_left = control.rectangle().left
-        control_top = control.rectangle().top
-        control_right = control.rectangle().right
-        control_bottom = control.rectangle().bottom
-
+        """
+        :param outside: 外层控件
+        :param control: 里层空间
+        :param control_isappear: 里层控件是否一直可以获取到
+        :return:
+        """
+        rect = outside.rectangle()
+        outside_left = rect.left
+        outside_top = rect.top
+        outside_right = rect.right
+        outside_bottom = rect.bottom
+        control_left = rect.left
+        control_top = rect.top
+        control_right = rect.right
+        control_bottom = rect.bottom
         if control_top >= outside_top and control_bottom <= outside_bottom:
             return True
         elif control_bottom < outside_top:
@@ -150,11 +166,44 @@ class Main:
         else:
             return False
 
+    #滚动控件直到要选的控件出现
+    def is_isappear_outside(self,choice_index,outside):
+        outside_list = outside.children()
+        page = choice_index//(len(outside_list)//2)+1
+        if page <= 2 :
+            self.click(control=outside_list[choice_index])
+        elif page > 2:
+            rect = outside.rectangle()
+            outside_left = rect.left
+            outside_top = rect.top
+            outside_right = rect.right
+            outside_bottom = rect.bottom
+            mouse.scroll(coords=(outside_left + ((outside_right - outside_left) // 2),
+                                 outside_top + ((outside_bottom - outside_top) // 2)), wheel_dist=2-page)
+            self.click(control=outside_list[choice_index%(len(outside_list)//2)+3])
+
+
+
 
     #截图保存
-    def capture_image(self,control,path):
-        control.capture_as_image().save(path)
-        return f"{path}已保存"
+    def capture_image(self,img_doc,control=None):
+        """
+        :param img_doc: 图片说明
+        :param control: 只对控件截图
+        :return:
+        """
+        file_name = rootPath + r"\picture\{}_{}.png".format(img_doc,datetime.strftime(datetime.now(), "%Y%m%d%H%M%S"))
+        print(file_name)
+        if control is None:
+            self._dlg.capture_as_image().save(file_name)
+        elif control:
+            control.capture_as_image().save(file_name)
+        with open(file_name, mode='rb') as f:
+            file = f.read()
+        allure.attach(file, img_doc, allure.attachment_type.PNG)
+        LogRoot.info(f"已保存截图至{file_name}")
+
+
 
     #下拉框选中
     def listbox_choice(self, click_index=1,parent=2,**kwargs):
@@ -164,7 +213,7 @@ class Main:
         :return:
         """
         application_child = self.click(**kwargs).children()
-        LogRoot.info("选择应用")
+        LogRoot.info(f"下拉列表，第{click_index}个")
         if parent == 1 :
             self.click(control=application_child[click_index])
         elif parent == 2:
@@ -178,10 +227,10 @@ class Main:
         # self.find(**kwargs).wait(wait_for="exists enabled visible ready", timeout=timeout)
         self._dlg.child_window(**kwargs).wait(wait_for="exists enabled visible ready", timeout=timeout)
 
+
     #等待消失
     def wait_not(self,timeout=9999,**kwargs):
-        self._dlg.print_control_identifiers()
-        self.find(**kwargs).wait_not(wait_for_not="exists enabled visible ready",timeout=timeout)
+        self._dlg.child_window(**kwargs).wait_not(wait_for_not="exists enabled visible ready",timeout=timeout)
 
     #点击下一步按钮
     def click_next_button(self):
@@ -189,10 +238,13 @@ class Main:
 
     #控件从出现到消失的总时长
     def wait_time(self,**kwargs):
-        self.wait(**kwargs,timeout=10)
+        self.wait(**kwargs,timeout=5)
+        LogRoot.info(f"控件出现{datetime.now()}")
         start_time = datetime.now().replace(microsecond=0)
-        self.wait_not(**kwargs,timeout=10)
+        self.wait_not(**kwargs)
+        LogRoot.info(f"控件消失{datetime.now()}")
         end_time = datetime.now().replace(microsecond=0)
         time = end_time-start_time
         LogRoot.info(f"存在时长{time}")
         return time
+
