@@ -25,8 +25,13 @@ import time
 # b = datetime.now().replace( microsecond=0)
 # print(b - a)
 
-a = []
-for i in a:
-    print(123)
-print(345)
 
+def bubbleSort(arr):
+    # for i in range(len(arr) - 1):
+    for j in range(len(arr)-1):
+        if arr[j] > arr[j + 1]:
+            arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr[-1]
+
+
+print(bubbleSort([4,5,9,7,8,12,2]))

@@ -3,17 +3,16 @@
 # @author:Gemini
 # @time:  2021/11/9:11:00
 # @email: 13259727865@163.com
-from pywinauto import mouse
+import pywinauto
 
 from common.io import JsonIO
 from base.main import Main
 from common.logger import LogRoot
-from flow_frame.main_frame import FrameSet, TerminalFrame, MaterialFrame
+from flow_frame.main_frame import TerminalFrame, MaterialFrame, FrameSet, CopyFrame
 from flow_page.batch import Batch
 from flow_page.marking import Marking
 from flow_page.slice import Slice
 from flow_page.support import Support
-
 
 
 class MainPage(Main):
@@ -26,6 +25,7 @@ class MainPage(Main):
         :return:
         """
         auto_id = ["FormMain.openGLWidget.FormFixQuery.widgetList",
+
                    "FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.widgetList"]
         try:
 
@@ -36,11 +36,12 @@ class MainPage(Main):
                     LogRoot.info("发现检测修复弹框,是否修")
                     if oper == "上传修复":
                         LogRoot.info("上传修复")
-                        LogRoot.info(f"找到{auto_id[i]}")
                         self.click(index="修复")
+                        self.wait_not(auto_id="FormMain.openGLWidget.CProgress.widgetTitle")
                     elif oper == "切片修复":
                         LogRoot.info("切片修复")
                         self.click(index="修复")
+                        self.wait_not(auto_id="FormMain.openGLWidget.CProgress.widgetTitle")
                         self.click(index="切片")
                     elif oper == "忽略":
                         LogRoot.info("忽略")
@@ -56,7 +57,6 @@ class MainPage(Main):
                     LogRoot.info("未发现修复检测弹框，无需修复")
         except Exception as e:
             LogRoot.error("报错处理", e)
-
 
     # 设置菜单-打开设置弹框
     def menu_set(self):
@@ -101,7 +101,6 @@ class MainPage(Main):
         LogRoot.info(f"(材料选择图片，默认材料{default_material}，材料弹框类)")
         return material_lcon, default_material, MaterialFrame(self._dlg)
 
-
     # 保存文件
     def save_file(self, save_path, save_name):
         try:
@@ -128,11 +127,26 @@ class MainPage(Main):
                                         isall=False).texts()[0]
             modle_list = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels",
                                    control_type="List").children()
-            LogRoot.info(f"返回（零件列表图标，列表text,零件list{modle_list}）")
+            # LogRoot.info(f"返回（零件列表图标，列表text,零件list{modle_list}）")
             return modle_list_lcon, modle_list_text, modle_list
         except Exception as e:
             LogRoot.error("报错处理", e)
 
+    # 复制模型
+    def copy_file(self, file_index=0):
+        file_list = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List").children()
+        print(file_list)
+        list_num = len(file_list)
+        if list_num == 0:
+            LogRoot.error("没有可选零件")
+        elif list_num > 0:
+            if file_index <= list_num - 1:
+                self.click(control=file_list[file_index])
+            else:
+                LogRoot.error(f"没有第{file_index}个零件")
+                return
+            self.click(auto_id="FormMain.toolWidgte.pushButtonCopyParts", control_type="Button")
+            return CopyFrame(self._dlg)
 
     # 选中模型的模型参数
     def model_info(self):
@@ -156,7 +170,7 @@ class MainPage(Main):
         except Exception as e:
             LogRoot.error("报错处理", e)
 
-    #打开零件
+    # 打开零件
     def openfile(self, path, model):
         """
         :param path: 模型路径
@@ -169,9 +183,8 @@ class MainPage(Main):
             self.click(title="本地打开", auto_id="FormMain.rightwidget.stackedWidget.FormLoad.pbLocal",
                        control_type="Button")
             LogRoot.info("点击本地打开按钮")
-            self.win_desktop(win_title="打开文件", path_bar="Toolbar3", path=path, filename=model)
-            LogRoot.info("操作打开文件win弹窗")
-            LogRoot.info("返回按钮text")
+            self.win_desktop(win_title="打开文件", path_bar="Toolbar4", path=path, filename=model)
+            self.wait_not(auto_id="FormMain.openGLWidget.CProgress.widgetTitle")
             return openfile_text
         except Exception as e:
             LogRoot.error("报错处理", e)
@@ -203,7 +216,6 @@ class MainPage(Main):
                 LogRoot.info(f"{oper}")
         except Exception as e:
             LogRoot.error("报错处理", e)
-
 
     # 下方跳转按钮
     def jump_button(self, oper="切片"):
@@ -237,13 +249,11 @@ class MainPage(Main):
         except Exception as e:
             LogRoot.error("报错处理,oper有误！", e)
 
-
-
     def print_dlg(self):
         # print(type(self._dlg.print_control_identifiers()))
         self._dlg.print_control_identifiers()
         # self._dlg.capture_as_image().save("./111.png")
-        #材料温度设置
+        # 材料温度设置
         # self._dlg.child_window(auto_id="FormMain.FormEditParameter").print_control_identifiers()
         # self.click(control=self._dlg.child_window(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.deviceList", control_type="List").children()[2])
 
@@ -255,9 +265,14 @@ class MainPage(Main):
 
 
 if __name__ == '__main__':
-    a = MainPage()
+    main = MainPage()
     # a.is_isappear_outside(choice_index=7,outside=a.find(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.deviceList", control_type="List"))
     # a.capture_image(img_doc="test")
     # dict1 = {"X轴":100,"Y轴":100,"外轮廓":0.2654,"内轮廓":0.2654}
-    # a.jump_button().slice().slice_time()
-    a.print_dlg()
+    # support_parameter = {"抬升高度": 10, "支撑点直径": 1.5, "支撑头长度": 2.5, "支撑柱直径": 1.5, "支撑点间距": 4.5, "临界角": 75,
+    #                      "是否加固": True, "起始高度": 1.5, "角度": 50, "支撑加底座": True, "底座高度": 1.5}
+    # a.jump_button(oper="支撑").input_parameter(support_parameter)
+    # main._dlg.print_control_identifiers()
+    # main.click(auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.pbParameter",isall=False)
+    win = pywinauto.Desktop()
+    win["Dialog0"].print_control_identifiers()

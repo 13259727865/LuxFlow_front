@@ -28,7 +28,9 @@ class Slice(Main):
         :param type: "推荐" or "自定义"
         :return:
         """
-        thickness_types = self.slice_parent()[1].chilcren()[1].children()
+
+        thickness_types = self.slice_parent().children()[1].children()[1].children()
+        print(thickness_types)
         LogRoot.info(f"在{type}里操作")
         if type == "推荐":
             self.click(control=thickness_types[0])

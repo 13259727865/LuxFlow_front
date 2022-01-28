@@ -8,7 +8,9 @@ from pywinauto.keyboard import send_keys
 
 from base.main import Main
 from common.logger import LogRoot
+from flow_frame.batch_frame import BatchFrame
 from flow_page.marking import Marking
+from flow_page.slice import Slice
 
 
 class Batch(Main):
@@ -35,7 +37,7 @@ class Batch(Main):
         return batch_texts
 
     #间距设置
-    def set_spacing(self,spacing=None,button="add",second=0):
+    def set_spacing(self,spacing=None,second=0):
         """
         :param spacing: 间距值
         :param button: "add"增加按钮，“sub”减少按钮，，（可直接由second的正负控制，该参数可忽略）
@@ -48,25 +50,16 @@ class Batch(Main):
             return
         batch_parent_children = self.batch_parent_children()
         if spacing:
-            self.click(control=batch_parent_children[3])
-            send_keys("^a")
-            send_keys(str(spacing))
+            self.insert(value=spacing,control=batch_parent_children[3])
             LogRoot.info(f"输入参数值{spacing}")
         if second:
-            if button=="add":
-                if second > 0:
-                    for i in range(second):
-                        self.click(control=batch_parent_children[4])
-                elif second < 0:
-                    for i in range(abs(second)):
-                        self.click(control=batch_parent_children[2])
-            elif button=="sub":
-                if second > 0:
-                    for i in range(second):
-                        self.click(control=batch_parent_children[2])
-                elif second < 0:
-                    for i in range(abs(second)):
-                        self.click(control=batch_parent_children[4])
+            if second > 0:
+                for i in range(second):
+                    self.click(control=batch_parent_children[4])
+            elif second < 0:
+                for i in range(abs(second)):
+                    self.click(control=batch_parent_children[2])
+
 
     #选择布局方式
     def Layout_mode(self,mode=1):
@@ -85,7 +78,7 @@ class Batch(Main):
     def layout(self):
         self.click(self.batch_parent_children()[7])
         LogRoot.info("开始布局")
-        return Marking(self._dlg)
+        return BatchFrame(self._dlg)
 
 
 
@@ -95,6 +88,6 @@ class Batch(Main):
         :return: 下一页控件类
         """
         self.click_next_button()
-        # 跳转支撑页
+        # 跳转切片页
         LogRoot.info("进入编码页")
-        return Marking(self._dlg)
+        return Slice(self._dlg)
