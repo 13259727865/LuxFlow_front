@@ -1,0 +1,5 @@
+[32mINFO    [0m log:conftest.py:14 打开（连接）LuxFlow，开始执行测试用例！！！
+[32mINFO    [0m log:main_page.py:232 进入打开页
+[32mINFO    [0m log:main_page.py:186 点击本地打开按钮
+[32mINFO    [0m log:conftest.py:17 用例执行完毕，关闭软件！！！
+[32mINFO    [0m log:main_page.py:216 关闭软件

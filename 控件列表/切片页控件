@@ -1,0 +1,320 @@
+  ========================推荐==============================================================
+     | GroupBox - ''    (L3519, T115, R3839, B929)
+   | ['GroupBox14', '层厚(mm)GroupBox', '层厚(mm)GroupBox0', '层厚(mm)GroupBox1']
+   | child_window(auto_id="FormMain.rightwidget", control_type="Group")
+   |    |
+   |    | Custom - ''    (L3539, T115, R3819, B929)
+   |    | ['Custom6', '层厚(mm)Custom', '层厚(mm)Custom0', '层厚(mm)Custom1']
+   |    | child_window(auto_id="FormMain.rightwidget.stackedWidget", control_type="Custom")
+   |    |    |
+   |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    | ['GroupBox15', '层厚(mm)GroupBox2']
+   |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting", control_type="Group")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    |    | ['GroupBox16', '层厚(mm)GroupBox3']
+   |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    |    |    | ['GroupBox17', '层厚(mm)GroupBox4']
+   |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport", control_type="Group")
+   |    |    |    |    |    |
+   |    |    |    |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    |    |    |    | ['GroupBox18', '层厚(mm)GroupBox5']
+   |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents", control_type="Group")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | GroupBox - ''    (L3539, T131, R3819, B929)
+   |    |    |    |    |    |    | ['GroupBox19', '层厚(mm)GroupBox6']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode", control_type="Group")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '层厚(mm)'    (L3539, T131, R3819, B159)
+   |    |    |    |    |    |    |    | ['层厚(mm)', '层厚(mm)Static', 'Static10']
+   |    |    |    |    |    |    |    | child_window(title="层厚(mm)", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.labelThicknessRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | GroupBox - ''    (L3539, T173, R3819, B315)
+   |    |    |    |    |    |    |    | ['GroupBox20', '层厚(mm)GroupBox7']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness", control_type="Group")
+   |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    | Custom - ''    (L3539, T219, R3819, B315)
+   |    |    |    |    |    |    |    |    | ['Custom7', '层厚(mm)Custom2']
+   |    |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness.qt_tabwidget_stackedwidget", control_type="Custom")
+   |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    | GroupBox - ''    (L3539, T219, R3819, B315)
+   |    |    |    |    |    |    |    |    |    | ['GroupBox21', '层厚(mm)GroupBox8']
+   |    |    |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness.qt_tabwidget_stackedwidget.tabWidgetPage1", control_type="Group")
+   |    |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    |    | ComboBox - ''    (L3539, T231, R3819, B263)
+   |    |    |    |    |    |    |    |    |    |    | ['ComboBox', '层厚(mm)ComboBox', 'ComboBox0', 'ComboBox1', '层厚(mm)ComboBox0', '层厚(mm)ComboBox1']
+   |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness.qt_tabwidget_stackedwidget.tabWidgetPage1.cbThickness", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    |    |    | ListBox - ''    (L0, T0, R0, B0)
+   |    |    |    |    |    |    |    |    |    |    |    | ['ListBox', 'ListBox0', 'ListBox1']
+   |    |    |    |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    |    |    |    | ListItem - '0.10'    (L3540, T267, R3818, B307)
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['0.10', '0.10ListItem', 'ListItem', 'ListItem0', 'ListItem1']
+   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="0.10", control_type="ListItem")
+   |    |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    |    | ComboBox - ''    (L3539, T281, R3819, B313)
+   |    |    |    |    |    |    |    |    |    |    | ['ComboBoxSlow', 'ComboBox2', '层厚(mm)ComboBox2']
+   |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness.qt_tabwidget_stackedwidget.tabWidgetPage1.cbPrintSpeed", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    |    |    | ListBox - ''    (L0, T0, R0, B0)
+   |    |    |    |    |    |    |    |    |    |    |    | ['ListBox2']
+   |    |    |    |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    |    |    |    | ListItem - 'Fast'    (L3540, T317, R3818, B357)
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['Fast', 'ListItem2', 'FastListItem']
+   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="Fast", control_type="ListItem")
+   |    |    |    |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    |    |    |    | ListItem - 'Slow'    (L3540, T357, R3818, B397)
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['SlowListItem', 'ListItem3', 'Slow']
+   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="Slow", control_type="ListItem")
+   |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    | TabControl - '推荐'    (L3539, T173, R3815, B219)
+   |    |    |    |    |    |    |    |    | ['TabControl', '推荐', '推荐TabControl', '推荐0', '推荐1']
+   |    |    |    |    |    |    |    |    | child_window(title="推荐", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness.qt_tabwidget_tabbar", control_type="Tab")
+   |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    | TabItem - '推荐'    (L3539, T173, R3677, B219)
+   |    |    |    |    |    |    |    |    |    | ['推荐TabItem', '推荐2', 'TabItem', 'TabItem0', 'TabItem1']
+   |    |    |    |    |    |    |    |    |    | child_window(title="推荐", control_type="TabItem")
+   |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    | TabItem - '自定义'    (L3677, T173, R3815, B219)
+   |    |    |    |    |    |    |    |    |    | ['自定义', '自定义TabItem', 'TabItem2']
+   |    |    |    |    |    |    |    |    |    | child_window(title="自定义", control_type="TabItem")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Custom - ''    (L3539, T337, R3819, B338)
+   |    |    |    |    |    |    |    | ['Custom8', '层厚(mm)Custom3']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.line_2", control_type="Custom")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '表面精细'    (L3539, T352, R3819, B380)
+   |    |    |    |    |    |    |    | ['表面精细', 'Static11', '表面精细Static']
+   |    |    |    |    |    |    |    | child_window(title="表面精细", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.labelGreyscaleRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | RadioButton - '使表面光滑'    (L3539, T394, R3819, B414)
+   |    |    |    |    |    |    |    | ['RadioButton7', '使表面光滑RadioButton', '使表面光滑']
+   |    |    |    |    |    |    |    | child_window(title="使表面光滑", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.checkBoxGreyRd", control_type="RadioButton")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Custom - ''    (L3539, T436, R3819, B437)
+   |    |    |    |    |    |    |    | ['Custom9', '表面精细Custom']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.line_3", control_type="Custom")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '高级设置'    (L3539, T451, R3799, B488)
+   |    |    |    |    |    |    |    | ['高级设置', 'Static12', '高级设置Static']
+   |    |    |    |    |    |    |    | child_window(title="高级设置", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.labelAdvancedSetting", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Button - ''    (L3799, T459, R3819, B479)
+   |    |    |    |    |    |    |    | ['Button14', '高级设置Button']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.pbArrow", control_type="Button")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '精度补偿'    (L3539, T502, R3819, B530)
+   |    |    |    |    |    |    |    | ['精度补偿Static', '精度补偿', 'Static13']
+   |    |    |    |    |    |    |    | child_window(title="精度补偿", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.labelShrinkageRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - 'X轴'    (L3539, T544, R3649, B576)
+   |    |    |    |    |    |    |    | ['X轴', 'Static14', 'X轴Static']
+   |    |    |    |    |    |    |    | child_window(title="X轴", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.xAxisLabelRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '100.50%'    (L3659, T544, R3819, B576)
+   |    |    |    |    |    |    |    | ['UpDown', '100.50%UpDown', '100.50%', 'UpDown0', 'UpDown1', '100.50%UpDown0', '100.50%UpDown1', '100.50%0', '100.50%1']
+   |    |    |    |    |    |    |    | child_window(title="100.50%", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.XdoubleSpinBox", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - 'Y轴'    (L3539, T590, R3649, B622)
+   |    |    |    |    |    |    |    | ['Y轴', 'Static15', 'Y轴Static']
+   |    |    |    |    |    |    |    | child_window(title="Y轴", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.yAxisLabelRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '100.50%'    (L3659, T590, R3819, B622)
+   |    |    |    |    |    |    |    | ['UpDown2', '100.50%UpDown2', '100.50%2']
+   |    |    |    |    |    |    |    | child_window(title="100.50%", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.YdoubleSpinBox", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - 'Z轴'    (L3539, T636, R3649, B668)
+   |    |    |    |    |    |    |    | ['Z轴', 'Static16', 'Z轴Static']
+   |    |    |    |    |    |    |    | child_window(title="Z轴", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.zAxisLabelRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '100.00%'    (L3659, T636, R3819, B668)
+   |    |    |    |    |    |    |    | ['UpDown3', '100.00%UpDown', '100.00%']
+   |    |    |    |    |    |    |    | child_window(title="100.00%", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.ZdoubleSpinBox", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '外轮廓'    (L3539, T682, R3649, B714)
+   |    |    |    |    |    |    |    | ['外轮廓', 'Static17', '外轮廓Static']
+   |    |    |    |    |    |    |    | child_window(title="外轮廓", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.offsetRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '-0.0310mm'    (L3659, T682, R3819, B714)
+   |    |    |    |    |    |    |    | ['UpDown4', '-0.0310mmUpDown', '-0.0310mm']
+   |    |    |    |    |    |    |    | child_window(title="-0.0310mm", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.outlineOffsetLineEditRd", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '内轮廓'    (L3539, T728, R3649, B760)
+   |    |    |    |    |    |    |    | ['Static18', '内轮廓Static', '内轮廓']
+   |    |    |    |    |    |    |    | child_window(title="内轮廓", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.labelInnerContour", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '0.0179mm'    (L3659, T728, R3819, B760)
+   |    |    |    |    |    |    |    | ['UpDown5', '0.0179mm', '0.0179mmUpDown']
+   |    |    |    |    |    |    |    | child_window(title="0.0179mm", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.innerOffsetLineEditRd", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Button - '保存'    (L3539, T774, R3819, B806)
+   |    |    |    |    |    |    |    | ['保存', '保存Button', 'Button15']
+   |    |    |    |    |    |    |    | child_window(title="保存", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.pbSave", control_type="Button")
+   |
+   | GroupBox - ''    (L3519, T929, R3839, B1039)
+   | ['GroupBox22', '内轮廓GroupBox']
+   | child_window(auto_id="FormMain.nextStepWidget", control_type="Group")
+   |    |
+   |    | Button - '切 片'    (L3539, T962, R3819, B1006)
+   |    | ['切 片Button', '切 片2', 'Button16']
+   |    | child_window(title="切 片", auto_id="FormMain.nextStepWidget.pbNextStep", control_type="Button")
+
+  ========================自定义==============================================================
+  | GroupBox - ''    (L3519, T115, R3839, B929)
+   | ['GroupBox14', '层厚(mm)GroupBox', '层厚(mm)GroupBox0', '层厚(mm)GroupBox1']
+   | child_window(auto_id="FormMain.rightwidget", control_type="Group")
+   |    |
+   |    | Custom - ''    (L3539, T115, R3819, B929)
+   |    | ['层厚(mm)Custom', 'Custom6', '层厚(mm)Custom0', '层厚(mm)Custom1']
+   |    | child_window(auto_id="FormMain.rightwidget.stackedWidget", control_type="Custom")
+   |    |    |
+   |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    | ['GroupBox15', '层厚(mm)GroupBox2']
+   |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting", control_type="Group")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    |    | ['GroupBox16', '层厚(mm)GroupBox3']
+   |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    |    |    | ['GroupBox17', '层厚(mm)GroupBox4']
+   |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport", control_type="Group")
+   |    |    |    |    |    |
+   |    |    |    |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    |    |    |    | ['GroupBox18', '层厚(mm)GroupBox5']
+   |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents", control_type="Group")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | GroupBox - ''    (L3539, T131, R3819, B929)
+   |    |    |    |    |    |    | ['GroupBox19', '层厚(mm)GroupBox6']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode", control_type="Group")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '层厚(mm)'    (L3539, T131, R3819, B159)
+   |    |    |    |    |    |    |    | ['Static10', '层厚(mm)Static', '层厚(mm)']
+   |    |    |    |    |    |    |    | child_window(title="层厚(mm)", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.labelThicknessRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | GroupBox - ''    (L3539, T173, R3819, B315)
+   |    |    |    |    |    |    |    | ['GroupBox20', '层厚(mm)GroupBox7']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness", control_type="Group")
+   |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    | Custom - ''    (L3539, T219, R3819, B315)
+   |    |    |    |    |    |    |    |    | ['层厚(mm)Custom2', 'Custom7']
+   |    |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness.qt_tabwidget_stackedwidget", control_type="Custom")
+   |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    | GroupBox - ''    (L3539, T219, R3819, B315)
+   |    |    |    |    |    |    |    |    |    | ['GroupBox21', '层厚(mm)GroupBox8']
+   |    |    |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness.qt_tabwidget_stackedwidget.tabWidgetPage2", control_type="Group")
+   |    |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    |    | Edit - '0.5'    (L3539, T231, R3819, B263)
+   |    |    |    |    |    |    |    |    |    |    | ['层厚(mm)Edit', 'Edit']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="0.5", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness.qt_tabwidget_stackedwidget.tabWidgetPage2.lineEditCustomThickness", control_type="Edit")
+   |    |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    |    | ComboBox - ''    (L3539, T281, R3783, B313)
+   |    |    |    |    |    |    |    |    |    |    | ['ComboBox', '层厚(mm)ComboBox']
+   |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness.qt_tabwidget_stackedwidget.tabWidgetPage2.cbCustomThickness", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    |    |    | ListBox - ''    (L0, T0, R0, B0)
+   |    |    |    |    |    |    |    |    |    |    |    | ['ListBox']
+   |    |    |    |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    |    |    |    | ListItem - '0.5'    (L1, T1, R99, B41)
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['0.5ListItem', '0.5', 'ListItem']
+   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="0.5", control_type="ListItem")
+   |    |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    |    | Button - ''    (L3799, T287, R3819, B307)
+   |    |    |    |    |    |    |    |    |    |    | ['层厚(mm)Button', 'Button14']
+   |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness.qt_tabwidget_stackedwidget.tabWidgetPage2.pbCustomDelete", control_type="Button")
+   |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    | TabControl - '自定义'    (L3539, T173, R3815, B219)
+   |    |    |    |    |    |    |    |    | ['自定义TabControl', 'TabControl', '自定义', '自定义0', '自定义1']
+   |    |    |    |    |    |    |    |    | child_window(title="自定义", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.tabSliceThickness.qt_tabwidget_tabbar", control_type="Tab")
+   |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    | TabItem - '推荐'    (L3539, T173, R3677, B219)
+   |    |    |    |    |    |    |    |    |    | ['推荐', '推荐TabItem', 'TabItem', 'TabItem0', 'TabItem1']
+   |    |    |    |    |    |    |    |    |    | child_window(title="推荐", control_type="TabItem")
+   |    |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    |    | TabItem - '自定义'    (L3677, T173, R3815, B219)
+   |    |    |    |    |    |    |    |    |    | ['自定义2', '自定义TabItem', 'TabItem2']
+   |    |    |    |    |    |    |    |    |    | child_window(title="自定义", control_type="TabItem")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Custom - ''    (L3539, T337, R3819, B338)
+   |    |    |    |    |    |    |    | ['层厚(mm)Custom3', 'Custom8']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.line_2", control_type="Custom")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '表面精细'    (L3539, T352, R3819, B380)
+   |    |    |    |    |    |    |    | ['表面精细', '表面精细Static', 'Static11']
+   |    |    |    |    |    |    |    | child_window(title="表面精细", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.labelGreyscaleRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | RadioButton - '使表面光滑'    (L3539, T394, R3819, B414)
+   |    |    |    |    |    |    |    | ['RadioButton7', '使表面光滑', '使表面光滑RadioButton']
+   |    |    |    |    |    |    |    | child_window(title="使表面光滑", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.checkBoxGreyRd", control_type="RadioButton")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Custom - ''    (L3539, T436, R3819, B437)
+   |    |    |    |    |    |    |    | ['表面精细Custom', 'Custom9']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.line_3", control_type="Custom")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '高级设置'    (L3539, T451, R3799, B488)
+   |    |    |    |    |    |    |    | ['高级设置', 'Static12', '高级设置Static']
+   |    |    |    |    |    |    |    | child_window(title="高级设置", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.labelAdvancedSetting", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Button - ''    (L3799, T459, R3819, B479)
+   |    |    |    |    |    |    |    | ['Button15', '高级设置Button']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.pbArrow", control_type="Button")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '精度补偿'    (L3539, T502, R3819, B530)
+   |    |    |    |    |    |    |    | ['精度补偿Static', '精度补偿', 'Static13']
+   |    |    |    |    |    |    |    | child_window(title="精度补偿", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.labelShrinkageRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - 'X轴'    (L3539, T544, R3649, B576)
+   |    |    |    |    |    |    |    | ['Static14', 'X轴', 'X轴Static']
+   |    |    |    |    |    |    |    | child_window(title="X轴", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.xAxisLabelRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '100.00%'    (L3659, T544, R3819, B576)
+   |    |    |    |    |    |    |    | ['100.00%', 'UpDown', '100.00%UpDown', '100.00%0', '100.00%1', 'UpDown0', 'UpDown1', '100.00%UpDown0', '100.00%UpDown1']
+   |    |    |    |    |    |    |    | child_window(title="100.00%", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.XdoubleSpinBox", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - 'Y轴'    (L3539, T590, R3649, B622)
+   |    |    |    |    |    |    |    | ['Y轴Static', 'Static15', 'Y轴']
+   |    |    |    |    |    |    |    | child_window(title="Y轴", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.yAxisLabelRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '100.00%'    (L3659, T590, R3819, B622)
+   |    |    |    |    |    |    |    | ['100.00%2', 'UpDown2', '100.00%UpDown2']
+   |    |    |    |    |    |    |    | child_window(title="100.00%", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.YdoubleSpinBox", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - 'Z轴'    (L3539, T636, R3649, B668)
+   |    |    |    |    |    |    |    | ['Z轴', 'Static16', 'Z轴Static']
+   |    |    |    |    |    |    |    | child_window(title="Z轴", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.zAxisLabelRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '100.00%'    (L3659, T636, R3819, B668)
+   |    |    |    |    |    |    |    | ['100.00%3', 'UpDown3', '100.00%UpDown3']
+   |    |    |    |    |    |    |    | child_window(title="100.00%", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.ZdoubleSpinBox", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '外轮廓'    (L3539, T682, R3649, B714)
+   |    |    |    |    |    |    |    | ['外轮廓Static', 'Static17', '外轮廓']
+   |    |    |    |    |    |    |    | child_window(title="外轮廓", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.offsetRd", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '0.0000mm'    (L3659, T682, R3819, B714)
+   |    |    |    |    |    |    |    | ['0.0000mm', 'UpDown4', '0.0000mmUpDown', '0.0000mm0', '0.0000mm1', '0.0000mmUpDown0', '0.0000mmUpDown1']
+   |    |    |    |    |    |    |    | child_window(title="0.0000mm", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.outlineOffsetLineEditRd", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '内轮廓'    (L3539, T728, R3649, B760)
+   |    |    |    |    |    |    |    | ['内轮廓Static', '内轮廓', 'Static18']
+   |    |    |    |    |    |    |    | child_window(title="内轮廓", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.labelInnerContour", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '0.0000mm'    (L3659, T728, R3819, B760)
+   |    |    |    |    |    |    |    | ['0.0000mm2', 'UpDown5', '0.0000mmUpDown2']
+   |    |    |    |    |    |    |    | child_window(title="0.0000mm", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.innerOffsetLineEditRd", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Button - '保存'    (L3539, T774, R3819, B806)
+   |    |    |    |    |    |    |    | ['保存Button', 'Button16', '保存']
+   |    |    |    |    |    |    |    | child_window(title="保存", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetRDMode.pbSave", control_type="Button")
+   |
+   | GroupBox - ''    (L3519, T929, R3839, B1039)
+   | ['内轮廓GroupBox', 'GroupBox22']
+   | child_window(auto_id="FormMain.nextStepWidget", control_type="Group")
+   |    |
+   |    | Button - '切 片'    (L3539, T962, R3819, B1006)
+   |    | ['切 片2', 'Button17', '切 片Button']
+   |    | child_window(title="切 片", auto_id="FormMain.nextStepWidget.pbNextStep", control_type="Button")
+
+

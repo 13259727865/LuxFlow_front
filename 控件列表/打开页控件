@@ -1,0 +1,424 @@
+                                                                                                        Dialog - 'LuxCreo'    (L1920, T23, R3840, B1040)
+Dialog - 'LuxCreo'    (L1920, T23, R3840, B1040)
+['Dialog', 'LuxCreoDialog', 'LuxCreo']
+child_window(title="LuxCreo", auto_id="FormMain", control_type="Window")
+   |
+   | TitleBar - ''    (L1936, T-5, R3840, B23)
+   | ['TitleBar']
+   |    |
+   |    | Menu - '系统'    (L1920, T0, R1942, B22)
+   |    | ['系统Menu', '系统', 'Menu', '系统0', '系统1', 'Menu0', 'Menu1']
+   |    | child_window(title="系统", auto_id="MenuBar", control_type="MenuBar")
+   |    |    |
+   |    |    | MenuItem - '系统'    (L1920, T0, R1942, B22)
+   |    |    | ['MenuItem', '系统MenuItem', '系统2', 'MenuItem0', 'MenuItem1']
+   |    |    | child_window(title="系统", control_type="MenuItem")
+   |    |
+   |    | Button - '最小化'    (L3699, T8, R3746, B22)
+   |    | ['最小化', 'Button', '最小化Button', 'Button0', 'Button1']
+   |    | child_window(title="最小化", control_type="Button")
+   |    |
+   |    | Button - '还原'    (L3746, T8, R3792, B22)
+   |    | ['还原Button', 'Button2', '还原']
+   |    | child_window(title="还原", control_type="Button")
+   |    |
+   |    | Button - '关闭'    (L0, T0, R0, B0)
+   |    | ['关闭Button', '关闭', 'Button3']
+   |    | child_window(title="关闭", control_type="Button")
+   |
+   | GroupBox - ''    (L1921, T24, R3839, B54)
+   | ['GroupBox', 'GroupBox0', 'GroupBox1']
+   | child_window(auto_id="FormMain.widgetTitle", control_type="Group")
+   |    |
+   |    | GroupBox - ''    (L1941, T24, R2771, B53)
+   |    | ['GroupBox2']
+   |    | child_window(auto_id="FormMain.widgetTitle.wMenuBar", control_type="Group")
+   |    |    |
+   |    |    | Menu - ''    (L1941, T24, R2771, B53)
+   |    |    | ['Menu2']
+   |    |    | child_window(auto_id="FormMain.widgetTitle.wMenuBar.menuBar", control_type="MenuBar")
+   |    |    |    |
+   |    |    |    | MenuItem - '设置'    (L1941, T24, R1995, B48)
+   |    |    |    | ['MenuItem2', '设置', '设置MenuItem']
+   |    |    |    | child_window(title="设置", control_type="MenuItem")
+   |    |    |    |
+   |    |    |    | MenuItem - '帮助'    (L1995, T24, R2049, B48)
+   |    |    |    | ['MenuItem3', '帮助MenuItem', '帮助']
+   |    |    |    | child_window(title="帮助", control_type="MenuItem")
+   |    |
+   |    | Button - '登录'    (L3600, T26, R3688, B50)
+   |    | ['登录', 'Button4', '登录Button']
+   |    | child_window(title="登录", auto_id="FormMain.widgetTitle.pbLogin", control_type="Button")
+   |    |
+   |    | Custom - ''    (L3698, T30, R3699, B46)
+   |    | ['Custom', 'Custom0', 'Custom1']
+   |    | child_window(auto_id="FormMain.widgetTitle.titleLine", control_type="Custom")
+   |    |
+   |    | CheckBox - 'LuxLink'    (L3709, T24, R3819, B53)
+   |    | ['LuxLinkCheckBox', 'CheckBox', 'LuxLink', 'CheckBox0', 'CheckBox1']
+   |    | child_window(title="LuxLink", auto_id="FormMain.widgetTitle.pbTitleLink", control_type="CheckBox")
+   |    |
+   |    | Custom - ''    (L1921, T53, R3839, B54)
+   |    | ['Custom2']
+   |    | child_window(auto_id="FormMain.widgetTitle.line", control_type="Custom")
+   |
+   | GroupBox - ''    (L1921, T54, R3839, B114)
+   | ['GroupBox3']
+   | child_window(auto_id="FormMain.toolWidgte", control_type="Group")
+   |    |
+   |    | Button - ''    (L1941, T61, R1986, B106)
+   |    | ['Button5']
+   |    | child_window(auto_id="FormMain.toolWidgte.pbTSave", control_type="Button")
+   |    |
+   |    | Button - ''    (L2006, T63, R2046, B103)
+   |    | ['Button6']
+   |    | child_window(auto_id="FormMain.toolWidgte.pbUndo", control_type="Button")
+   |    |
+   |    | Button - ''    (L2066, T63, R2106, B103)
+   |    | ['Button7']
+   |    | child_window(auto_id="FormMain.toolWidgte.pbRedo", control_type="Button")
+   |    |
+   |    | Static - ''    (L2186, T71, R2210, B95)
+   |    | ['Static', 'Static0', 'Static1']
+   |    | child_window(auto_id="FormMain.toolWidgte.labelDevice", control_type="Text")
+   |    |
+   |    | CheckBox - 'iLux 8.9'    (L2218, T68, R2328, B98)
+   |    | ['iLux 8.9', 'iLux 8.9CheckBox', 'CheckBox2']
+   |    | child_window(title="iLux 8.9", auto_id="FormMain.toolWidgte.pbDevice", control_type="CheckBox")
+   |    |
+   |    | Static - ''    (L2342, T71, R2366, B95)
+   |    | ['Static2']
+   |    | child_window(auto_id="FormMain.toolWidgte.labeMaterial", control_type="Text")
+   |    |
+   |    | CheckBox - 'TM79'    (L2374, T68, R2524, B98)
+   |    | ['TM79', 'CheckBox3', 'TM79CheckBox']
+   |    | child_window(title="TM79", auto_id="FormMain.toolWidgte.pbMaterial", control_type="CheckBox")
+   |    |
+   |    | Button - ''    (L3027, T61, R3072, B106)
+   |    | ['Button8']
+   |    | child_window(auto_id="FormMain.toolWidgte.pushButtonMove", control_type="Button")
+   |    |
+   |    | Button - ''    (L3072, T61, R3117, B106)
+   |    | ['Button9']
+   |    | child_window(auto_id="FormMain.toolWidgte.pushButtonRotate", control_type="Button")
+   |    |
+   |    | Button - ''    (L3117, T61, R3162, B106)
+   |    | ['Button10']
+   |    | child_window(auto_id="FormMain.toolWidgte.pushButtonScale", control_type="Button")
+   |    |
+   |    | Button - ''    (L3162, T61, R3207, B106)
+   |    | ['Button11']
+   |    | child_window(auto_id="FormMain.toolWidgte.pushButtonCopyParts", control_type="Button")
+   |    |
+   |    | Custom - ''    (L3211, T68, R3214, B98)
+   |    | ['Custom3']
+   |    | child_window(auto_id="FormMain.toolWidgte.line_2", control_type="Custom")
+   |    |
+   |    | Button - ''    (L3218, T61, R3263, B106)
+   |    | ['Button12']
+   |    | child_window(auto_id="FormMain.toolWidgte.pushButtonAutomaticFix", control_type="Button")
+   |    |
+   |    | CheckBox - ''    (L3263, T61, R3308, B106)
+   |    | ['CheckBox4']
+   |    | child_window(auto_id="FormMain.toolWidgte.pushButtonHoling", control_type="CheckBox")
+   |    |
+   |    | CheckBox - ''    (L3308, T61, R3353, B106)
+   |    | ['CheckBox5']
+   |    | child_window(auto_id="FormMain.toolWidgte.pushButtonAuxiliary", control_type="CheckBox")
+   |    |
+   |    | Custom - ''    (L3357, T68, R3360, B98)
+   |    | ['Custom4']
+   |    | child_window(auto_id="FormMain.toolWidgte.line", control_type="Custom")
+   |    |
+   |    | CheckBox - ''    (L3364, T61, R3409, B106)
+   |    | ['CheckBox6']
+   |    | child_window(auto_id="FormMain.toolWidgte.pushButtonGodown", control_type="CheckBox")
+   |    |
+   |    | CheckBox - ''    (L3409, T61, R3454, B106)
+   |    | ['CheckBox7']
+   |    | child_window(auto_id="FormMain.toolWidgte.pbTran", control_type="CheckBox")
+   |    |
+   |    | CheckBox - ''    (L3454, T61, R3499, B106)
+   |    | ['CheckBox8']
+   |    | child_window(auto_id="FormMain.toolWidgte.pbPerspertive", control_type="CheckBox")
+   |    |
+   |    | RadioButton - ''    (L3549, T61, R3594, B106)
+   |    | ['RadioButton', 'RadioButton0', 'RadioButton1']
+   |    | child_window(auto_id="FormMain.toolWidgte.pbFront", control_type="RadioButton")
+   |    |
+   |    | RadioButton - ''    (L3594, T61, R3639, B106)
+   |    | ['RadioButton2']
+   |    | child_window(auto_id="FormMain.toolWidgte.pbBehind", control_type="RadioButton")
+   |    |
+   |    | RadioButton - ''    (L3639, T61, R3684, B106)
+   |    | ['RadioButton3']
+   |    | child_window(auto_id="FormMain.toolWidgte.pbLeft", control_type="RadioButton")
+   |    |
+   |    | RadioButton - ''    (L3684, T61, R3729, B106)
+   |    | ['RadioButton4']
+   |    | child_window(auto_id="FormMain.toolWidgte.pbRight", control_type="RadioButton")
+   |    |
+   |    | RadioButton - ''    (L3729, T61, R3774, B106)
+   |    | ['RadioButton5']
+   |    | child_window(auto_id="FormMain.toolWidgte.pbTop", control_type="RadioButton")
+   |    |
+   |    | RadioButton - ''    (L3774, T61, R3819, B106)
+   |    | ['RadioButton6']
+   |    | child_window(auto_id="FormMain.toolWidgte.pbBottom", control_type="RadioButton")
+   |
+   | Custom - ''    (L1921, T114, R3839, B115)
+   | ['Custom5']
+   | child_window(auto_id="FormMain.line", control_type="Custom")
+   |
+   | GroupBox - ''    (L1921, T115, R2141, B1039)
+   | ['GroupBox4', '零件列表GroupBox', '零件列表GroupBox0', '零件列表GroupBox1']
+   | child_window(auto_id="FormMain.leftWidget", control_type="Group")
+   |    |
+   |    | GroupBox - ''    (L1921, T115, R2141, B822)
+   |    | ['GroupBox5', '零件列表GroupBox2']
+   |    | child_window(auto_id="FormMain.leftWidget.FormPartList", control_type="Group")
+   |    |    |
+   |    |    | Static - ''    (L1941, T135, R1959, B155)
+   |    |    | ['Static3']
+   |    |    | child_window(auto_id="FormMain.leftWidget.FormPartList.label", control_type="Text")
+   |    |    |
+   |    |    | Static - '零件列表'    (L1969, T135, R2140, B155)
+   |    |    | ['零件列表', 'Static4', '零件列表Static']
+   |    |    | child_window(title="零件列表", auto_id="FormMain.leftWidget.FormPartList.labelModelList", control_type="Text")
+   |    |    |
+   |    |    | ListBox - ''    (L1921, T161, R2140, B561)
+   |    |    | ['零件列表ListBox', 'ListBox']
+   |    |    | child_window(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List")
+   |    |    |    |
+   |    |    |    | ListItem - '1. 孔洞花瓶.STL'    (L1921, T161, R2140, B201)
+   |    |    |    | ['ListItem', '1. 孔洞花瓶.STLListItem', '1. 孔洞花瓶.STL', 'ListItem0', 'ListItem1']
+   |    |    |    | child_window(title="1. 孔洞花瓶.STL", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - '2. 孔洞花瓶_1.STL'    (L1921, T201, R2140, B241)
+   |    |    |    | ['ListItem2', '2. 孔洞花瓶_1.STL', '2. 孔洞花瓶_1.STLListItem']
+   |    |    |    | child_window(title="2. 孔洞花瓶_1.STL", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - '3. 孔洞花瓶_2.STL'    (L1921, T241, R2140, B281)
+   |    |    |    | ['ListItem3', '3. 孔洞花瓶_2.STL', '3. 孔洞花瓶_2.STLListItem']
+   |    |    |    | child_window(title="3. 孔洞花瓶_2.STL", control_type="ListItem")
+   |    |    |
+   |    |    | Button - '合并'    (L1941, T567, R2120, B597)
+   |    |    | ['合并Button', 'Button13', '合并']
+   |    |    | child_window(title="合并", auto_id="FormMain.leftWidget.FormPartList.pushButtonPartsMarge", control_type="Button")
+   |    |    |
+   |    |    | Custom - ''    (L1921, T619, R2140, B620)
+   |    |    | ['Custom6', '零件列表Custom', '零件列表Custom0', '零件列表Custom1']
+   |    |    | child_window(auto_id="FormMain.leftWidget.FormPartList.line", control_type="Custom")
+   |    |    |
+   |    |    | GroupBox - ''    (L1941, T642, R2140, B802)
+   |    |    | ['GroupBox6', '零件信息GroupBox', '零件信息GroupBox0', '零件信息GroupBox1']
+   |    |    | child_window(auto_id="FormMain.leftWidget.FormPartList.scrollArea", control_type="Group")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L1941, T642, R2140, B802)
+   |    |    |    | ['GroupBox7', '零件信息GroupBox2']
+   |    |    |    | child_window(auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | GroupBox - ''    (L1941, T642, R2140, B827)
+   |    |    |    |    | ['GroupBox8', '零件信息GroupBox3']
+   |    |    |    |    | child_window(auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents", control_type="Group")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - ''    (L1941, T646, R1959, B666)
+   |    |    |    |    |    | ['Static5']
+   |    |    |    |    |    | child_window(auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.label_2", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - '零件信息'    (L1969, T642, R2139, B670)
+   |    |    |    |    |    | ['零件信息', '零件信息Static', 'Static6']
+   |    |    |    |    |    | child_window(title="零件信息", auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelPartInfo", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - '长:'    (L1941, T678, R2011, B703)
+   |    |    |    |    |    | ['Static7', '长:', '长:Static']
+   |    |    |    |    |    | child_window(title="长:", auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelLenth", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - '43.64 mm'    (L2011, T678, R2139, B703)
+   |    |    |    |    |    | ['Static8', '43.64 mm', '43.64 mmStatic']
+   |    |    |    |    |    | child_window(title="43.64 mm", auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.lengthInfo", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - '宽:'    (L1941, T709, R2011, B734)
+   |    |    |    |    |    | ['Static9', '宽:', '宽:Static']
+   |    |    |    |    |    | child_window(title="宽:", auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelWidth", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - '22.82 mm'    (L2011, T709, R2139, B734)
+   |    |    |    |    |    | ['Static10', '22.82 mm', '22.82 mmStatic']
+   |    |    |    |    |    | child_window(title="22.82 mm", auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widthInfo", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - '高:'    (L1941, T740, R2011, B765)
+   |    |    |    |    |    | ['Static11', '高:', '高:Static']
+   |    |    |    |    |    | child_window(title="高:", auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelHeight", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - '100.00 mm'    (L2011, T740, R2139, B765)
+   |    |    |    |    |    | ['Static12', '100.00 mmStatic', '100.00 mm']
+   |    |    |    |    |    | child_window(title="100.00 mm", auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.heightInfo", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - '体积:'    (L1941, T771, R2011, B796)
+   |    |    |    |    |    | ['体积:', 'Static13', '体积:Static']
+   |    |    |    |    |    | child_window(title="体积:", auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelVol", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - '19.19 ml'    (L2011, T771, R2139, B796)
+   |    |    |    |    |    | ['19.19 ml', 'Static14', '19.19 mlStatic']
+   |    |    |    |    |    | child_window(title="19.19 ml", auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.VolumeInfo", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - '面积:'    (L1941, T802, R2011, B827)
+   |    |    |    |    |    | ['面积:Static', '面积:', 'Static15']
+   |    |    |    |    |    | child_window(title="面积:", auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelArea", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - '996.04 mm²'    (L2011, T802, R2139, B827)
+   |    |    |    |    |    | ['Static16', '996.04 mm²Static', '996.04 mm²']
+   |    |    |    |    |    | child_window(title="996.04 mm²", auto_id="FormMain.leftWidget.FormPartList.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.areaInfo", control_type="Text")
+   |    |    |
+   |    |    | Custom - ''    (L2140, T115, R2141, B822)
+   |    |    | ['996.04 mm²Custom', 'Custom7', '零件列表Custom2']
+   |    |    | child_window(auto_id="FormMain.leftWidget.FormPartList.line_2", control_type="Custom")
+   |
+   | GroupBox - ''    (L2141, T115, R3519, B1039)
+   | ['GroupBox9', '零件列表GroupBox3']
+   | child_window(auto_id="FormMain.openGLWidget", control_type="Group")
+   |    |
+   |    | GroupBox - ''    (L2141, T929, R3519, B1039)
+   |    | ['GroupBox10', '996.04 mm²GroupBox']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormWizard", control_type="Group")
+   |    |    |
+   |    |    | GroupBox - ''    (L2496, T929, R3164, B1039)
+   |    |    | ['GroupBox11', '打 开GroupBox', '打 开GroupBox0', '打 开GroupBox1']
+   |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget", control_type="Group")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L2496, T959, R2636, B1009)
+   |    |    |    | ['GroupBox12', '打 开GroupBox2']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLoad", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | CheckBox - ''    (L2496, T959, R2546, B1009)
+   |    |    |    |    | ['996.04 mm²CheckBox', 'CheckBox9']
+   |    |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLoad.pushButton", control_type="CheckBox")
+   |    |    |    |    |
+   |    |    |    |    | Static - '打 开'    (L2546, T959, R2636, B1009)
+   |    |    |    |    | ['Static17', '打 开', '打 开Static', '打 开Static0', '打 开Static1']
+   |    |    |    |    | child_window(title="打 开", auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLoad.labelCurrentState", control_type="Text")
+   |    |    |    |
+   |    |    |    | Static - ''    (L2650, T978, R2660, B990)
+   |    |    |    | ['Static18', '打 开Static2']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.loadWizardLabel", control_type="Text")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L2674, T959, R2724, B1009)
+   |    |    |    | ['GroupBox13', '打 开GroupBox3']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbSupport", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | CheckBox - ''    (L2674, T959, R2724, B1009)
+   |    |    |    |    | ['打 开CheckBox', 'CheckBox10', '打 开CheckBox0', '打 开CheckBox1']
+   |    |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbSupport.pushButton", control_type="CheckBox")
+   |    |    |    |    |
+   |    |    |    |    | Static - ''    (L0, T0, R0, B0)
+   |    |    |    |    | ['Static19']
+   |    |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbSupport.labelCurrentState", control_type="Text")
+   |    |    |    |
+   |    |    |    | Image - ''    (L2738, T978, R2748, B990)
+   |    |    |    | ['打 开Image', 'Image', '打 开Image0', '打 开Image1', 'Image0', 'Image1']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.supportWizardLabel", control_type="Image")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L2762, T959, R2812, B1009)
+   |    |    |    | ['GroupBox14', '打 开GroupBox4']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLayout", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | CheckBox - ''    (L2762, T959, R2812, B1009)
+   |    |    |    |    | ['打 开CheckBox2', 'CheckBox11']
+   |    |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLayout.pushButton", control_type="CheckBox")
+   |    |    |    |    |
+   |    |    |    |    | Static - ''    (L0, T0, R0, B0)
+   |    |    |    |    | ['Static20']
+   |    |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbLayout.labelCurrentState", control_type="Text")
+   |    |    |    |
+   |    |    |    | Image - ''    (L2826, T978, R2836, B990)
+   |    |    |    | ['打 开Image2', 'Image2']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.layoutWizardLabel", control_type="Image")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L2850, T959, R2900, B1009)
+   |    |    |    | ['GroupBox15', '打 开GroupBox5']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbCoding", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | CheckBox - ''    (L2850, T959, R2900, B1009)
+   |    |    |    |    | ['打 开CheckBox3', 'CheckBox12']
+   |    |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbCoding.pushButton", control_type="CheckBox")
+   |    |    |    |    |
+   |    |    |    |    | Static - ''    (L2890, T959, R2900, B1009)
+   |    |    |    |    | ['Static21', '打 开Static3']
+   |    |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbCoding.labelCurrentState", control_type="Text")
+   |    |    |    |
+   |    |    |    | Image - ''    (L2914, T978, R2924, B990)
+   |    |    |    | ['打 开Image3', 'Image3']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.codingWizardLabel", control_type="Image")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L2938, T959, R2988, B1009)
+   |    |    |    | ['GroupBox16', '打 开GroupBox6']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbPrintSet", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | CheckBox - ''    (L2938, T959, R2988, B1009)
+   |    |    |    |    | ['打 开CheckBox4', 'CheckBox13']
+   |    |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbPrintSet.pushButton", control_type="CheckBox")
+   |    |    |    |    |
+   |    |    |    |    | Static - ''    (L0, T0, R0, B0)
+   |    |    |    |    | ['Static22']
+   |    |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbPrintSet.labelCurrentState", control_type="Text")
+   |    |    |    |
+   |    |    |    | Image - ''    (L3002, T978, R3012, B990)
+   |    |    |    | ['打 开Image4', 'Image4']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.printSetWizardLabel", control_type="Image")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L3026, T959, R3076, B1009)
+   |    |    |    | ['GroupBox17', '打 开GroupBox7']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbAnalyze", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | CheckBox - ''    (L3026, T959, R3076, B1009)
+   |    |    |    |    | ['打 开CheckBox5', 'CheckBox14']
+   |    |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbAnalyze.pushButton", control_type="CheckBox")
+   |    |    |    |    |
+   |    |    |    |    | Static - ''    (L3066, T959, R3076, B1009)
+   |    |    |    |    | ['Static23', '打 开Static4']
+   |    |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget.pbAnalyze.labelCurrentState", control_type="Text")
+   |    |
+   |    | GroupBox - ''    (L3389, T356, R3519, B798)
+   |    | ['GroupBox18']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormClipSlider", control_type="Group")
+   |    |    |
+   |    |    | Slider - ''    (L3459, T366, R3489, B788)
+   |    |    | ['Slider']
+   |    |    | child_window(auto_id="FormMain.openGLWidget.FormClipSlider.sectionSlider", control_type="Slider")
+   |    |
+   |    | Button - ''    (L2141, T577, R2163, B609)
+   |    | ['零件列表Button', 'Button14']
+   |    | child_window(auto_id="FormMain.openGLWidget._shrinkButton", control_type="Button")
+   |
+   | GroupBox - ''    (L3519, T115, R3839, B929)
+   | ['GroupBox19', '打开零件GroupBox', '打开零件GroupBox0', '打开零件GroupBox1']
+   | child_window(auto_id="FormMain.rightwidget", control_type="Group")
+   |    |
+   |    | Custom - ''    (L3539, T115, R3819, B929)
+   |    | ['Custom8', '打开零件Custom']
+   |    | child_window(auto_id="FormMain.rightwidget.stackedWidget", control_type="Custom")
+   |    |    |
+   |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    | ['GroupBox20', '打开零件GroupBox2']
+   |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormLoad", control_type="Group")
+   |    |    |    |
+   |    |    |    | Static - '打开零件'    (L3539, T131, R3819, B159)
+   |    |    |    | ['Static24', '打开零件', '打开零件Static']
+   |    |    |    | child_window(title="打开零件", auto_id="FormMain.rightwidget.stackedWidget.FormLoad.labelNewModel", control_type="Text")
+   |    |    |    |
+   |    |    |    | Button - '下      载'    (L3539, T173, R3819, B213)
+   |    |    |    | ['Button15', '下      载Button', '下      载']
+   |    |    |    | child_window(title="下      载", auto_id="FormMain.rightwidget.stackedWidget.FormLoad.pbWorkspace", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - '本地打开'    (L3539, T229, R3819, B269)
+   |    |    |    | ['本地打开Button', 'Button16', '本地打开']
+   |    |    |    | child_window(title="本地打开", auto_id="FormMain.rightwidget.stackedWidget.FormLoad.pbLocal", control_type="Button")
+   |
+   | GroupBox - ''    (L3519, T929, R3839, B1039)
+   | ['GroupBox21', '打开零件GroupBox3']
+   | child_window(auto_id="FormMain.nextStepWidget", control_type="Group")
+   |    |
+   |    | Button - '下一步'    (L3539, T962, R3819, B1006)
+   |    | ['下一步', '下一步Button', 'Button17']
+   |    | child_window(title="下一步", auto_id="FormMain.nextStepWidget.pbNextStep", control_type="Button")
+

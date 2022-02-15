@@ -33,7 +33,7 @@ class MainPage(Main):
 
                 tips = self.find(auto_id=auto_id[i], control_type="Group")
                 if tips is not False:
-                    LogRoot.info("发现检测修复弹框,是否修")
+                    LogRoot.info("发现检测修复弹框,是否修复")
                     if oper == "上传修复":
                         LogRoot.info("上传修复")
                         self.click(index="修复")
@@ -170,6 +170,7 @@ class MainPage(Main):
         except Exception as e:
             LogRoot.error("报错处理", e)
 
+
     # 打开零件
     def openfile(self, path, model):
         """
@@ -189,6 +190,7 @@ class MainPage(Main):
         except Exception as e:
             LogRoot.error("报错处理", e)
 
+
     # 按钮下一步
     def next_step(self):
         """
@@ -201,6 +203,7 @@ class MainPage(Main):
             return Support(self._dlg)
         except Exception as e:
             LogRoot.error("报错处理", e)
+
 
     # 退出Luxflow
     def main_quit(self, oper='不保存'):
@@ -216,6 +219,7 @@ class MainPage(Main):
                 LogRoot.info(f"{oper}")
         except Exception as e:
             LogRoot.error("报错处理", e)
+
 
     # 下方跳转按钮
     def jump_button(self, oper="切片"):
@@ -249,6 +253,7 @@ class MainPage(Main):
         except Exception as e:
             LogRoot.error("报错处理,oper有误！", e)
 
+
     def print_dlg(self):
         # print(type(self._dlg.print_control_identifiers()))
         self._dlg.print_control_identifiers()
@@ -274,5 +279,4 @@ if __name__ == '__main__':
     # a.jump_button(oper="支撑").input_parameter(support_parameter)
     # main._dlg.print_control_identifiers()
     # main.click(auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.pbParameter",isall=False)
-    win = pywinauto.Desktop()
-    win["Dialog0"].print_control_identifiers()
+    main.print_dlg()

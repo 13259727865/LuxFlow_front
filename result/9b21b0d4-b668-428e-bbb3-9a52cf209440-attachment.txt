@@ -1,0 +1,39 @@
+[32mINFO    [0m log:conftest.py:14 打开（连接）LuxFlow，开始执行测试用例！！！
+[32mINFO    [0m log:main_page.py:232 进入打开页
+[32mINFO    [0m log:main_page.py:186 点击本地打开按钮
+[32mINFO    [0m log:main.py:62 "孔洞花瓶.stl" "谢牙龈.stl"已打开
+[32mINFO    [0m log:main_page.py:36 发现检测修复弹框,是否修复
+[32mINFO    [0m log:main_page.py:38 上传修复
+[32mINFO    [0m log:main.py:201 已保存截图至E:\LuxFlow_front\picture\打开零件_20220210181144.png
+[32mINFO    [0m log:main_page.py:236 进入支撑页
+[32mINFO    [0m log:main.py:211 下拉列表，第0个
+[32mINFO    [0m log:support.py:117 选择第0项应用
+[32mINFO    [0m log:support.py:182 输入参数{'抬升高度': 10, '支撑点直径': 1.5, '支撑头长度': 2.5, '支撑柱直径': 1.5, '支撑点间距': 4.5, '临界角': 75, '是否加固': True, '起始高度': 1.5, '角度': 50, '支撑加底座': True, '底座高度': 1.5}
+[32mINFO    [0m log:support.py:193 点击是否加固
+[32mINFO    [0m log:support.py:193 点击支撑加底座
+[32mINFO    [0m log:support.py:221 生成
+[32mINFO    [0m log:support.py:223 支撑生成进度条
+[32mINFO    [0m log:main.py:236 计算时常
+[32mINFO    [0m log:main.py:238 控件出现2022-02-10 18:12:44.685367
+[32mINFO    [0m log:main.py:241 控件消失2022-02-10 18:12:48.004730
+[32mINFO    [0m log:main.py:244 存在时长0:00:04
+[32mINFO    [0m log:main.py:201 已保存截图至E:\LuxFlow_front\picture\生成支撑_20220210181248.png
+[32mINFO    [0m log:support.py:233 进入布局页
+[32mINFO    [0m log:batch.py:47 开始输入间距设置
+[32mINFO    [0m log:batch.py:54 输入参数值5
+[32mINFO    [0m log:batch.py:75 选择嵌套布局
+[32mINFO    [0m log:batch.py:80 开始布局
+[32mINFO    [0m log:main.py:236 计算时常
+[32mINFO    [0m log:main.py:247 未及时捕捉到
+[32mINFO    [0m log:main.py:201 已保存截图至E:\LuxFlow_front\picture\布局截图_20220210181300.png
+[32mINFO    [0m log:main_page.py:251 进入切片页
+[32mINFO    [0m log:slice.py:34 在自定义里操作
+[32mINFO    [0m log:main.py:236 计算时常
+[32mINFO    [0m log:main.py:238 控件出现2022-02-10 18:13:04.795708
+[32mINFO    [0m log:main.py:241 控件消失2022-02-10 18:18:44.749943
+[32mINFO    [0m log:main.py:244 存在时长0:05:40
+[32mINFO    [0m log:main.py:201 已保存截图至E:\LuxFlow_front\picture\切片后截图_20220210181844.png
+[32mINFO    [0m log:slice_frame.py:63 准备跳转进入上传页
+[32mINFO    [0m log:conftest.py:17 用例执行完毕，关闭软件！！！
+[32mINFO    [0m log:main_page.py:216 关闭软件
+[32mINFO    [0m log:main_page.py:219 不保存

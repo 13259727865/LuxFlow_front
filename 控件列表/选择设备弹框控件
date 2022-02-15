@@ -1,0 +1,83 @@
+Dialog - '旋转'    (L624, T175, R1294, B807)
+   | ['旋转', '旋转Dialog', 'Dialog2']
+   | child_window(title="旋转", auto_id="FormMain.openGLWidget.FormDeviceTypeSelection", control_type="Window")
+   |    |
+   |    | GroupBox - ''    (L624, T175, R1294, B235)
+   |    | ['选择设备GroupBox', 'GroupBox', 'GroupBox0', 'GroupBox1', '选择设备GroupBox0', '选择设备GroupBox1']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.widgetTitle", control_type="Group")
+   |    |    |
+   |    |    | Static - '选择设备'    (L654, T175, R743, B235)
+   |    |    | ['选择设备', '选择设备Static', 'Static', 'Static0', 'Static1']
+   |    |    | child_window(title="选择设备", auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.widgetTitle.popTitle", control_type="Text")
+   |    |    |
+   |    |    | Button - ''    (L1234, T185, R1274, B225)
+   |    |    | ['Button', '选择设备Button', 'Button0', 'Button1']
+   |    |    | child_window(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.widgetTitle.pbPopClose", control_type="Button")
+   |    |
+   |    | ListBox - ''    (L654, T255, R1294, B595)
+   |    | ['ListBox', '选择设备ListBox', 'ListBox0', 'ListBox1']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.deviceList", control_type="List")
+   |    |    |
+   |    |    | ListItem - ''    (L654, T255, R864, B425)
+   |    |    | ['ListItem', '选择设备ListItem', 'ListItem0', 'ListItem1', '选择设备ListItem0', '选择设备ListItem1']
+   |    |    |
+   |    |    | ListItem - ''    (L864, T255, R1074, B425)
+   |    |    | ['ListItem2', '选择设备ListItem2']
+   |    |    |
+   |    |    | ListItem - ''    (L1074, T255, R1284, B425)
+   |    |    | ['ListItem3', '选择设备ListItem3']
+   |    |    |
+   |    |    | ListItem - ''    (L654, T425, R864, B595)
+   |    |    | ['ListItem4', '选择设备ListItem4']
+   |    |    |
+   |    |    | ListItem - ''    (L864, T425, R1074, B595)
+   |    |    | ['ListItem5', '选择设备ListItem5']
+   |    |    |
+   |    |    | ListItem - ''    (L1074, T425, R1284, B595)
+   |    |    | ['ListItem6', '选择设备ListItem6']
+   |    |
+   |    | Custom - ''    (L654, T595, R1294, B707)
+   |    | ['Custom', '成型台Custom', 'Custom0', 'Custom1']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.stackedWidget", control_type="Custom")
+   |    |    |
+   |    |    | GroupBox - ''    (L654, T595, R1294, B707)
+   |    |    | ['成型台GroupBox', 'GroupBox2']
+   |    |    | child_window(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.stackedWidget.pageLux3", control_type="Group")
+   |    |    |    |
+   |    |    |    | Static - '成型台'    (L662, T599, R807, B639)
+   |    |    |    | ['成型台', '成型台Static', 'Static2']
+   |    |    |    | child_window(title="成型台", auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.stackedWidget.pageLux3.labelPlatformType", control_type="Text")
+   |    |    |    |
+   |    |    |    | ComboBox - ''    (L815, T599, R1265, B639)
+   |    |    |    | ['ComboBox', '成型台ComboBox', 'ComboBox0', 'ComboBox1']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.stackedWidget.pageLux3.comboBoxPlatformType", control_type="ComboBox")
+   |    |    |    |    |
+   |    |    |    |    | ListBox - ''    (L0, T0, R0, B0)
+   |    |    |    |    | ['ListBox2']
+   |    |    |    |    |    |
+   |    |    |    |    |    | ListItem - 'Lux 3+ Solid'    (L1, T1, R106, B41)
+   |    |    |    |    |    | ['Lux 3+ Solid', 'ListItem7', 'Lux 3+ SolidListItem']
+   |    |    |    |    |    | child_window(title="Lux 3+ Solid", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | Static - '膜'    (L662, T663, R807, B703)
+   |    |    |    | ['Static3', '膜Static', '膜']
+   |    |    |    | child_window(title="膜", auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.stackedWidget.pageLux3.labelLeapType", control_type="Text")
+   |    |    |    |
+   |    |    |    | ComboBox - ''    (L815, T663, R1265, B703)
+   |    |    |    | ['ComboBox2', '膜ComboBox']
+   |    |    |    | child_window(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.stackedWidget.pageLux3.comboBoxLeapType", control_type="ComboBox")
+   |    |    |    |    |
+   |    |    |    |    | ListBox - ''    (L0, T0, R0, B0)
+   |    |    |    |    | ['ListBox3']
+   |    |    |    |    |    |
+   |    |    |    |    |    | ListItem - 'G3'    (L1, T1, R99, B41)
+   |    |    |    |    |    | ['ListItem8', 'G3', 'G3ListItem']
+   |    |    |    |    |    | child_window(title="G3", control_type="ListItem")
+   |    |
+   |    | RadioButton - '取消'    (L654, T737, R774, B777)
+   |    | ['取消RadioButton', 'RadioButton', '取消', 'RadioButton0', 'RadioButton1']
+   |    | child_window(title="取消", auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.pbCancel", control_type="RadioButton")
+   |    |
+   |    | RadioButton - '确认'    (L1144, T737, R1264, B777)
+   |    | ['确认', 'RadioButton2', '确认RadioButton']
+   |    | child_window(title="确认", auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.pbSure", control_type="RadioButton")

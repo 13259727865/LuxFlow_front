@@ -8,7 +8,6 @@
 import time
 import allure
 
-
 # @pytest.fixture(scope='module')
 # def setup_module(self):
 #     self.main = MainPage()
@@ -22,7 +21,7 @@ class TestOpen:
 
     # 打开零件
     @allure.story("打开零件")
-    def test_openpart(self, start_flow):
+    def test_openpart(self, start_flow, a, b):
         with allure.step("打开零件"):
             start_flow.jump_button(oper="打开")
             openfile = start_flow.openfile(r"E:\model\model", '"孔洞花瓶.stl" "heart.stl"')
@@ -32,7 +31,6 @@ class TestOpen:
             time.sleep(2)
             pytest.assume(len(start_flow.modle_list()[2]) == 2)
             start_flow.capture_image("打开零件")
-
 
     # 支撑应用选择
     @allure.story("支撑应用选择")

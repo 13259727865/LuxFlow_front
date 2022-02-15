@@ -1,0 +1,160 @@
+[2022-01-13 16:54:22,830][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 16:54:23,705][main_page.py 216][INFO]: 进入打开页
+[2022-01-13 16:54:25,501][main_page.py 171][INFO]: 点击本地打开按钮
+[2022-01-13 16:54:29,626][main_page.py 173][INFO]: 操作打开文件win弹窗
+[2022-01-13 16:54:29,626][main_page.py 174][INFO]: 返回按钮text
+[2022-01-13 16:54:30,331][main_page.py 56][INFO]: 未发现修复检测弹框，无需修复
+[2022-01-13 16:54:30,902][main_page.py 56][INFO]: 未发现修复检测弹框，无需修复
+[2022-01-13 16:54:36,722][main_page.py 131][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. Dove Hollowed 2.5.STL', ListItem, 7891826759597082801>, <uia_controls.ListItemWrapper - '2. Dove Hollowed 2.5_4.STL', ListItem, 7891826759598330376>]）
+[2022-01-13 16:54:37,728][main.py 204][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220113165436.png
+[2022-01-13 16:54:38,747][main_page.py 220][INFO]: 进入支撑页
+[2022-01-13 16:54:39,607][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-13 17:29:31,139][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 17:29:32,017][main_page.py 217][INFO]: 进入打开页
+[2022-01-13 17:29:33,693][main_page.py 173][INFO]: 点击本地打开按钮
+[2022-01-13 17:29:37,167][main.py 64][INFO]: "孔洞花瓶.stl" "heart.stl"已打开
+[2022-01-13 17:29:38,276][main_page.py 37][INFO]: 发现检测修复弹框,是否修
+[2022-01-13 17:29:38,277][main_page.py 39][INFO]: 上传修复
+[2022-01-13 17:29:44,432][main_page.py 133][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 打孔石雕12.STL', ListItem, 7891826761323726601>, <uia_controls.ListItemWrapper - '2. 孔洞花瓶.STL', ListItem, 7891826761324974176>, <uia_controls.ListItemWrapper - '3. heart.STL', ListItem, 7891826761321231451>]）
+[2022-01-13 17:29:44,946][main.py 205][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220113172944.png
+[2022-01-13 17:29:45,810][main_page.py 221][INFO]: 进入支撑页
+[2022-01-13 17:29:48,194][main.py 217][INFO]: 下拉列表，第0个
+[2022-01-13 17:29:48,320][support.py 120][INFO]: 选择第0项应用
+[2022-01-13 17:29:48,320][support.py 182][INFO]: 输入参数{'抬升高度': 10, '支撑点直径': 1.5, '支撑头长度': 2.5, '支撑住直径': 1.5, '支撑点间距': 4.5, '临界角': 75, '是否加固': True, '其实高度': 1.5, '角度': 50, '支撑加底座': True, '底座高度': 1.5}
+[2022-01-13 17:29:54,598][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-13 17:29:56,514][main_page.py 201][INFO]: 关闭软件
+[2022-01-13 17:29:59,159][main_page.py 204][INFO]: 不保存
+[2022-01-13 17:30:25,554][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 17:30:45,008][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 17:31:04,289][main_page.py 217][INFO]: 进入打开页
+[2022-01-13 17:31:06,361][main_page.py 173][INFO]: 点击本地打开按钮
+[2022-01-13 17:31:11,899][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-13 17:31:12,985][main_page.py 201][INFO]: 关闭软件
+[2022-01-13 17:31:20,024][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 17:31:32,501][main_page.py 217][INFO]: 进入打开页
+[2022-01-13 17:31:34,232][main_page.py 173][INFO]: 点击本地打开按钮
+[2022-01-13 17:31:38,010][main.py 64][INFO]: "孔洞花瓶.stl" "heart.stl"已打开
+[2022-01-13 17:31:39,019][main_page.py 37][INFO]: 发现检测修复弹框,是否修
+[2022-01-13 17:31:39,020][main_page.py 39][INFO]: 上传修复
+[2022-01-13 17:31:45,166][main_page.py 133][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, 1229697301063342001>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, 1229697301064589576>]）
+[2022-01-13 17:31:45,774][main.py 205][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220113173145.png
+[2022-01-13 17:31:46,713][main_page.py 221][INFO]: 进入支撑页
+[2022-01-13 17:31:49,277][main.py 217][INFO]: 下拉列表，第0个
+[2022-01-13 17:31:49,398][support.py 120][INFO]: 选择第0项应用
+[2022-01-13 17:31:49,399][support.py 182][INFO]: 输入参数{'抬升高度': 10, '支撑点直径': 1.5, '支撑头长度': 2.5, '支撑住直径': 1.5, '支撑点间距': 4.5, '临界角': 75, '是否加固': True, '其实高度': 1.5, '角度': 50, '支撑加底座': True, '底座高度': 1.5}
+[2022-01-13 17:31:56,665][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-13 17:38:59,920][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 17:39:12,279][main_page.py 217][INFO]: 进入打开页
+[2022-01-13 17:39:13,991][main_page.py 173][INFO]: 点击本地打开按钮
+[2022-01-13 17:39:17,635][main.py 64][INFO]: "孔洞花瓶.stl" "heart.stl"已打开
+[2022-01-13 17:39:18,651][main_page.py 37][INFO]: 发现检测修复弹框,是否修
+[2022-01-13 17:39:18,651][main_page.py 39][INFO]: 上传修复
+[2022-01-13 17:39:24,386][main_page.py 133][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, 580190118500726443>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, 580190118501974018>]）
+[2022-01-13 17:39:25,055][main.py 205][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220113173924.png
+[2022-01-13 17:39:26,000][main_page.py 221][INFO]: 进入支撑页
+[2022-01-13 17:39:27,884][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-13 17:51:25,531][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 17:51:38,218][main_page.py 217][INFO]: 进入打开页
+[2022-01-13 17:51:39,824][main_page.py 173][INFO]: 点击本地打开按钮
+[2022-01-13 17:51:43,656][main.py 64][INFO]: "孔洞花瓶.stl" "heart.stl"已打开
+[2022-01-13 17:51:54,714][main_page.py 37][INFO]: 发现检测修复弹框,是否修
+[2022-01-13 17:51:54,715][main_page.py 39][INFO]: 上传修复
+[2022-01-13 17:52:00,313][main_page.py 133][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, -6242508232839899811>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, -6242508232838652236>]）
+[2022-01-13 17:52:00,876][main.py 205][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220113175200.png
+[2022-01-13 17:52:01,851][main_page.py 221][INFO]: 进入支撑页
+[2022-01-13 17:52:04,753][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-13 17:53:42,760][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 17:53:43,671][main_page.py 217][INFO]: 进入打开页
+[2022-01-13 17:53:45,304][main_page.py 173][INFO]: 点击本地打开按钮
+[2022-01-13 17:53:48,712][main.py 64][INFO]: "孔洞花瓶.stl" "heart.stl"已打开
+[2022-01-13 17:53:49,648][main_page.py 37][INFO]: 发现检测修复弹框,是否修
+[2022-01-13 17:53:49,648][main_page.py 39][INFO]: 上传修复
+[2022-01-13 17:53:55,635][main_page.py 133][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, -6242508232928477636>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, -6242508232932220361>, <uia_controls.ListItemWrapper - '3. 孔洞花瓶.STL', ListItem, -6242508232930972786>, <uia_controls.ListItemWrapper - '4. heart.STL', ListItem, -6242508232924734911>]）
+[2022-01-13 17:53:56,299][main.py 205][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220113175355.png
+[2022-01-13 17:53:57,271][main_page.py 221][INFO]: 进入支撑页
+[2022-01-13 17:54:01,066][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-13 17:56:16,865][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 17:56:17,810][main_page.py 217][INFO]: 进入打开页
+[2022-01-13 17:56:19,460][main_page.py 173][INFO]: 点击本地打开按钮
+[2022-01-13 17:56:22,900][main.py 64][INFO]: "孔洞花瓶.stl" "heart.stl"已打开
+[2022-01-13 17:56:23,793][main_page.py 37][INFO]: 发现检测修复弹框,是否修
+[2022-01-13 17:56:23,793][main_page.py 39][INFO]: 上传修复
+[2022-01-13 17:56:29,812][main_page.py 133][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, -6242508232901030986>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, -6242508232974637911>, <uia_controls.ListItemWrapper - '3. 孔洞花瓶.STL', ListItem, -6242508232973390336>, <uia_controls.ListItemWrapper - '4. heart.STL', ListItem, -6242508232977133061>, <uia_controls.ListItemWrapper - '5. 孔洞花瓶.STL', ListItem, -6242508232975885486>, <uia_controls.ListItemWrapper - '6. heart.STL', ListItem, -6242508232969647611>]）
+[2022-01-13 17:56:30,541][main.py 205][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220113175629.png
+[2022-01-13 17:56:31,525][main_page.py 221][INFO]: 进入支撑页
+[2022-01-13 17:56:35,416][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-13 17:57:30,416][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 17:57:31,315][main_page.py 217][INFO]: 进入打开页
+[2022-01-13 17:57:32,963][main_page.py 173][INFO]: 点击本地打开按钮
+[2022-01-13 17:57:36,401][main.py 64][INFO]: "孔洞花瓶.stl" "heart.stl"已打开
+[2022-01-13 17:57:37,304][main_page.py 37][INFO]: 发现检测修复弹框,是否修
+[2022-01-13 17:57:37,304][main_page.py 39][INFO]: 上传修复
+[2022-01-13 17:57:43,536][main_page.py 133][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, -6242508232945943686>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, -6242508232939705811>, <uia_controls.ListItemWrapper - '3. 孔洞花瓶.STL', ListItem, -6242508232938458236>, <uia_controls.ListItemWrapper - '4. heart.STL', ListItem, -6242508232942200961>, <uia_controls.ListItemWrapper - '5. 孔洞花瓶.STL', ListItem, -6242508232940953386>, <uia_controls.ListItemWrapper - '6. heart.STL', ListItem, -6242508232695181111>, <uia_controls.ListItemWrapper - '7. 孔洞花瓶.STL', ListItem, -6242508232693933536>, <uia_controls.ListItemWrapper - '8. heart.STL', ListItem, -6242508232697676261>]）
+[2022-01-13 17:57:44,131][main.py 205][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220113175743.png
+[2022-01-13 17:57:44,992][main_page.py 221][INFO]: 进入支撑页
+[2022-01-13 17:57:49,296][main.py 217][INFO]: 下拉列表，第0个
+[2022-01-13 17:57:49,424][support.py 125][INFO]: 选择第0项应用
+[2022-01-13 17:57:49,425][support.py 191][INFO]: 输入参数{'抬升高度': 10, '支撑点直径': 1.5, '支撑头长度': 2.5, '支撑住直径': 1.5, '支撑点间距': 4.5, '临界角': 75, '是否加固': True, '其实高度': 1.5, '角度': 50, '支撑加底座': True, '底座高度': 1.5}
+[2022-01-13 17:57:57,523][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-13 17:59:21,129][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 17:59:21,995][main_page.py 217][INFO]: 进入打开页
+[2022-01-13 17:59:23,627][main_page.py 173][INFO]: 点击本地打开按钮
+[2022-01-13 17:59:27,062][main.py 64][INFO]: "孔洞花瓶.stl" "heart.stl"已打开
+[2022-01-13 17:59:28,008][main_page.py 37][INFO]: 发现检测修复弹框,是否修
+[2022-01-13 17:59:28,008][main_page.py 39][INFO]: 上传修复
+[2022-01-13 17:59:34,336][main_page.py 133][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, -6242508232737598661>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, -6242508232736351086>, <uia_controls.ListItemWrapper - '3. 孔洞花瓶.STL', ListItem, -6242508232730113211>, <uia_controls.ListItemWrapper - '4. heart.STL', ListItem, -6242508232728865636>, <uia_controls.ListItemWrapper - '5. 孔洞花瓶.STL', ListItem, -6242508232732608361>, <uia_controls.ListItemWrapper - '6. heart.STL', ListItem, -6242508232731360786>, <uia_controls.ListItemWrapper - '7. 孔洞花瓶.STL', ListItem, -6242508232725122911>, <uia_controls.ListItemWrapper - '8. heart.STL', ListItem, -6242508232723875336>, <uia_controls.ListItemWrapper - '9. 孔洞花瓶.STL', ListItem, -6242508232727618061>, <uia_controls.ListItemWrapper - '10. heart.STL', ListItem, -6242508232726370486>]）
+[2022-01-13 17:59:34,897][main.py 205][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220113175934.png
+[2022-01-13 17:59:35,803][main_page.py 221][INFO]: 进入支撑页
+[2022-01-13 17:59:40,234][main.py 217][INFO]: 下拉列表，第0个
+[2022-01-13 17:59:40,370][support.py 125][INFO]: 选择第0项应用
+[2022-01-13 17:59:40,370][support.py 191][INFO]: 输入参数{'抬升高度': 10, '支撑点直径': 1.5, '支撑头长度': 2.5, '支撑住直径': 1.5, '支撑点间距': 4.5, '临界角': 75, '是否加固': True, '其实高度': 1.5, '角度': 50, '支撑加底座': True, '底座高度': 1.5}
+[2022-01-13 18:00:01,108][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-13 18:04:13,428][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 18:04:14,308][main_page.py 217][INFO]: 进入打开页
+[2022-01-13 18:04:15,927][main_page.py 173][INFO]: 点击本地打开按钮
+[2022-01-13 18:04:19,358][main.py 64][INFO]: "孔洞花瓶.stl" "heart.stl"已打开
+[2022-01-13 18:04:20,283][main_page.py 37][INFO]: 发现检测修复弹框,是否修
+[2022-01-13 18:04:20,283][main_page.py 39][INFO]: 上传修复
+[2022-01-13 18:04:26,869][main_page.py 133][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, -6242508232770035611>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, -6242508232768788036>, <uia_controls.ListItemWrapper - '3. 孔洞花瓶.STL', ListItem, -6242508232772530761>, <uia_controls.ListItemWrapper - '4. heart.STL', ListItem, -6242508232771283186>, <uia_controls.ListItemWrapper - '5. 孔洞花瓶.STL', ListItem, -6242508232765045311>, <uia_controls.ListItemWrapper - '6. heart.STL', ListItem, -6242508232763797736>, <uia_controls.ListItemWrapper - '7. 孔洞花瓶.STL', ListItem, -6242508232767540461>, <uia_controls.ListItemWrapper - '8. heart.STL', ListItem, -6242508232766292886>, <uia_controls.ListItemWrapper - '9. 孔洞花瓶.STL', ListItem, -6242508232760055011>, <uia_controls.ListItemWrapper - '10. heart.STL', ListItem, -6242508232758807436>]）
+[2022-01-13 18:04:27,518][main.py 205][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220113180426.png
+[2022-01-13 18:04:28,480][main_page.py 221][INFO]: 进入支撑页
+[2022-01-13 18:04:33,048][main.py 217][INFO]: 下拉列表，第0个
+[2022-01-13 18:04:33,160][support.py 125][INFO]: 选择第0项应用
+[2022-01-13 18:04:33,160][support.py 191][INFO]: 输入参数{'抬升高度': 10, '支撑点直径': 1.5, '支撑头长度': 2.5, '支撑柱直径': 1.5, '支撑点间距': 4.5, '临界角': 75, '是否加固': True, '其实高度': 1.5, '角度': 50, '支撑加底座': True, '底座高度': 1.5}
+[2022-01-13 18:05:15,308][support.py 202][INFO]: 点击是否加固
+[2022-01-13 18:05:20,177][support.py 220][ERROR]: 参数有误，请检查！！
+[2022-01-13 18:05:23,741][support.py 229][INFO]: 生成
+[2022-01-13 18:05:23,741][support.py 231][INFO]: 支撑生成进度条
+[2022-01-13 18:05:24,546][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-13 18:09:11,586][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 18:09:12,453][main_page.py 217][INFO]: 进入打开页
+[2022-01-13 18:09:14,105][main_page.py 173][INFO]: 点击本地打开按钮
+[2022-01-13 18:09:17,560][main.py 64][INFO]: "孔洞花瓶.stl" "heart.stl"已打开
+[2022-01-13 18:09:18,497][main_page.py 37][INFO]: 发现检测修复弹框,是否修
+[2022-01-13 18:09:18,497][main_page.py 39][INFO]: 上传修复
+[2022-01-13 18:09:24,415][main_page.py 133][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, -6242508232812453161>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, -6242508232811205586>]）
+[2022-01-13 18:09:24,978][main.py 205][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220113180924.png
+[2022-01-13 18:09:25,934][main_page.py 221][INFO]: 进入支撑页
+[2022-01-13 18:09:30,324][main.py 217][INFO]: 下拉列表，第0个
+[2022-01-13 18:09:30,445][support.py 125][INFO]: 选择第0项应用
+[2022-01-13 18:09:30,445][support.py 191][INFO]: 输入参数{'抬升高度': 10, '支撑点直径': 1.5, '支撑头长度': 2.5, '支撑柱直径': 1.5, '支撑点间距': 4.5, '临界角': 75, '是否加固': True, '起始高度': 1.5, '角度': 50, '支撑加底座': True, '底座高度': 1.5}
+[2022-01-13 18:10:32,443][support.py 202][INFO]: 点击支撑加底座
+[2022-01-13 18:10:45,753][support.py 229][INFO]: 生成
+[2022-01-13 18:10:45,753][support.py 231][INFO]: 支撑生成进度条
+[2022-01-13 18:10:46,583][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-13 18:11:53,533][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-13 18:11:54,400][main_page.py 217][INFO]: 进入打开页
+[2022-01-13 18:11:55,913][main_page.py 173][INFO]: 点击本地打开按钮
+[2022-01-13 18:11:58,569][main.py 64][INFO]: 孔洞花瓶.stl已打开
+[2022-01-13 18:11:59,526][main_page.py 37][INFO]: 发现检测修复弹框,是否修
+[2022-01-13 18:11:59,526][main_page.py 39][INFO]: 上传修复
+[2022-01-13 18:12:04,410][main_page.py 133][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, -6242508233815503461>]）
+[2022-01-13 18:12:04,880][main.py 205][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220113181204.png
+[2022-01-13 18:12:05,700][main_page.py 221][INFO]: 进入支撑页
+[2022-01-13 18:12:09,663][main.py 217][INFO]: 下拉列表，第0个
+[2022-01-13 18:12:09,785][support.py 125][INFO]: 选择第0项应用
+[2022-01-13 18:12:09,785][support.py 191][INFO]: 输入参数{'抬升高度': 10, '支撑点直径': 1.5, '支撑头长度': 2.5, '支撑柱直径': 1.5, '支撑点间距': 4.5, '临界角': 75, '是否加固': True, '起始高度': 1.5, '角度': 50, '支撑加底座': True, '底座高度': 1.5}
+[2022-01-13 18:13:09,629][support.py 202][INFO]: 点击支撑加底座
+[2022-01-13 18:13:22,377][support.py 229][INFO]: 生成
+[2022-01-13 18:13:22,378][support.py 231][INFO]: 支撑生成进度条
+[2022-01-13 18:13:23,144][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！

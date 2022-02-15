@@ -189,7 +189,7 @@ class Main:
         :param control: 只对控件截图
         :return:
         """
-        file_name = rootPath + r"\picture\{}_{}.png".format(img_doc, datetime.strftime(datetime.now(), "%Y%m%d%H%M%S"))
+        file_name = rootPath + r"picture\{}_{}.png".format(img_doc, datetime.strftime(datetime.now(), "%Y%m%d%H%M%S"))
         print(file_name)
         if control is None:
             self._dlg.capture_as_image().save(file_name)
@@ -245,3 +245,4 @@ class Main:
             return time
         except:
             LogRoot.info("未及时捕捉到")
+

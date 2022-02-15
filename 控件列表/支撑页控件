@@ -1,0 +1,260 @@
+['GroupBox19', '支撑GroupBox', '支撑GroupBox0', '支撑GroupBox1']
+   | child_window(auto_id="FormMain.rightwidget", control_type="Group")
+   |    |
+   |    | Custom - ''    (L3539, T115, R3819, B929)
+   |    | ['支撑Custom', 'Custom8']
+   |    | child_window(auto_id="FormMain.rightwidget.stackedWidget", control_type="Custom")
+   |    |    |
+   |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    | ['GroupBox20', '支撑GroupBox2']
+   |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports", control_type="Group")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    |    | ['GroupBox21', '支撑GroupBox3']
+   |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    |    |    | ['GroupBox22', '支撑GroupBox4']
+   |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport", control_type="Group")
+   |    |    |    |    |    |
+   |    |    |    |    |    | GroupBox - ''    (L3539, T115, R3819, B1230)
+   |    |    |    |    |    | ['GroupBox23', '支撑GroupBox5']
+   |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents", control_type="Group")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Static - '支撑'    (L3539, T131, R3819, B159)
+   |    |    |    |    |    |    | ['支撑Static', 'Static24', '支撑']
+   |    |    |    |    |    |    | child_window(title="支撑", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelSupport", control_type="Text")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Static - '应用'    (L3539, T173, R3668, B203)
+   |    |    |    |    |    |    | ['Static25', '应用Static', '应用']
+   |    |    |    |    |    |    | child_window(title="应用", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.label", control_type="Text")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | ComboBox - ''    (L3690, T173, R3819, B203)
+   |    |    |    |    |    |    | ['ComboBox鞋类产品', '应用ComboBox', 'ComboBox其他产品', 'ComboBox', 'ComboBox眼镜产品', 'ComboBox0', 'ComboBox1']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbScene", control_type="ComboBox")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | ListBox - ''    (L0, T0, R0, B0)
+   |    |    |    |    |    |    |    | ['ListBox2']
+   |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    | ListItem - '齿科产品'    (L3691, T207, R3818, B247)
+   |    |    |    |    |    |    |    |    | ['齿科产品ListItem', '齿科产品', 'ListItem4']
+   |    |    |    |    |    |    |    |    | child_window(title="齿科产品", control_type="ListItem")
+   |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    | ListItem - '鞋类产品'    (L3691, T247, R3818, B287)
+   |    |    |    |    |    |    |    |    | ['ListItem5', '鞋类产品ListItem', '鞋类产品']
+   |    |    |    |    |    |    |    |    | child_window(title="鞋类产品", control_type="ListItem")
+   |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    | ListItem - '眼镜产品'    (L3691, T287, R3818, B327)
+   |    |    |    |    |    |    |    |    | ['ListItem6', '眼镜产品', '眼镜产品ListItem']
+   |    |    |    |    |    |    |    |    | child_window(title="眼镜产品", control_type="ListItem")
+   |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    | ListItem - '其他产品'    (L3691, T327, R3818, B367)
+   |    |    |    |    |    |    |    |    | ['其他产品', '其他产品ListItem', 'ListItem7']
+   |    |    |    |    |    |    |    |    | child_window(title="其他产品", control_type="ListItem")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Custom - ''    (L3539, T225, R3819, B226)
+   |    |    |    |    |    |    | ['应用Custom', 'Custom9']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.line", control_type="Custom")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Static - '支撑设置'    (L3539, T242, R3679, B270)
+   |    |    |    |    |    |    | ['Static26', '支撑设置', '支撑设置Static']
+   |    |    |    |    |    |    | child_window(title="支撑设置", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelSupportSettings", control_type="Text")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Button - ''    (L3679, T246, R3699, B266)
+   |    |    |    |    |    |    | ['Button15', '支撑设置Button', '支撑设置Button0', '支撑设置Button1']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.pbSave", control_type="Button")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Button - ''    (L3709, T246, R3729, B266)
+   |    |    |    |    |    |    | ['Button16', '支撑设置Button2']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.pbImport", control_type="Button")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Button - ''    (L3739, T246, R3759, B266)
+   |    |    |    |    |    |    | ['Button17', '支撑设置Button3']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.pbExport", control_type="Button")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Button - ''    (L3769, T246, R3789, B266)
+   |    |    |    |    |    |    | ['Button18', '支撑设置Button4']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.pbReset", control_type="Button")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Button - ''    (L3799, T246, R3819, B266)
+   |    |    |    |    |    |    | ['Button19', '支撑设置Button5']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.pbDelete", control_type="Button")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | ComboBox - ''    (L3539, T286, R3819, B318)
+   |    |    |    |    |    |    | ['ComboBox123', '支撑设置ComboBox', 'ComboBox2']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.cbpara", control_type="ComboBox")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | ListBox - ''    (L0, T0, R0, B0)
+   |    |    |    |    |    |    |    | ['ListBox3']
+   |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    | ListItem - '推荐参数'    (L1620, T328, R1898, B368)
+   |    |    |    |    |    |    |    |    | ['推荐参数', 'ListItem8', '推荐参数ListItem']
+   |    |    |    |    |    |    |    |    | child_window(title="推荐参数", control_type="ListItem")
+   |    |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    |    | ListItem - '123'    (L1620, T368, R1898, B408)
+   |    |    |    |    |    |    |    |    | ['123ListItem', 'ListItem9', '123']
+   |    |    |    |    |    |    |    |    | child_window(title="123", control_type="ListItem")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | GroupBox - ''    (L3539, T340, R3819, B370)
+   |    |    |    |    |    |    | ['GroupBox24', '基础设置GroupBox', '基础设置GroupBox0', '基础设置GroupBox1']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBasic", control_type="Group")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '基础设置'    (L3550, T340, R3771, B370)
+   |    |    |    |    |    |    |    | ['Static27', '基础设置', '基础设置Static']
+   |    |    |    |    |    |    |    | child_window(title="基础设置", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBasic.labelTitilBasic", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | CheckBox - ''    (L3778, T340, R3808, B370)
+   |    |    |    |    |    |    |    | ['CheckBox15', '基础设置CheckBox']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBasic.pushButtonBasic", control_type="CheckBox")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Custom - ''    (L3539, T370, R3819, B371)
+   |    |    |    |    |    |    | ['基础设置Custom', 'Custom10']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.line_4", control_type="Custom")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | GroupBox - ''    (L3539, T371, R3819, B673)
+   |    |    |    |    |    |    | ['GroupBox25', '基础设置GroupBox2']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic", control_type="Group")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '抬升高度'    (L3550, T391, R3679, B423)
+   |    |    |    |    |    |    |    | ['Static28', '抬升高度Static', '抬升高度']
+   |    |    |    |    |    |    |    | child_window(title="抬升高度", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic.label_7", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '2.50 mm'    (L3679, T391, R3808, B423)
+   |    |    |    |    |    |    |    | ['2.50 mmUpDown', '2.50 mm', 'UpDown', 'UpDown0', 'UpDown1']
+   |    |    |    |    |    |    |    | child_window(title="2.50 mm", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic.aboveEdit", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '支撑点直径'    (L3550, T439, R3679, B471)
+   |    |    |    |    |    |    |    | ['Static29', '支撑点直径', '支撑点直径Static']
+   |    |    |    |    |    |    |    | child_window(title="支撑点直径", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic.label_5", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '1.20 mm'    (L3679, T439, R3808, B471)
+   |    |    |    |    |    |    |    | ['1.20 mmUpDown', '1.20 mm', 'UpDown2', '1.20 mmUpDown0', '1.20 mmUpDown1', '1.20 mm0', '1.20 mm1']
+   |    |    |    |    |    |    |    | child_window(title="1.20 mm", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic.pointDiameterEdit", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '支撑头长度'    (L3550, T487, R3679, B519)
+   |    |    |    |    |    |    |    | ['支撑头长度Static', 'Static30', '支撑头长度']
+   |    |    |    |    |    |    |    | child_window(title="支撑头长度", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic.label_6", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '2.00 mm'    (L3679, T487, R3808, B519)
+   |    |    |    |    |    |    |    | ['2.00 mmUpDown', '2.00 mm', 'UpDown3']
+   |    |    |    |    |    |    |    | child_window(title="2.00 mm", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic.headLengthEdit", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '支撑柱直径'    (L3550, T535, R3679, B567)
+   |    |    |    |    |    |    |    | ['Static31', '支撑柱直径', '支撑柱直径Static']
+   |    |    |    |    |    |    |    | child_window(title="支撑柱直径", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic.label_8", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '1.20 mm'    (L3679, T535, R3808, B567)
+   |    |    |    |    |    |    |    | ['1.20 mmUpDown2', '1.20 mm2', 'UpDown4']
+   |    |    |    |    |    |    |    | child_window(title="1.20 mm", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic.bodyDiameterEdit", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '支撑点间距'    (L3550, T583, R3679, B615)
+   |    |    |    |    |    |    |    | ['Static32', '支撑点间距Static', '支撑点间距']
+   |    |    |    |    |    |    |    | child_window(title="支撑点间距", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic.label_9", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '4.00 mm'    (L3679, T583, R3808, B615)
+   |    |    |    |    |    |    |    | ['4.00 mm', 'UpDown5', '4.00 mmUpDown']
+   |    |    |    |    |    |    |    | child_window(title="4.00 mm", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic.spacingEdit", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '临界角'    (L3550, T631, R3679, B663)
+   |    |    |    |    |    |    |    | ['临界角Static', 'Static33', '临界角']
+   |    |    |    |    |    |    |    | child_window(title="临界角", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic.label_10", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '70.00 °'    (L3679, T631, R3808, B663)
+   |    |    |    |    |    |    |    | ['70.00 °', 'UpDown6', '70.00 °UpDown']
+   |    |    |    |    |    |    |    | child_window(title="70.00 °", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBasic.criticalAngleEdit", control_type="Spinner")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | GroupBox - ''    (L3539, T675, R3819, B705)
+   |    |    |    |    |    |    | ['GroupBox26', '临界角GroupBox']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarReinforce", control_type="Group")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '加固设置'    (L3550, T675, R3771, B705)
+   |    |    |    |    |    |    |    | ['Static34', '加固设置', '加固设置Static']
+   |    |    |    |    |    |    |    | child_window(title="加固设置", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarReinforce.labelTitleReinforce", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | CheckBox - ''    (L3778, T675, R3808, B705)
+   |    |    |    |    |    |    |    | ['CheckBox16', '加固设置CheckBox']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarReinforce.pushButtonReinforce", control_type="CheckBox")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Custom - ''    (L3539, T705, R3819, B706)
+   |    |    |    |    |    |    | ['加固设置Custom', 'Custom11']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.line_3", control_type="Custom")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | GroupBox - ''    (L3539, T706, R3819, B850)
+   |    |    |    |    |    |    | ['加固设置GroupBox', 'GroupBox27']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintReinforce", control_type="Group")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | CheckBox - '是否加固'    (L3550, T726, R3644, B748)
+   |    |    |    |    |    |    |    | ['CheckBox17', '是否加固CheckBox', '是否加固']
+   |    |    |    |    |    |    |    | child_window(title="是否加固", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintReinforce.cbReinforce", control_type="CheckBox")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '起始高度'    (L3550, T762, R3679, B794)
+   |    |    |    |    |    |    |    | ['起始高度Static', 'Static35', '起始高度']
+   |    |    |    |    |    |    |    | child_window(title="起始高度", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintReinforce.label_12", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '0.01 mm'    (L3679, T762, R3808, B794)
+   |    |    |    |    |    |    |    | ['0.01 mmUpDown', 'UpDown7', '0.01 mm']
+   |    |    |    |    |    |    |    | child_window(title="0.01 mm", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintReinforce.startHeightEdit", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '角度'    (L3550, T808, R3679, B840)
+   |    |    |    |    |    |    |    | ['Static36', '角度Static', '角度']
+   |    |    |    |    |    |    |    | child_window(title="角度", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintReinforce.label_11", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '45.00 °'    (L3679, T808, R3808, B840)
+   |    |    |    |    |    |    |    | ['UpDown8', '45.00 °', '45.00 °UpDown']
+   |    |    |    |    |    |    |    | child_window(title="45.00 °", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintReinforce.angleEdit", control_type="Spinner")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | GroupBox - ''    (L3539, T852, R3819, B882)
+   |    |    |    |    |    |    | ['角度GroupBox', 'GroupBox28']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBase", control_type="Group")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '底座设置'    (L3550, T852, R3771, B882)
+   |    |    |    |    |    |    |    | ['底座设置Static', 'Static37', '底座设置']
+   |    |    |    |    |    |    |    | child_window(title="底座设置", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBase.labelTitleBase", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | CheckBox - ''    (L3778, T852, R3808, B882)
+   |    |    |    |    |    |    |    | ['CheckBox18', '底座设置CheckBox']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetBarBase.pushButtonBase", control_type="CheckBox")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Custom - ''    (L3539, T882, R3819, B883)
+   |    |    |    |    |    |    | ['底座设置Custom', 'Custom12']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.line_5", control_type="Custom")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | GroupBox - ''    (L3539, T883, R3819, B1040)
+   |    |    |    |    |    |    | ['GroupBox29', '底座设置GroupBox', '底座设置GroupBox0', '底座设置GroupBox1']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBase", control_type="Group")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | CheckBox - '支撑加底座'    (L3539, T903, R3649, B925)
+   |    |    |    |    |    |    |    | ['CheckBox19', '支撑加底座', '支撑加底座CheckBox']
+   |    |    |    |    |    |    |    | child_window(title="支撑加底座", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBase.checkBox_SupportBase", control_type="CheckBox")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | CheckBox - '仅底座'    (L3539, T945, R3616, B967)
+   |    |    |    |    |    |    |    | ['CheckBox20', '仅底座', '仅底座CheckBox']
+   |    |    |    |    |    |    |    | child_window(title="仅底座", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBase.checkBox_Base", control_type="CheckBox")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '底座高度'    (L3550, T987, R3679, B1019)
+   |    |    |    |    |    |    |    | ['Static38', '底座高度Static', '底座高度']
+   |    |    |    |    |    |    |    | child_window(title="底座高度", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBase.label_13", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '0.30 mm'    (L3679, T987, R3808, B1019)
+   |    |    |    |    |    |    |    | ['0.30 mm', 'UpDown9', '0.30 mmUpDown']
+   |    |    |    |    |    |    |    | child_window(title="0.30 mm", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBase.baseThcknessEdit", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Custom - ''    (L3539, T1039, R3819, B1040)
+   |    |    |    |    |    |    |    | ['底座高度Custom', 'Custom13']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widgetContaintBase.line_6", control_type="Custom")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | CheckBox - '生 成'    (L3539, T1062, R3819, B1102)
+   |    |    |    |    |    |    | ['生 成', 'CheckBox21', '生 成CheckBox']
+   |    |    |    |    |    |    | child_window(title="生 成", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.pushButtonGenerate", control_type="CheckBox")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | Button - '删 除'    (L3539, T1118, R3819, B1158)
+   |    |    |    |    |    |    | ['Button20', '删 除', '删 除Button']
+   |    |    |    |    |    |    | child_window(title="删 除", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.pushButtonClear", control_type="Button")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | CheckBox - '编辑'    (L3539, T1174, R3819, B1214)
+   |    |    |    |    |    |    | ['编辑CheckBox', 'CheckBox22', '编辑']
+   |    |    |    |    |    |    | child_window(title="编辑", auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.pushButtonEdit", control_type="CheckBox")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | GroupBox - ''    (L0, T0, R0, B0)
+   |    |    |    |    |    |    | ['GroupBox30']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.widget", control_type="Group")

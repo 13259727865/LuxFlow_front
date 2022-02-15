@@ -62,7 +62,7 @@ class Batch(Main):
 
 
     #选择布局方式
-    def Layout_mode(self,mode=1):
+    def layout_mode(self,mode=1):
         """
         :param mode: "整齐布局" or "嵌套布局"
         :return:

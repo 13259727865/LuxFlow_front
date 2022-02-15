@@ -1,0 +1,83 @@
+GroupBox - ''    (L1599, T121, R1919, B1029)
+   | ['GroupBox19', '切片结果GroupBox', '切片结果GroupBox0', '切片结果GroupBox1']
+   | child_window(auto_id="FormMain.rightwidget", control_type="Group")
+   |    |
+   |    | Custom - ''    (L1619, T121, R1899, B1029)
+   |    | ['Custom8', '切片结果Custom']
+   |    | child_window(auto_id="FormMain.rightwidget.stackedWidget", control_type="Custom")
+   |    |    |
+   |    |    | GroupBox - ''    (L1619, T121, R1899, B1029)
+   |    |    | ['GroupBox20', '切片结果GroupBox2']
+   |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult", control_type="Group")
+   |    |    |    |
+   |    |    |    | Static - '切片结果'    (L1619, T137, R1899, B165)
+   |    |    |    | ['Static24', '切片结果', '切片结果Static']
+   |    |    |    | child_window(title="切片结果", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.labelResult", control_type="Text")
+   |    |    |    |
+   |    |    |    | Static - '打印时间'    (L1619, T173, R1779, B201)
+   |    |    |    | ['Static25', '打印时间Static', '打印时间']
+   |    |    |    | child_window(title="打印时间", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.labelTime", control_type="Text")
+   |    |    |    |
+   |    |    |    | Static - '0min'    (L1799, T173, R1899, B201)
+   |    |    |    | ['Static26', '0min', '0minStatic']
+   |    |    |    | child_window(title="0min", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.estimatedTime", control_type="Text")
+   |    |    |    |
+   |    |    |    | Static - '材料基础量'    (L1619, T205, R1779, B230)
+   |    |    |    | ['材料基础量', 'Static27', '材料基础量Static']
+   |    |    |    | child_window(title="材料基础量", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.labelRisin", control_type="Text")
+   |    |    |    |
+   |    |    |    | Static - '20g'    (L1799, T205, R1899, B230)
+   |    |    |    | ['Static28', '20gStatic', '20g']
+   |    |    |    | child_window(title="20g", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.risin", control_type="Text")
+   |    |    |    |
+   |    |    |    | Static - '打印总重量'    (L1619, T234, R1779, B259)
+   |    |    |    | ['Static29', '打印总重量Static', '打印总重量']
+   |    |    |    | child_window(title="打印总重量", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.labelWeight", control_type="Text")
+   |    |    |    |
+   |    |    |    | Static - '110g'    (L1799, T234, R1899, B259)
+   |    |    |    | ['110g', 'Static30', '110gStatic']
+   |    |    |    | child_window(title="110g", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.weight", control_type="Text")
+   |    |    |    |
+   |    |    |    | Static - '模型重量'    (L1629, T267, R1779, B287)
+   |    |    |    | ['Static31', '模型重量Static', '模型重量']
+   |    |    |    | child_window(title="模型重量", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.labeModelWeight", control_type="Text")
+   |    |    |    |
+   |    |    |    | Static - '91g'    (L1799, T267, R1899, B287)
+   |    |    |    | ['Static32', '91gStatic', '91g']
+   |    |    |    | child_window(title="91g", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.modelWeight", control_type="Text")
+   |    |    |    |
+   |    |    |    | Static - '支撑重量'    (L1629, T295, R1779, B315)
+   |    |    |    | ['Static33', '支撑重量', '支撑重量Static']
+   |    |    |    | child_window(title="支撑重量", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.labelSupportWeight", control_type="Text")
+   |    |    |    |
+   |    |    |    | Static - '19g'    (L1799, T295, R1899, B315)
+   |    |    |    | ['19g', 'Static34', '19gStatic']
+   |    |    |    | child_window(title="19g", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.supportWeight", control_type="Text")
+   |    |    |    |
+   |    |    |    | Custom - ''    (L1619, T331, R1899, B332)
+   |    |    |    | ['19gCustom', 'Custom9', '支撑重量Custom']
+   |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.line", control_type="Custom")
+   |    |    |    |
+   |    |    |    | Static - '打印参数设置'    (L1619, T348, R1899, B376)
+   |    |    |    | ['打印参数设置', 'Static35', '打印参数设置Static']
+   |    |    |    | child_window(title="打印参数设置", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.labelParameter", control_type="Text")
+   |    |    |    |
+   |    |    |    | Button - '打印参数编辑'    (L1619, T390, R1899, B430)
+   |    |    |    | ['打印参数编辑', '打印参数编辑Button', 'Button15']
+   |    |    |    | child_window(title="打印参数编辑", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.pbParameter", control_type="Button")
+   |    |    |    |
+   |    |    |    | Custom - ''    (L1619, T452, R1899, B453)
+   |    |    |    | ['打印参数设置Custom', 'Custom10']
+   |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.line_2", control_type="Custom")
+   |    |    |    |
+   |    |    |    | Static - '切片文件'    (L1619, T469, R1899, B497)
+   |    |    |    | ['切片文件Static', 'Static36', '切片文件']
+   |    |    |    | child_window(title="切片文件", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.labelSliceFile", control_type="Text")
+   |    |    |    |
+   |    |    |    | Button - '导 出'    (L1619, T511, R1899, B551)
+   |    |    |    | ['导 出Button', 'Button16', '导 出']
+   |    |    |    | child_window(title="导 出", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.pbExportSlice", control_type="Button")
+   |    |    |    |
+   |    |    |    | CheckBox - '上 传'    (L1619, T573, R1899, B613)
+   |    |    |    | ['上 传CheckBox', '上 传2', 'CheckBox17']
+   |    |    |    | child_window(title="上 传", auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.pbWifiUpload", control_type="CheckBox")

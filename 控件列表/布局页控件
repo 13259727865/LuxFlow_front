@@ -1,0 +1,67 @@
+GroupBox - ''    (L3519, T115, R3839, B929)
+   | ['布局GroupBox', 'GroupBox19', '布局GroupBox0', '布局GroupBox1']
+   | child_window(auto_id="FormMain.rightwidget", control_type="Group")
+   |    |
+   |    | Custom - ''    (L3539, T115, R3819, B929)
+   |    | ['Custom8', '布局Custom']
+   |    | child_window(auto_id="FormMain.rightwidget.stackedWidget", control_type="Custom")
+   |    |    |
+   |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    | ['布局GroupBox2', 'GroupBox20']
+   |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormLayout", control_type="Group")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    |    | ['布局GroupBox3', 'GroupBox21']
+   |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormLayout.scrollArea", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    |    |    | ['布局GroupBox4', 'GroupBox22']
+   |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormLayout.scrollArea.qt_scrollarea_viewport", control_type="Group")
+   |    |    |    |    |    |
+   |    |    |    |    |    | GroupBox - ''    (L3539, T115, R3819, B929)
+   |    |    |    |    |    | ['布局GroupBox5', 'GroupBox23']
+   |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormLayout.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents", control_type="Group")
+   |    |    |    |    |    |    |
+   |    |    |    |    |    |    | GroupBox - ''    (L3539, T131, R3819, B333)
+   |    |    |    |    |    |    | ['布局GroupBox6', 'GroupBox24']
+   |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormLayout.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.layoutWidget", control_type="Group")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '布局'    (L3539, T131, R3819, B159)
+   |    |    |    |    |    |    |    | ['Static24', '布局', '布局Static']
+   |    |    |    |    |    |    |    | child_window(title="布局", auto_id="FormMain.rightwidget.stackedWidget.FormLayout.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.layoutWidget.layoutTitle", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - '间距'    (L3539, T167, R3614, B199)
+   |    |    |    |    |    |    |    | ['Static25', '间距', '间距Static']
+   |    |    |    |    |    |    |    | child_window(title="间距", auto_id="FormMain.rightwidget.stackedWidget.FormLayout.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.layoutWidget.label", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Button - ''    (L3630, T167, R3662, B199)
+   |    |    |    |    |    |    |    | ['Button15', '间距Button']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormLayout.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.layoutWidget.pbMinus", control_type="Button")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | UpDown - '1.0mm'    (L3662, T167, R3787, B199)
+   |    |    |    |    |    |    |    | ['UpDown', '1.0mm', '1.0mmUpDown']
+   |    |    |    |    |    |    |    | child_window(title="1.0mm", auto_id="FormMain.rightwidget.stackedWidget.FormLayout.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.layoutWidget.numberEdit", control_type="Spinner")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Button - ''    (L3787, T167, R3819, B199)
+   |    |    |    |    |    |    |    | ['Button16', '布局Button']
+   |    |    |    |    |    |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormLayout.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.layoutWidget.pbPlus", control_type="Button")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | RadioButton - '整齐布局'    (L3539, T217, R3819, B239)
+   |    |    |    |    |    |    |    | ['整齐布局RadioButton', 'RadioButton7', '整齐布局']
+   |    |    |    |    |    |    |    | child_window(title="整齐布局", auto_id="FormMain.rightwidget.stackedWidget.FormLayout.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.layoutWidget.rbNeatLayout", control_type="RadioButton")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | RadioButton - '嵌套布局'    (L3539, T253, R3819, B275)
+   |    |    |    |    |    |    |    | ['嵌套布局RadioButton', 'RadioButton8', '嵌套布局']
+   |    |    |    |    |    |    |    | child_window(title="嵌套布局", auto_id="FormMain.rightwidget.stackedWidget.FormLayout.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.layoutWidget.rbNestedLayout", control_type="RadioButton")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Button - '布 局'    (L3539, T293, R3819, B333)
+   |    |    |    |    |    |    |    | ['Button17', '布 局2', '布 局Button']
+   |    |    |    |    |    |    |    | child_window(title="布 局", auto_id="FormMain.rightwidget.stackedWidget.FormLayout.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.layoutWidget.pbLayout", control_type="Button")
+   |
+   | GroupBox - ''    (L3519, T929, R3839, B1039)
+   | ['布 局GroupBox6', 'GroupBox25']
+   | child_window(auto_id="FormMain.nextStepWidget", control_type="Group")
+   |    |
+   |    | Button - '下一步'    (L3539, T962, R3819, B1006)
+   |    | ['Button18', '下一步', '下一步Button']
+   |    | child_window(title="下一步", auto_id="FormMain.nextStepWidget.pbNextStep", control_type="Button")

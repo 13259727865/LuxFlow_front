@@ -1,0 +1,103 @@
+[2022-01-05 14:11:03,603][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 14:12:33,380][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 14:13:13,987][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 14:13:26,066][main_page.py 199][INFO]: 进入打开页
+[2022-01-05 14:13:26,093][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-05 14:17:03,879][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 14:17:15,828][main_page.py 219][INFO]: 进入打开页
+[2022-01-05 14:17:16,913][main_page.py 174][INFO]: 点击本地打开按钮
+[2022-01-05 14:17:20,647][main_page.py 176][INFO]: 操作打开文件win弹窗
+[2022-01-05 14:17:20,648][main_page.py 177][INFO]: 返回按钮text
+[2022-01-05 14:17:21,077][main_page.py 39][INFO]: 发现检测修复弹框,是否修
+[2022-01-05 14:17:21,077][main_page.py 41][INFO]: 上传修复
+[2022-01-05 14:17:21,077][main_page.py 42][INFO]: 找到FormMain.openGLWidget.FormFixQuery.widgetList
+[2022-01-05 14:17:26,404][main_page.py 134][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, 5117197155894160197>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, 5117197155895407772>]）
+[2022-01-05 14:17:27,557][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-05 14:20:17,027][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 14:22:02,640][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 14:22:03,226][main_page.py 219][INFO]: 进入打开页
+[2022-01-05 14:22:04,190][main_page.py 174][INFO]: 点击本地打开按钮
+[2022-01-05 14:22:09,587][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-05 14:22:19,992][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 14:22:20,578][main_page.py 219][INFO]: 进入打开页
+[2022-01-05 14:22:21,557][main_page.py 174][INFO]: 点击本地打开按钮
+[2022-01-05 14:22:24,919][main_page.py 176][INFO]: 操作打开文件win弹窗
+[2022-01-05 14:22:24,920][main_page.py 177][INFO]: 返回按钮text
+[2022-01-05 14:22:25,232][main_page.py 39][INFO]: 发现检测修复弹框,是否修
+[2022-01-05 14:22:25,232][main_page.py 41][INFO]: 上传修复
+[2022-01-05 14:22:25,233][main_page.py 42][INFO]: 找到FormMain.openGLWidget.FormFixQuery.widgetList
+[2022-01-05 14:22:30,223][main_page.py 134][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, 5117197155944063197>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, 5117197155945310772>, <uia_controls.ListItemWrapper - '3. 孔洞花瓶.STL', ListItem, 5117197155936577747>, <uia_controls.ListItemWrapper - '4. heart.STL', ListItem, 5117197155937825322>]）
+[2022-01-05 14:22:30,240][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-05 14:25:01,517][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 14:25:02,104][main_page.py 219][INFO]: 进入打开页
+[2022-01-05 14:25:03,083][main_page.py 174][INFO]: 点击本地打开按钮
+[2022-01-05 14:25:06,434][main_page.py 176][INFO]: 操作打开文件win弹窗
+[2022-01-05 14:25:06,434][main_page.py 177][INFO]: 返回按钮text
+[2022-01-05 14:25:06,714][main_page.py 39][INFO]: 发现检测修复弹框,是否修
+[2022-01-05 14:25:06,714][main_page.py 41][INFO]: 上传修复
+[2022-01-05 14:25:06,714][main_page.py 42][INFO]: 找到FormMain.openGLWidget.FormFixQuery.widgetList
+[2022-01-05 14:25:11,600][main_page.py 134][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, 5117197155955291372>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, 5117197155946558347>]）
+[2022-01-05 14:25:11,926][main.py 184][INFO]: 已保存截图至./123.png
+[2022-01-05 14:25:11,927][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-05 14:29:11,225][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 14:29:11,847][main_page.py 219][INFO]: 进入打开页
+[2022-01-05 14:29:12,861][main_page.py 174][INFO]: 点击本地打开按钮
+[2022-01-05 14:29:16,244][main_page.py 176][INFO]: 操作打开文件win弹窗
+[2022-01-05 14:29:16,246][main_page.py 177][INFO]: 返回按钮text
+[2022-01-05 14:29:16,554][main_page.py 39][INFO]: 发现检测修复弹框,是否修
+[2022-01-05 14:29:16,555][main_page.py 41][INFO]: 上传修复
+[2022-01-05 14:29:16,556][main_page.py 42][INFO]: 找到FormMain.openGLWidget.FormFixQuery.widgetList
+[2022-01-05 14:29:21,646][main_page.py 134][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, 5117197155845504772>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, 5117197155836771747>, <uia_controls.ListItemWrapper - '3. 孔洞花瓶.STL', ListItem, 5117197155838019322>, <uia_controls.ListItemWrapper - '4. heart.STL', ListItem, 5117197155839266897>]）
+[2022-01-05 14:29:22,255][main_page.py 223][INFO]: 进入打开页
+[2022-01-05 14:29:23,797][main.py 196][INFO]: 选择应用
+[2022-01-05 14:29:26,698][support.py 104][INFO]: 返回支撑页参数{'support1': '支撑', 'support2': '应用', 'support3': ['齿科产品', '鞋类产品', '眼镜产品', '其他产品'], 'support4': '支撑设置', 'support5': '推荐参数', 'support6': '基础设置', 'support7': '抬升高度', 'support8': '2.00 mm', 'support9': '支撑点直径', 'support10': '1.00 mm', 'support11': '支撑头长度', 'support12': '2.00 mm', 'support13': '支撑柱直径', 'support14': '1.25 mm', 'support15': '支撑点间距', 'support16': '3.00 mm', 'support17': '临界角', 'support18': '70.00 °', 'support19': '加固设置', 'support20': '是否加固', 'support21': 0, 'support22': '起始高度', 'support23': '0.01 mm', 'support24': '角度', 'support25': '45.00 °', 'support26': '底座设置', 'support27': '支撑加底座', 'support28': 0, 'support29': '仅底座', 'support30': 0, 'support31': '底座高度', 'support32': '0.50 mm', 'support33': '生 成', 'support34': '删 除', 'support35': '编辑'}
+[2022-01-05 14:29:26,705][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-05 14:38:54,340][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 14:38:54,919][main_page.py 219][INFO]: 进入打开页
+[2022-01-05 14:38:56,098][main_page.py 174][INFO]: 点击本地打开按钮
+[2022-01-05 14:38:59,446][main_page.py 176][INFO]: 操作打开文件win弹窗
+[2022-01-05 14:38:59,449][main_page.py 177][INFO]: 返回按钮text
+[2022-01-05 14:38:59,772][main_page.py 39][INFO]: 发现检测修复弹框,是否修
+[2022-01-05 14:38:59,773][main_page.py 41][INFO]: 上传修复
+[2022-01-05 14:38:59,774][main_page.py 42][INFO]: 找到FormMain.openGLWidget.FormFixQuery.widgetList
+[2022-01-05 14:39:04,711][main_page.py 134][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, 5117197155758174522>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, 5117197155759422097>, <uia_controls.ListItemWrapper - '3. 孔洞花瓶.STL', ListItem, 5117197155760669672>, <uia_controls.ListItemWrapper - '4. heart.STL', ListItem, 5117197155751936647>, <uia_controls.ListItemWrapper - '5. 孔洞花瓶.STL', ListItem, 5117197155753184222>, <uia_controls.ListItemWrapper - '6. heart.STL', ListItem, 5117197155754431797>]）
+[2022-01-05 14:39:05,040][main.py 184][INFO]: 已保存截图至./123.png
+[2022-01-05 14:39:05,658][main_page.py 223][INFO]: 进入打开页
+[2022-01-05 14:39:07,166][main.py 196][INFO]: 选择应用
+[2022-01-05 14:39:09,424][support.py 104][INFO]: 返回支撑页参数{'support1': '支撑', 'support2': '应用', 'support3': ['齿科产品', '鞋类产品', '眼镜产品', '其他产品'], 'support4': '支撑设置', 'support5': '推荐参数', 'support6': '基础设置', 'support7': '抬升高度', 'support8': '2.00 mm', 'support9': '支撑点直径', 'support10': '1.00 mm', 'support11': '支撑头长度', 'support12': '2.00 mm', 'support13': '支撑柱直径', 'support14': '1.25 mm', 'support15': '支撑点间距', 'support16': '3.00 mm', 'support17': '临界角', 'support18': '70.00 °', 'support19': '加固设置', 'support20': '是否加固', 'support21': 0, 'support22': '起始高度', 'support23': '0.01 mm', 'support24': '角度', 'support25': '45.00 °', 'support26': '底座设置', 'support27': '支撑加底座', 'support28': 0, 'support29': '仅底座', 'support30': 0, 'support31': '底座高度', 'support32': '0.50 mm', 'support33': '生 成', 'support34': '删 除', 'support35': '编辑'}
+[2022-01-05 14:39:09,425][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-05 15:05:27,491][main.py 194][INFO]: 已保存截图至E:\LuxFlow_front\\picture\20220105150527_test.png
+[2022-01-05 15:08:22,052][main.py 193][INFO]: 已保存截图至E:\LuxFlow_front\\picture\20220105150821_test.png
+[2022-01-05 15:14:53,012][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 15:14:53,614][main_page.py 219][INFO]: 进入打开页
+[2022-01-05 15:14:55,124][main_page.py 223][INFO]: 进入打开页
+[2022-01-05 15:14:56,504][main.py 211][INFO]: 选择应用
+[2022-01-05 15:14:58,859][support.py 104][INFO]: 返回支撑页参数{'support1': '支撑', 'support2': '应用', 'support3': ['齿科产品', '鞋类产品', '眼镜产品', '其他产品'], 'support4': '支撑设置', 'support5': '推荐参数', 'support6': '基础设置', 'support7': '抬升高度', 'support8': '2.00 mm', 'support9': '支撑点直径', 'support10': '1.00 mm', 'support11': '支撑头长度', 'support12': '2.00 mm', 'support13': '支撑柱直径', 'support14': '1.25 mm', 'support15': '支撑点间距', 'support16': '3.00 mm', 'support17': '临界角', 'support18': '70.00 °', 'support19': '加固设置', 'support20': '是否加固', 'support21': 0, 'support22': '起始高度', 'support23': '0.01 mm', 'support24': '角度', 'support25': '45.00 °', 'support26': '底座设置', 'support27': '支撑加底座', 'support28': 0, 'support29': '仅底座', 'support30': 0, 'support31': '底座高度', 'support32': '0.50 mm', 'support33': '生 成', 'support34': '删 除', 'support35': '编辑'}
+[2022-01-05 15:14:58,861][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-05 15:15:09,683][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 15:15:10,306][main_page.py 219][INFO]: 进入打开页
+[2022-01-05 15:15:11,393][main_page.py 174][INFO]: 点击本地打开按钮
+[2022-01-05 15:15:14,774][main_page.py 176][INFO]: 操作打开文件win弹窗
+[2022-01-05 15:15:14,775][main_page.py 177][INFO]: 返回按钮text
+[2022-01-05 15:15:15,129][main_page.py 39][INFO]: 发现检测修复弹框,是否修
+[2022-01-05 15:15:15,131][main_page.py 41][INFO]: 上传修复
+[2022-01-05 15:15:15,131][main_page.py 42][INFO]: 找到FormMain.openGLWidget.FormFixQuery.widgetList
+[2022-01-05 15:15:20,360][main_page.py 134][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, 5117197155803087222>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, 5117197155804334797>]）
+[2022-01-05 15:15:20,968][main_page.py 223][INFO]: 进入打开页
+[2022-01-05 15:15:22,581][main.py 211][INFO]: 选择应用
+[2022-01-05 15:15:25,086][support.py 104][INFO]: 返回支撑页参数{'support1': '支撑', 'support2': '应用', 'support3': ['齿科产品', '鞋类产品', '眼镜产品', '其他产品'], 'support4': '支撑设置', 'support5': '推荐参数', 'support6': '基础设置', 'support7': '抬升高度', 'support8': '2.00 mm', 'support9': '支撑点直径', 'support10': '1.00 mm', 'support11': '支撑头长度', 'support12': '2.00 mm', 'support13': '支撑柱直径', 'support14': '1.25 mm', 'support15': '支撑点间距', 'support16': '3.00 mm', 'support17': '临界角', 'support18': '70.00 °', 'support19': '加固设置', 'support20': '是否加固', 'support21': 0, 'support22': '起始高度', 'support23': '0.01 mm', 'support24': '角度', 'support25': '45.00 °', 'support26': '底座设置', 'support27': '支撑加底座', 'support28': 0, 'support29': '仅底座', 'support30': 0, 'support31': '底座高度', 'support32': '0.50 mm', 'support33': '生 成', 'support34': '删 除', 'support35': '编辑'}
+[2022-01-05 15:15:25,087][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-01-05 15:39:26,087][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-01-05 15:39:26,702][main_page.py 219][INFO]: 进入打开页
+[2022-01-05 15:39:27,794][main_page.py 174][INFO]: 点击本地打开按钮
+[2022-01-05 15:39:31,164][main_page.py 176][INFO]: 操作打开文件win弹窗
+[2022-01-05 15:39:31,164][main_page.py 177][INFO]: 返回按钮text
+[2022-01-05 15:39:31,530][main_page.py 39][INFO]: 发现检测修复弹框,是否修
+[2022-01-05 15:39:31,530][main_page.py 41][INFO]: 上传修复
+[2022-01-05 15:39:31,530][main_page.py 42][INFO]: 找到FormMain.openGLWidget.FormFixQuery.widgetList
+[2022-01-05 15:39:36,618][main_page.py 134][INFO]: 返回（零件列表图标，列表text,零件list[<uia_controls.ListItemWrapper - '1. 孔洞花瓶.STL', ListItem, 5117197155653378222>, <uia_controls.ListItemWrapper - '2. heart.STL', ListItem, 5117197155654625797>]）
+[2022-01-05 15:39:36,966][main.py 199][INFO]: 已保存截图至E:\LuxFlow_front\\picture\打开零件_20220105153936.png
+[2022-01-05 15:39:37,527][main_page.py 223][INFO]: 进入打开页
+[2022-01-05 15:39:39,000][main.py 211][INFO]: 选择应用
+[2022-01-05 15:39:41,336][support.py 104][INFO]: 返回支撑页参数{'support1': '支撑', 'support2': '应用', 'support3': ['齿科产品', '鞋类产品', '眼镜产品', '其他产品'], 'support4': '支撑设置', 'support5': '推荐参数', 'support6': '基础设置', 'support7': '抬升高度', 'support8': '2.00 mm', 'support9': '支撑点直径', 'support10': '1.00 mm', 'support11': '支撑头长度', 'support12': '2.00 mm', 'support13': '支撑柱直径', 'support14': '1.25 mm', 'support15': '支撑点间距', 'support16': '3.00 mm', 'support17': '临界角', 'support18': '70.00 °', 'support19': '加固设置', 'support20': '是否加固', 'support21': 0, 'support22': '起始高度', 'support23': '0.01 mm', 'support24': '角度', 'support25': '45.00 °', 'support26': '底座设置', 'support27': '支撑加底座', 'support28': 0, 'support29': '仅底座', 'support30': 0, 'support31': '底座高度', 'support32': '0.50 mm', 'support33': '生 成', 'support34': '删 除', 'support35': '编辑'}
+[2022-01-05 15:39:41,337][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！

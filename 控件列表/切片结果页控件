@@ -1,0 +1,42 @@
+['打印参数编辑GroupBox', 'GroupBox']
+child_window(auto_id="FormMain.FormEditParameter.widgetTitle", control_type="Group")
+   |
+   | Static - '打印参数编辑'    (L30, T0, R163, B50)
+   | ['Static', '打印参数编辑Static', '打印参数编辑']
+   | child_window(title="打印参数编辑", auto_id="FormMain.FormEditParameter.widgetTitle.popTitle", control_type="Text")
+   |
+   | Button - ''    (L1860, T5, R1900, B45)
+   | ['Button', '打印参数编辑Button']
+   | child_window(auto_id="FormMain.FormEditParameter.widgetTitle.pbPopClose", control_type="Button")
+##############################################################################################################################
+GroupBox - ''    (L1490, T50, R1890, B518)
+['材料温度设置GroupBox', 'GroupBox']
+child_window(auto_id="FormMain.FormEditParameter.widgetEdiSlice.widgetTemp", control_type="Group")
+   |
+   | Static - '材料温度设置'    (L1490, T70, R1765, B95)
+   | ['Static', '材料温度设置Static', '材料温度设置']
+   | child_window(title="材料温度设置", auto_id="FormMain.FormEditParameter.widgetEdiSlice.widgetTemp.labelMaterialTemp", control_type="Text")
+   |
+   | CheckBox - '预加热'    (L1490, T120, R1567, B142)
+   | ['预加热', 'CheckBox', '预加热CheckBox', 'CheckBox0', 'CheckBox1']
+   | child_window(title="预加热", auto_id="FormMain.FormEditParameter.widgetEdiSlice.widgetTemp.checkBoxPreheat", control_type="CheckBox")
+   |
+   | UpDown - '℃'    (L1595, T115, R1735, B147)
+   | ['℃UpDown', '℃', 'UpDown', '℃UpDown0', '℃UpDown1', '℃0', '℃1', 'UpDown0', 'UpDown1']
+   | child_window(title="℃", auto_id="FormMain.FormEditParameter.widgetEdiSlice.widgetTemp.lineEditPreheatTime", control_type="Spinner")
+   |
+   | CheckBox - ''    (L1745, T121, R1765, B141)
+   | ['材料温度设置CheckBox', 'CheckBox2', '材料温度设置CheckBox0', '材料温度设置CheckBox1']
+   | child_window(auto_id="FormMain.FormEditParameter.widgetEdiSlice.widgetTemp.pbPreheatWaring", control_type="CheckBox")
+   |
+   | CheckBox - '加热'    (L1490, T168, R1550, B190)
+   | ['加热CheckBox', 'CheckBox3', '加热']
+   | child_window(title="加热", auto_id="FormMain.FormEditParameter.widgetEdiSlice.widgetTemp.checkBoxHeat", control_type="CheckBox")
+   |
+   | UpDown - '℃'    (L1595, T163, R1735, B195)
+   | ['℃UpDown2', '℃2', 'UpDown2']
+   | child_window(title="℃", auto_id="FormMain.FormEditParameter.widgetEdiSlice.widgetTemp.lineEditHeatTemp", control_type="Spinner")
+   |
+   | CheckBox - ''    (L1745, T169, R1765, B189)
+   | ['材料温度设置CheckBox2', 'CheckBox4']
+   | child_window(auto_id="FormMain.FormEditParameter.widgetEdiSlice.widgetTemp.pbHeatWaring", control_type="CheckBox")

@@ -1,0 +1,215 @@
+ ####################################主动检测修复################################################################
+ Dialog - 'Form'    (L2709, T311, R3051, B753)
+   | ['Form', 'FormDialog', 'Dialog2']
+   | child_window(title="Form", auto_id="FormMain.openGLWidget.FormVDFix", control_type="Window")
+   |    |
+   |    | GroupBox - ''    (L2709, T311, R3051, B356)
+   |    | ['GroupBox', '修复GroupBox', 'GroupBox0', 'GroupBox1']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormVDFix.widget", control_type="Group")
+   |    |    |
+   |    |    | Static - '修复'    (L2739, T311, R2784, B356)
+   |    |    | ['Static', '修复Static', '修复', 'Static0', 'Static1', '修复0', '修复1']
+   |    |    | child_window(title="修复", auto_id="FormMain.openGLWidget.FormVDFix.widget.popTitle", control_type="Text")
+   |    |    |
+   |    |    | Button - ''    (L2991, T313, R3031, B353)
+   |    |    | ['Button', '修复Button', 'Button0', 'Button1', '修复Button0', '修复Button1']
+   |    |    | child_window(auto_id="FormMain.openGLWidget.FormVDFix.widget.pbPopClose", control_type="Button")
+   |    |
+   |    | Static - '项目'    (L2729, T366, R2763, B396)
+   |    | ['Static2', '项目', '项目Static']
+   |    | child_window(title="项目", auto_id="FormMain.openGLWidget.FormVDFix.label_4", control_type="Text")
+   |    |
+   |    | Static - '检测结果'    (L2917, T366, R2985, B396)
+   |    | ['Static3', '检测结果', '检测结果Static']
+   |    | child_window(title="检测结果", auto_id="FormMain.openGLWidget.FormVDFix.label_5", control_type="Text")
+   |    |
+   |    | Static - '数量'    (L3005, T366, R3039, B396)
+   |    | ['Static4', '数量Static', '数量']
+   |    | child_window(title="数量", auto_id="FormMain.openGLWidget.FormVDFix.label_6", control_type="Text")
+   |    |
+   |    | Custom - ''    (L2709, T406, R3051, B407)
+   |    | ['项目Custom', 'Custom', '数量Custom', 'Custom0', 'Custom1']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormVDFix.line", control_type="Custom")
+   |    |
+   |    | Static - '坏边'    (L2729, T427, R2763, B468)
+   |    | ['Static5', '坏边Static', '坏边']
+   |    | child_window(title="坏边", auto_id="FormMain.openGLWidget.FormVDFix.label", control_type="Text")
+   |    |
+   |    | Image - ''    (L2921, T432, R2951, B462)
+   |    | ['检测结果Image', 'Image', '坏边Image', '检测结果Image0', '检测结果Image1', 'Image0', 'Image1']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormVDFix.labelIconBadEdges", control_type="Image")
+   |    |
+   |    | Static - '50'    (L2996, T427, R3046, B468)
+   |    | ['Static6', '50Static', '50']
+   |    | child_window(title="50", auto_id="FormMain.openGLWidget.FormVDFix.labelNbrBadEdges", control_type="Text")
+   |    |
+   |    | Static - '孔洞'    (L2729, T478, R2763, B519)
+   |    | ['Static7', '孔洞Static', '孔洞']
+   |    | child_window(title="孔洞", auto_id="FormMain.openGLWidget.FormVDFix.label_2", control_type="Text")
+   |    |
+   |    | Image - ''    (L2921, T483, R2951, B513)
+   |    | ['检测结果Image2', 'Image2', '孔洞Image']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormVDFix.labelIconHoles", control_type="Image")
+   |    |
+   |    | Static - '7'    (L2996, T478, R3046, B519)
+   |    | ['Static8', '7', '7Static']
+   |    | child_window(title="7", auto_id="FormMain.openGLWidget.FormVDFix.labelNbrHoles", control_type="Text")
+   |    |
+   |    | Static - '壳体'    (L2729, T529, R2763, B571)
+   |    | ['Static9', '壳体Static', '壳体', '壳体Static0', '壳体Static1']
+   |    | child_window(title="壳体", auto_id="FormMain.openGLWidget.FormVDFix.label_3", control_type="Text")
+   |    |
+   |    | Image - ''    (L2921, T535, R2951, B565)
+   |    | ['检测结果Image3', 'Image3', '壳体Image', '壳体Image0', '壳体Image1']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormVDFix.labelIconShells", control_type="Image")
+   |    |
+   |    | Static - '1'    (L2996, T529, R3046, B571)
+   |    | ['Static10', '1Static', '1']
+   |    | child_window(title="1", auto_id="FormMain.openGLWidget.FormVDFix.labelNbrShells", control_type="Text")
+   |    |
+   |    | CheckBox - '反向三角面片'    (L2729, T590, R2853, B612)
+   |    | ['反向三角面片CheckBox', 'CheckBox', '反向三角面片', 'CheckBox0', 'CheckBox1']
+   |    | child_window(title="反向三角面片", auto_id="FormMain.openGLWidget.FormVDFix.checkBoxBadOrienation", control_type="CheckBox")
+   |    |
+   |    | Image - ''    (L2921, T586, R2951, B616)
+   |    | ['检测结果Image4', 'Image4']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormVDFix.labelIconBadOrientation", control_type="Image")
+   |    |
+   |    | Static - '0'    (L2996, T581, R3046, B622)
+   |    | ['Static11', '0', '0Static']
+   |    | child_window(title="0", auto_id="FormMain.openGLWidget.FormVDFix.labelNbrBadOrientation", control_type="Text")
+   |    |
+   |    | CheckBox - '相交三角面片'    (L2729, T641, R2853, B663)
+   |    | ['相交三角面片', 'CheckBox2', '相交三角面片CheckBox']
+   |    | child_window(title="相交三角面片", auto_id="FormMain.openGLWidget.FormVDFix.checkBoxIntersections", control_type="CheckBox")
+   |    |
+   |    | Image - ''    (L2921, T637, R2951, B667)
+   |    | ['检测结果Image5', 'Image5']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormVDFix.labelIconIntersections", control_type="Image")
+   |    |
+   |    | Static - '18'    (L2996, T632, R3046, B673)
+   |    | ['Static12', '18', '18Static']
+   |    | child_window(title="18", auto_id="FormMain.openGLWidget.FormVDFix.labelNbrIntersections", control_type="Text")
+   |    |
+   |    | Button - '检测'    (L2729, T703, R2829, B733)
+   |    | ['检测Button', '检测', 'Button2']
+   |    | child_window(title="检测", auto_id="FormMain.openGLWidget.FormVDFix.pushButtonCheck", control_type="Button")
+   |    |
+   |    | Button - '修复'    (L2931, T703, R3031, B733)
+   |    | ['Button3', '修复2', '修复Button2']
+   |    | child_window(title="修复", auto_id="FormMain.openGLWidget.FormVDFix.pushButtonFix", control_type="Button")
+ ####################################上传检测修复################################################################
+ Dialog - '旋转'    (L2679, T275, R3079, B725)
+   | ['Dialog2', '旋转Dialog', '旋转']
+   | child_window(title="旋转", auto_id="FormMain.openGLWidget.FormFixQuery", control_type="Window")
+   |    |
+   |    | GroupBox - ''    (L2679, T275, R3079, B320)
+   |    | ['提示GroupBox', 'GroupBox', '提示GroupBox0', '提示GroupBox1', 'GroupBox0', 'GroupBox1']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormFixQuery.widget", control_type="Group")
+   |    |    |
+   |    |    | Static - '提示'    (L2709, T275, R2754, B320)
+   |    |    | ['Static', '提示', '提示Static', 'Static0', 'Static1']
+   |    |    | child_window(title="提示", auto_id="FormMain.openGLWidget.FormFixQuery.widget.popTitle", control_type="Text")
+   |    |    |
+   |    |    | Button - ''    (L3019, T277, R3059, B317)
+   |    |    | ['Button', '提示Button', 'Button0', 'Button1']
+   |    |    | child_window(auto_id="FormMain.openGLWidget.FormFixQuery.widget.pbPopClose", control_type="Button")
+   |    |
+   |    | GroupBox - ''    (L2679, T320, R3079, B675)
+   |    | ['提示GroupBox2', 'GroupBox2']
+   |    | child_window(auto_id="FormMain.openGLWidget.FormFixQuery.widgetList", control_type="Group")
+   |    |    |
+   |    |    | Static - '零件'    (L2704, T340, R2738, B362)
+   |    |    | ['零件', 'Static2', '零件Static']
+   |    |    | child_window(title="零件", auto_id="FormMain.openGLWidget.FormFixQuery.widgetList.label_2", control_type="Text")
+   |    |    |
+   |    |    | Static - '检测结果'    (L2986, T340, R3054, B362)
+   |    |    | ['检测结果Static', 'Static3', '检测结果']
+   |    |    | child_window(title="检测结果", auto_id="FormMain.openGLWidget.FormFixQuery.widgetList.label_3", control_type="Text")
+   |    |    |
+   |    |    | Custom - ''    (L2679, T372, R3079, B373)
+   |    |    | ['零件Custom', 'Custom', '检测结果Custom', '零件Custom0', '零件Custom1', 'Custom0', 'Custom1']
+   |    |    | child_window(auto_id="FormMain.openGLWidget.FormFixQuery.widgetList.line", control_type="Custom")
+   |    |    |
+   |    |    | ListBox - ''    (L2679, T373, R3079, B600)
+   |    |    | ['ListBox', '零件ListBox', 'ListBox0', 'ListBox1']
+   |    |    | child_window(auto_id="FormMain.openGLWidget.FormFixQuery.widgetList.listWidget", control_type="List")
+   |    |    |    |
+   |    |    |    | ListItem - ''    (L2679, T373, R3079, B413)
+   |    |    |    | ['ListItem', '零件ListItem', 'ListItem0', 'ListItem1']
+   |    |    |
+   |    |    | Custom - ''    (L2679, T600, R3079, B601)
+   |    |    | ['零件Custom2', 'Custom2']
+   |    |    | child_window(auto_id="FormMain.openGLWidget.FormFixQuery.widgetList.line_2", control_type="Custom")
+   |    |    |
+   |    |    | Static - '检测到零件有壳体、坏边、孔洞的破损，有打印风险，您是否修复？'    (L2704, T611, R3054, B655)
+   |    |    | ['检测到零件有壳体、坏边、孔洞的破损，有打印风险，您是否修复？', 'Static4', '检测到零件有壳体、坏边、孔洞的破损，有打印风险，您是否修复？Static', '检测到零件有壳体、坏边、孔洞的破损，有打印风险，您是否修复？Static0', '检测到零件有壳体、坏边、孔洞的破损，有打印风险，您是否修复？Static1']
+   |    |    | child_window(title="检测到零件有壳体、坏边、孔洞的破损，有打印风险，您是否修复？", auto_id="FormMain.openGLWidget.FormFixQuery.widgetList.label", control_type="Text")
+   |    |
+   |    | Button - '修复'    (L2704, T675, R2804, B705)
+   |    | ['Button2', '修复', '修复Button']
+   |    | child_window(title="修复", auto_id="FormMain.openGLWidget.FormFixQuery.pushButtonFix", control_type="Button")
+   |    |
+   |    | Button - '忽略'    (L2829, T675, R2929, B705)
+   |    | ['Button3', '忽略Button', '忽略']
+   |    | child_window(title="忽略", auto_id="FormMain.openGLWidget.FormFixQuery.pushButtonIgnore", control_type="Button")
+   |    |
+   |    | Button - '取消'    (L2954, T675, R3054, B705)
+   |    | ['Button4', '取消Button', '取消']
+   |    | child_window(title="取消", auto_id="FormMain.openGLWidget.FormFixQuery.pushButtonCancel", control_type="Button")
+
+ ####################################切片检测修复################################################################
+ Dialog - '旋转'    (L2679, T275, R3079, B725)
+   | ['Dialog2', '旋转Dialog', '旋转']
+   | child_window(title="旋转", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery", control_type="Window")
+   |    |
+   |    | GroupBox - ''    (L2679, T275, R3079, B320)
+   |    | ['提示GroupBox', 'GroupBox', '提示GroupBox0', '提示GroupBox1', 'GroupBox0', 'GroupBox1']
+   |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.widget", control_type="Group")
+   |    |    |
+   |    |    | Static - '提示'    (L2709, T275, R2754, B320)
+   |    |    | ['提示', '提示Static', 'Static', 'Static0', 'Static1']
+   |    |    | child_window(title="提示", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.widget.popTitle", control_type="Text")
+   |    |    |
+   |    |    | Button - ''    (L3019, T277, R3059, B317)
+   |    |    | ['提示Button', 'Button', 'Button0', 'Button1']
+   |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.widget.pbPopClose", control_type="Button")
+   |    |
+   |    | GroupBox - ''    (L2679, T320, R3079, B675)
+   |    | ['提示GroupBox2', 'GroupBox2']
+   |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.widgetList", control_type="Group")
+   |    |    |
+   |    |    | Static - '零件'    (L2704, T340, R2738, B362)
+   |    |    | ['零件', '零件Static', 'Static2']
+   |    |    | child_window(title="零件", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.widgetList.label_2", control_type="Text")
+   |    |    |
+   |    |    | Static - '检测结果'    (L2986, T340, R3054, B362)
+   |    |    | ['Static3', '检测结果Static', '检测结果']
+   |    |    | child_window(title="检测结果", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.widgetList.label_3", control_type="Text")
+   |    |    |
+   |    |    | Custom - ''    (L2679, T372, R3079, B373)
+   |    |    | ['Custom', '零件Custom', '检测结果Custom', 'Custom0', 'Custom1', '零件Custom0', '零件Custom1']
+   |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.widgetList.line", control_type="Custom")
+   |    |    |
+   |    |    | ListBox - ''    (L2679, T373, R3079, B600)
+   |    |    | ['ListBox', '零件ListBox', 'ListBox0', 'ListBox1']
+   |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.widgetList.listWidget", control_type="List")
+   |    |    |    |
+   |    |    |    | ListItem - ''    (L2679, T373, R3079, B413)
+   |    |    |    | ['ListItem', '零件ListItem', 'ListItem0', 'ListItem1']
+   |    |    |
+   |    |    | Custom - ''    (L2679, T600, R3079, B601)
+   |    |    | ['Custom2', '零件Custom2']
+   |    |    | child_window(auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.widgetList.line_2", control_type="Custom")
+   |    |    |
+   |    |    | Static - '检测到零件有壳体、坏边、孔洞的破损，有打印风险，您是否修复？'    (L2704, T611, R3054, B655)
+   |    |    | ['检测到零件有壳体、坏边、孔洞的破损，有打印风险，您是否修复？', '检测到零件有壳体、坏边、孔洞的破损，有打印风险，您是否修复？Static', 'Static4', '检测到零件有壳体、坏边、孔洞的破损，有打印风险，您是否修复？Static0', '检测到零件有壳体、坏边、孔洞的破损，有打印风险，您是否修复？Static1']
+   |    |    | child_window(title="检测到零件有壳体、坏边、孔洞的破损，有打印风险，您是否修复？", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.widgetList.label", control_type="Text")
+   |    |
+   |    | Button - '修复'    (L2704, T675, R2804, B705)
+   |    | ['修复', '修复Button', 'Button2']
+   |    | child_window(title="修复", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.pushButtonRepair", control_type="Button")
+   |    |
+   |    | Button - '切片'    (L2954, T675, R3054, B705)
+   |    | ['切片', 'Button3', '切片Button']
+   |    | child_window(title="切片", auto_id="FormMain.rightwidget.stackedWidget.FormPrintSetting.FormVDSliceQuery.pushButtonSlice", control_type="Button")

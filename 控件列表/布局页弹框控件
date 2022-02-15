@@ -1,0 +1,27 @@
+ Dialog - '旋转'    (L2560, T428, R3200, B642)
+   | ['旋转Dialog', '旋转', 'Dialog2']
+   | child_window(title="旋转", auto_id="FormMain.openGLWidget.CProgress", control_type="Window")
+   |    |
+   |    | GroupBox - ''    (L2560, T428, R3200, B474)
+   |    | ['GroupBox', '布局中GroupBox', 'GroupBox0', 'GroupBox1']
+   |    | child_window(auto_id="FormMain.openGLWidget.CProgress.widgetTitle", control_type="Group")
+   |    |    |
+   |    |    | Static - '布局中'    (L2590, T428, R2657, B474)
+   |    |    | ['布局中Static', '布局中', 'Static', 'Static0', 'Static1']
+   |    |    | child_window(title="布局中", auto_id="FormMain.openGLWidget.CProgress.widgetTitle.popTitle", control_type="Text")
+   |    |    |
+   |    |    | Button - ''    (L3140, T431, R3180, B471)
+   |    |    | ['Button', '布局中Button', 'Button0', 'Button1']
+   |    |    | child_window(auto_id="FormMain.openGLWidget.CProgress.widgetTitle.pbPopClose", control_type="Button")
+   |    |
+   |    | Progress - ''    (L2590, T514, R3170, B530)
+   |    | ['布局中Progress', 'Progress']
+   |    | child_window(auto_id="FormMain.openGLWidget.CProgress.progressBar", control_type="ProgressBar")
+   |    |
+   |    | Static - '已用时：00:00:02'    (L2590, T540, R3170, B562)
+   |    | ['已用时：00:00:02Static', 'Static2', '已用时：00:00:02', '已用时：00:00:02Static0', '已用时：00:00:02Static1']
+   |    | child_window(title="已用时：00:00:02", auto_id="FormMain.openGLWidget.CProgress.labelProcessTime", control_type="Text")
+   |    |
+   |    | CheckBox - '取消'    (L3050, T572, R3170, B612)
+   |    | ['取消CheckBox', 'CheckBox', '取消', 'CheckBox0', 'CheckBox1']
+   |    | child_window(title="取消", auto_id="FormMain.openGLWidget.CProgress.pbCancel", control_type="CheckBox")
