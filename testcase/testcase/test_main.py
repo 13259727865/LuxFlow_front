@@ -28,7 +28,7 @@ class TestMain:
             pytest.assume(openfile == process_date["opentext"])
             start_flow.modle_check_tips(oper="上传修复")
             start_flow.wait(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List")
-            pytest.assume(len(start_flow.modle_list()[2]) == len(process_date["model"].split(" "))-1)
+            pytest.assume(len(start_flow.modle_list()[2]) == len(process_date["model"].split(" ")))
             start_flow.capture_image("打开零件")
         with allure.step("添加支撑"):
             support = start_flow.jump_button(oper="支撑")
@@ -52,5 +52,5 @@ class TestMain:
             slice = start_flow.jump_button()
         with allure.step("切片"):
             slice.choice_thickness_type(type=process_date["thickness_type"])
-            pytest.assume(slice.slice().slice_time() != False)
-            # assert slice.slice().slice_time() != False
+            pytest.assume(slice.slice().slice_time() is not False)
+            # assert slice.slice().slice_time() is not False

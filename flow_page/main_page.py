@@ -3,7 +3,10 @@
 # @author:Gemini
 # @time:  2021/11/9:11:00
 # @email: 13259727865@163.com
+from typing import List
+
 import pywinauto
+from pywinauto import mouse
 
 from common.io import JsonIO
 from base.main import Main
@@ -122,13 +125,49 @@ class MainPage(Main):
         :return: 列表lcon，列表名称，列表内容列表
         """
         try:
-            modle_list_lcon = self.find(auto_id="FormMain.leftWidget.FormPartList.label", control_type="Text")
-            modle_list_text = self.find(auto_id="FormMain.leftWidget.FormPartList.labelModelList", control_type="Text",
-                                        isall=False).texts()[0]
-            modle_list = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels",
-                                   control_type="List").children()
-            # LogRoot.info(f"返回（零件列表图标，列表text,零件list{modle_list}）")
-            return modle_list_lcon, modle_list_text, modle_list
+            modle_parent = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels",
+                                    control_type="List")
+            outrect = modle_parent.rectangle()
+            side_left = outrect.left
+            side_top = outrect.top
+            side_right = outrect.right
+            side_bottom = outrect.bottom
+            side_x = side_left + ((side_right - side_left) // 2)
+            side_y = side_top + ((side_bottom - side_top) // 2)
+            #循环上滚，直到第一个序号为1
+            while int(modle_parent.children()[0].texts()[0].split(".")[0]) != 1:
+                mouse.scroll(coords=(side_x, side_y), wheel_dist=1)
+            #第一页模型列表
+            frist_modle_list = modle_parent.children()
+            # 第一页模型名称列表
+            modle_list = []
+            for i in frist_modle_list:
+                modle_list.append(i.texts()[0].split(".", 1)[1])
+            if len(frist_modle_list)<10:
+                #第一页不够十个，直接返回名称列表
+                print(12)
+                return modle_list
+            elif len(frist_modle_list)==10:
+                pagesum = 10
+                while True:
+                    now_parent = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels",
+                              control_type="List")
+                    #所在页最后一个模型得序号
+                    mouse.scroll(coords=(side_x, side_y), wheel_dist=-1)
+                    page_index = int(now_parent.children()[-1].texts()[0].split(".", 1)[0])
+                    now_page_sur = page_index - pagesum
+                    if now_page_sur == 0:
+                        print(112)
+                        return modle_list
+                    elif now_page_sur < 3:
+                        for i in modle_parent.children()[-now_page_sur:]:
+                            modle_list.append(i.texts()[0].split(".",1)[1])
+                        return modle_list
+                    elif now_page_sur == 3:
+                        for i in modle_parent.children()[-now_page_sur:]:
+                            modle_list.append(i.texts()[0].split(".",1)[1])
+                        pagesum += 3
+
         except Exception as e:
             LogRoot.error("报错处理", e)
 
@@ -279,4 +318,4 @@ if __name__ == '__main__':
     # a.jump_button(oper="支撑").input_parameter(support_parameter)
     # main._dlg.print_control_identifiers()
     # main.click(auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.pbParameter",isall=False)
-    main.print_dlg()
+    print(main.modle_list())

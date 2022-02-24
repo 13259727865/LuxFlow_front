@@ -43,12 +43,10 @@ class SupportFrame(Main):
         :return:
         """
         if oper == "导入":
-            self.win_desktop(win_title="打开配置文件", path_bar="Toolbar3", path=path, filename=conf, title="打开(&O)",
-                             class_name="Button")
+            self.win_desktop(win_title="打开配置文件", path_bar="Toolbar3", path=path, filename=conf)
             LogRoot.info("导入")
         elif oper == "导出":
-            self.win_desktop(win_title="保存配置文件", path_bar="Toolbar4", path=path, filename=conf, title="保存(&S)",
-                             class_name="Button")
+            self.win_desktop(win_title="保存配置文件", path_bar="Toolbar4", path=path, filename=conf)
             LogRoot.info("导出")
 
     # 刷新和删除弹框提示

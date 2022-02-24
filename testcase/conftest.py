@@ -15,4 +15,9 @@ def start_flow():
     main = MainPage()
     yield main
     LogRoot.info("用例执行完毕，关闭软件！！！")
-    main.main_quit()
+    # main.main_quit()
+
+def pytest_collection_modifyitems(items):
+    for item in items:
+        item.name = item.name.encode("utf-8").decode("unicode_escape")
+        item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")

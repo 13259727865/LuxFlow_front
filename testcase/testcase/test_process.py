@@ -21,7 +21,7 @@ class TestOpen:
 
     # 打开零件
     @allure.story("打开零件")
-    def test_openpart(self, start_flow, a, b):
+    def test_openpart(self, start_flow):
         with allure.step("打开零件"):
             start_flow.jump_button(oper="打开")
             openfile = start_flow.openfile(r"E:\model\model", '"孔洞花瓶.stl" "heart.stl"')
