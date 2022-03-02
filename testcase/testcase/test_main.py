@@ -28,7 +28,7 @@ class TestMain:
             pytest.assume(openfile == process_date["opentext"])
             start_flow.modle_check_tips(oper="上传修复")
             start_flow.wait(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List")
-            pytest.assume(len(start_flow.modle_list()[2]) == len(process_date["model"].split(" ")))
+            pytest.assume(len(start_flow.get_modle_list()) == len(process_date["model"].split(" ")))
             start_flow.capture_image("打开零件")
         with allure.step("添加支撑"):
             support = start_flow.jump_button(oper="支撑")
@@ -36,7 +36,7 @@ class TestMain:
 
             support.input_parameter(process_date["support_parameter"])
             # 选中列表中第0个模型
-            start_flow.click(control=start_flow.modle_list()[2][0])
+            start_flow.click(control=start_flow.get_modle_list()[0])
             support_frame = support.support_oper()
             support_frame.support_time()
         with allure.step("复制零件"):

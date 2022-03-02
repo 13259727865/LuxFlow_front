@@ -136,6 +136,24 @@ class Main:
         send_keys("^a")
         send_keys(str(value))
 
+    #在空间内滚动
+    def scroll(self,control,dist):
+        """
+        :param control: 滚动的控件
+        :param dist: 滚动正反 1（滚轮向外滑1下） -1（滚轮向里滑1下）
+        :return:
+        """
+        outrect = control.rectangle()
+        side_left = outrect.left
+        side_top = outrect.top
+        side_right = outrect.right
+        side_bottom = outrect.bottom
+        side_x = side_left + ((side_right - side_left) // 2)
+        side_y = side_top + ((side_bottom - side_top) // 2)
+        mouse.scroll(coords=(side_x, side_y), wheel_dist=dist)
+
+
+
     # 判断control是否在outside里面
     def is_in_outside(self, outside=None, control=None):
         """

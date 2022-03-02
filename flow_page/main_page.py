@@ -3,10 +3,7 @@
 # @author:Gemini
 # @time:  2021/11/9:11:00
 # @email: 13259727865@163.com
-from typing import List
 
-import pywinauto
-from pywinauto import mouse
 
 from common.io import JsonIO
 from base.main import Main
@@ -120,40 +117,33 @@ class MainPage(Main):
             LogRoot.error("报错处理", e)
 
     # 零件列表
-    def modle_list(self):
+    def get_modle_list(self):
         """
         :return: 列表lcon，列表名称，列表内容列表
         """
         try:
             modle_parent = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels",
-                                    control_type="List")
-            outrect = modle_parent.rectangle()
-            side_left = outrect.left
-            side_top = outrect.top
-            side_right = outrect.right
-            side_bottom = outrect.bottom
-            side_x = side_left + ((side_right - side_left) // 2)
-            side_y = side_top + ((side_bottom - side_top) // 2)
-            #循环上滚，直到第一个序号为1
+                                     control_type="List")
+            # 循环上滚，直到第一个序号为1
             while int(modle_parent.children()[0].texts()[0].split(".")[0]) != 1:
-                mouse.scroll(coords=(side_x, side_y), wheel_dist=1)
-            #第一页模型列表
+                self.scroll(control=modle_parent, dist=1)
+            # 第一页模型列表
             frist_modle_list = modle_parent.children()
             # 第一页模型名称列表
             modle_list = []
             for i in frist_modle_list:
                 modle_list.append(i.texts()[0].split(".", 1)[1])
-            if len(frist_modle_list)<10:
-                #第一页不够十个，直接返回名称列表
+            if len(frist_modle_list) < 10:
+                # 第一页不够十个，直接返回名称列表
                 print(12)
                 return modle_list
-            elif len(frist_modle_list)==10:
+            elif len(frist_modle_list) == 10:
                 pagesum = 10
                 while True:
                     now_parent = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels",
-                              control_type="List")
-                    #所在页最后一个模型得序号
-                    mouse.scroll(coords=(side_x, side_y), wheel_dist=-1)
+                                           control_type="List")
+                    # 所在页最后一个模型得序号
+                    self.scroll(control=modle_parent, dist=-1)
                     page_index = int(now_parent.children()[-1].texts()[0].split(".", 1)[0])
                     now_page_sur = page_index - pagesum
                     if now_page_sur == 0:
@@ -161,15 +151,55 @@ class MainPage(Main):
                         return modle_list
                     elif now_page_sur < 3:
                         for i in modle_parent.children()[-now_page_sur:]:
-                            modle_list.append(i.texts()[0].split(".",1)[1])
+                            modle_list.append(i.texts()[0].split(".", 1)[1])
                         return modle_list
                     elif now_page_sur == 3:
                         for i in modle_parent.children()[-now_page_sur:]:
-                            modle_list.append(i.texts()[0].split(".",1)[1])
+                            modle_list.append(i.texts()[0].split(".", 1)[1])
                         pagesum += 3
-
         except Exception as e:
             LogRoot.error("报错处理", e)
+
+    # 点击选中列表中得零件
+    def click_modle(self, model_code):
+
+        modle_parent = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels",
+                                 control_type="List")
+
+        model_list = modle_parent.children()
+        if len(model_list) < 10:
+            self.click(control=model_list[model_code - 1])
+            return
+        elif len(model_list) == 10:
+            if int(model_list[0].texts()[0].split(".")[0]) <= model_code & int(
+                    model_list[-1].texts()[0].split(".")[0]) >= model_code:
+                for i in modle_parent.children():
+                    if int(i.texts()[0].split(".")[0]) == model_code:
+                        self.click(control=i)
+                        return
+
+            while True:
+                now_frist = int(modle_parent.children()[0].texts()[0].split(".")[0])
+                now_end = int(modle_parent.children()[-1].texts()[0].split(".")[0])
+                if now_frist > model_code:
+                    self.scroll(control=modle_parent, dist=1)
+                    scroll_frist = int(modle_parent.children()[0].texts()[0].split(".")[0])
+                    if now_frist == scroll_frist:
+                        return f"未找到第{model_code}个模型"
+
+                    for i in modle_parent.children()[0:3]:
+                        if int(i.texts()[0].split(".")[0]) == model_code:
+                            self.click(control=i)
+                            return
+                elif now_end < model_code:
+                    self.scroll(control=modle_parent, dist=-1)
+                    scroll_end = int(modle_parent.children()[-1].texts()[0].split(".")[0])
+                    if now_end == scroll_end:
+                        return f"未找到第{model_code}个模型"
+                    for i in modle_parent.children()[-3:]:
+                        if int(i.texts()[0].split(".")[0]) == model_code:
+                            self.click(control=i)
+                            return
 
     # 复制模型
     def copy_file(self, file_index=0):
@@ -209,7 +239,6 @@ class MainPage(Main):
         except Exception as e:
             LogRoot.error("报错处理", e)
 
-
     # 打开零件
     def openfile(self, path, model):
         """
@@ -229,7 +258,6 @@ class MainPage(Main):
         except Exception as e:
             LogRoot.error("报错处理", e)
 
-
     # 按钮下一步
     def next_step(self):
         """
@@ -242,7 +270,6 @@ class MainPage(Main):
             return Support(self._dlg)
         except Exception as e:
             LogRoot.error("报错处理", e)
-
 
     # 退出Luxflow
     def main_quit(self, oper='不保存'):
@@ -258,7 +285,6 @@ class MainPage(Main):
                 LogRoot.info(f"{oper}")
         except Exception as e:
             LogRoot.error("报错处理", e)
-
 
     # 下方跳转按钮
     def jump_button(self, oper="切片"):
@@ -292,7 +318,6 @@ class MainPage(Main):
         except Exception as e:
             LogRoot.error("报错处理,oper有误！", e)
 
-
     def print_dlg(self):
         # print(type(self._dlg.print_control_identifiers()))
         self._dlg.print_control_identifiers()
@@ -318,4 +343,4 @@ if __name__ == '__main__':
     # a.jump_button(oper="支撑").input_parameter(support_parameter)
     # main._dlg.print_control_identifiers()
     # main.click(auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.pbParameter",isall=False)
-    print(main.modle_list())
+    print(main.click_modle(25))
