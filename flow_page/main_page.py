@@ -3,12 +3,16 @@
 # @author:Gemini
 # @time:  2021/11/9:11:00
 # @email: 13259727865@163.com
+import time
 
+from pywinauto import mouse
+from pywinauto.keyboard import send_keys
 
 from common.io import JsonIO
 from base.main import Main
 from common.logger import LogRoot
-from flow_frame.main_frame import TerminalFrame, MaterialFrame, FrameSet, CopyFrame
+from flow_frame.main_frame import TerminalFrame, MaterialFrame, FrameSet, CopyFrame, RepairModle
+from flow_frame.slice_frame import SliceFrame
 from flow_page.batch import Batch
 from flow_page.marking import Marking
 from flow_page.slice import Slice
@@ -17,6 +21,25 @@ from flow_page.support import Support
 
 class MainPage(Main):
     _page_path = JsonIO().read_json()["path"]
+
+    #上排控件父项
+    def button_parent(self):
+        button_parent=self.find(auto_id="FormMain.toolWidgte", control_type="Group")
+        # buttons = button_parent.children()
+        return button_parent
+
+
+    #修复按钮
+    def repair_button(self):
+        # self._dlg.print_control_identifiers()
+        repair_button = self.button_parent().children()[12]
+        return repair_button
+
+    #点击修复打开弹框
+    def click_repair(self):
+        self.click(control=self.repair_button())
+        return RepairModle(self._dlg)
+
 
     # 零件破损检测提示
     def modle_check_tips(self, oper="忽略"):
@@ -43,6 +66,7 @@ class MainPage(Main):
                         self.click(index="修复")
                         self.wait_not(auto_id="FormMain.openGLWidget.CProgress.widgetTitle")
                         self.click(index="切片")
+                        return SliceFrame(self._dlg).slice_time()
                     elif oper == "忽略":
                         LogRoot.info("忽略")
                         self.click(index="忽略")
@@ -52,6 +76,7 @@ class MainPage(Main):
                     elif oper == "切片":
                         LogRoot.info("切片")
                         self.click(index="切片")
+                        return SliceFrame(self._dlg).slice_time()
                     return
                 else:
                     LogRoot.info("未发现修复检测弹框，无需修复")
@@ -85,12 +110,13 @@ class MainPage(Main):
     # 菜单栏选择设备-打开弹框
     def terminal(self):
         # 设备图标
-        terminal_lcon = self.find(auto_id="FormMain.toolWidgte.labelDevice", control_type="Text")
+
         default_terminal = \
             self.find(auto_id="FormMain.toolWidgte.pbDevice", control_type="CheckBox", isall=False).texts()[0]
         self.click(auto_id="FormMain.toolWidgte.pbDevice", isall=False)
-        LogRoot.info(f"(设备选择图片，默认设备{default_terminal}，设备弹框类)")
-        return terminal_lcon, default_terminal, TerminalFrame(self._dlg)
+        LogRoot.info(f"(默认设备{default_terminal})")
+        return TerminalFrame(self._dlg)
+
 
     def material(self):
         # 材料图标
@@ -98,7 +124,7 @@ class MainPage(Main):
         default_material = \
             self.find(auto_id="FormMain.toolWidgte.pbMaterial", control_type="CheckBox", isall=False).texts()[0]
         self.click(auto_id="FormMain.toolWidgte.pbMaterial", control_type="CheckBox", isall=False)
-        LogRoot.info(f"(材料选择图片，默认材料{default_material}，材料弹框类)")
+        LogRoot.info(f"(默认材料{default_material}，材料弹框类)")
         return material_lcon, default_material, MaterialFrame(self._dlg)
 
     # 保存文件
@@ -124,18 +150,21 @@ class MainPage(Main):
         try:
             modle_parent = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels",
                                      control_type="List")
+            modle_list = []
+            if len(modle_parent.children())==0:
+                LogRoot.error("零件列表为空")
+                return modle_list
             # 循环上滚，直到第一个序号为1
             while int(modle_parent.children()[0].texts()[0].split(".")[0]) != 1:
                 self.scroll(control=modle_parent, dist=1)
             # 第一页模型列表
             frist_modle_list = modle_parent.children()
             # 第一页模型名称列表
-            modle_list = []
+
             for i in frist_modle_list:
                 modle_list.append(i.texts()[0].split(".", 1)[1])
             if len(frist_modle_list) < 10:
                 # 第一页不够十个，直接返回名称列表
-                print(12)
                 return modle_list
             elif len(frist_modle_list) == 10:
                 pagesum = 10
@@ -147,7 +176,6 @@ class MainPage(Main):
                     page_index = int(now_parent.children()[-1].texts()[0].split(".", 1)[0])
                     now_page_sur = page_index - pagesum
                     if now_page_sur == 0:
-                        print(112)
                         return modle_list
                     elif now_page_sur < 3:
                         for i in modle_parent.children()[-now_page_sur:]:
@@ -217,7 +245,7 @@ class MainPage(Main):
             self.click(auto_id="FormMain.toolWidgte.pushButtonCopyParts", control_type="Button")
             return CopyFrame(self._dlg)
 
-    # 选中模型的模型参数
+    # 获取模型参数
     def model_info(self):
         """
         :return:字典--名称、参数 {'零件信息':
@@ -318,6 +346,25 @@ class MainPage(Main):
         except Exception as e:
             LogRoot.error("报错处理,oper有误！", e)
 
+    #删除模型
+    def del_model(self,dele="all"):
+
+        mate=self.find(auto_id="FormMain.toolWidgte.labeMaterial",isall=False)
+        merge=self.find(auto_id= "FormMain.leftWidget.FormPartList.pushButtonPartsMarge",isall=False)
+        mate_rect = mate.rectangle()
+        merge_rect = merge.rectangle()
+        click_x = mate_rect.right
+        click_y = merge_rect.bottom
+        mouse.click(coords=(click_x,click_y))
+        if dele is "all":
+            send_keys("^a""{DELETE}")
+        elif type(dele) is int:
+            self.click_modle(model_code=dele)
+            send_keys("{DELETE}")
+        else:
+            LogRoot.error("参数错误")
+
+
     def print_dlg(self):
         # print(type(self._dlg.print_control_identifiers()))
         self._dlg.print_control_identifiers()
@@ -343,4 +390,9 @@ if __name__ == '__main__':
     # a.jump_button(oper="支撑").input_parameter(support_parameter)
     # main._dlg.print_control_identifiers()
     # main.click(auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.pbParameter",isall=False)
-    print(main.click_modle(25))
+    # main.terminal().choice_membrane1(membrane_code=1)
+    # time.sleep(5)
+    # print(main.find(index="修复"))
+    # print(main.find(title="修复", auto_id="qtooltip_label", control_type="Window"))
+    # main._dlg.child_window(title="LuxCreo", auto_id="FormMain", control_type="Window").print_control_identifiers()
+    main.click_repair().repir_result(checkout=1)

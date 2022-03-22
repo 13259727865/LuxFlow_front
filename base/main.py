@@ -238,7 +238,9 @@ class Main:
     # 等待出现
     def wait(self, timeout=9999, **kwargs):
         # self.find(**kwargs).wait(wait_for="exists enabled visible ready", timeout=timeout)
-        self._dlg.child_window(**kwargs).wait(wait_for="exists enabled visible ready", timeout=timeout)
+        control = self._dlg.child_window(**kwargs)
+        control.wait(wait_for="exists enabled visible ready", timeout=timeout)
+        return control
 
     # 等待消失
     def wait_not(self, timeout=9999, **kwargs):
@@ -264,3 +266,11 @@ class Main:
         except:
             LogRoot.info("未及时捕捉到")
 
+    #鼠标悬浮
+    def mouse_suspension(self,control):
+        rect = control.rectangle()
+        print(rect.right,rect.left)
+        control_x = rect.left+(rect.right - rect.left)//2
+        outside_y = rect.top +(rect.bottom - rect.top)//2
+        print(control_x,outside_y)
+        mouse.move(coords=(control_x,outside_y))

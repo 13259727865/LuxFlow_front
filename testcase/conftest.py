@@ -14,7 +14,7 @@ def start_flow():
     LogRoot.info("打开（连接）LuxFlow，开始执行测试用例！！！")
     main = MainPage()
     yield main
-    LogRoot.info("用例执行完毕，关闭软件！！！")
+    # LogRoot.info("用例执行完毕，关闭软件！！！")
     # main.main_quit()
 
 def pytest_collection_modifyitems(items):

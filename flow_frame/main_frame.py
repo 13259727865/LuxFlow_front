@@ -33,7 +33,7 @@ class FrameSet(Main):
                 self.click(title="日本語", control_type="ListItem")
             elif language == "中":
                 self.click(title="中", control_type="ListItem")
-        except :
+        except:
             print("目前只支持参数：中、英、日")
         return children_texts
 
@@ -69,16 +69,125 @@ class TerminalFrame(Main):
                                     isall=False)
         return terminal_parent.children()
 
-    def choice_terminal(self, terminal_index):
-        choice_terminal_autoid = self.terminal_parent()[1].get_properties()["automation_id"]
-        choice_terminal_children = self.find(auto_id=choice_terminal_autoid, isall=False).children()
-        terminal_page = terminal_index // 6 + 1
-        # terminal_page_index
-        if terminal_page == 1:
-            self.click(control=choice_terminal_children[terminal_index])
-        elif terminal_page > 1:
-            pass
+    # 默认设备
+    def default_terminal(self):
+        default_terminal = \
+            self.find(auto_id="FormMain.toolWidgte.pbDevice", control_type="CheckBox", isall=False).texts()[0]
+        return default_terminal
 
+    # 选择设备
+    def choice_terminal(self, terminal_code):
+
+        choice_terminal_autoid = self.terminal_parent()[1].get_properties()["automation_id"]
+        choice_terminal = self.find(auto_id=choice_terminal_autoid, isall=False)
+        self.scroll(control=choice_terminal, dist=1)
+        if terminal_code <= 6:
+            self.click(control=self.find(auto_id=choice_terminal_autoid, isall=False).children()[terminal_code - 1])
+        elif terminal_code > 6:
+            self.scroll(control=choice_terminal, dist=-1)
+            terminal_code = terminal_code - 6
+            self.click(control=self.find(auto_id=choice_terminal_autoid, isall=False).children()[terminal_code - 1])
+        else:
+            LogRoot.error("参数错误或找不到该设备")
+
+    # 成形台选择
+    def choice_forming(self, forming_code=None):
+        forming = self.terminal_parent()[2].children()[0].children()[1]
+        if type(forming_code) is int:
+            self.click(control=forming)
+            self.click(control=forming.children()[0].children()[forming_code - 1])
+        return forming
+
+    # 选择膜
+    def choice_membrane(self, membrane_code=None):
+        forming = self.terminal_parent()[2].children()[0].children()[3]
+        if type(membrane_code) is int:
+            self.click(control=forming)
+            self.click(control=forming.children()[0].children()[membrane_code - 1])
+        return forming
+
+    # 确认or取消
+    def confirm_cancel(self, oper="confirm"):
+        """
+        :param oper: confirm(确认) or cancel(取消)
+        :return:
+        """
+        if oper is "confirm":
+            self.click(control=self.terminal_parent()[3])
+        elif oper is "cancel":
+            self.click(control=self.terminal_parent()[4])
+        else:
+            LogRoot.error("参数有误：oper: confirm(确认) or cancel(取消)")
+
+
+# 修复检测弹框
+class RepairModle(Main):
+    # 没有上传模型点击修复
+    def no_modle(self):
+        tips = self.wait(auto_id="FormMain.openGLWidget.FormVDFix.MyMessageBox.labelMessageText", control_type="Text")
+        text = tips.texts()[0]
+        return text
+
+    # 点击弹框提示中“好的”按钮
+    def tips_ok(self):
+        self.click(auto_id="FormMain.openGLWidget.FormVDFix.MyMessageBox.pbConfirm", control_type="CheckBox",
+                   isall=False)
+
+    def repair_parent(self):
+        repir_parent = self.find(title="Form", auto_id="FormMain.openGLWidget.FormVDFix",
+                               control_type="Window")
+        return repir_parent
+
+    # 检测结果
+    def testing_result(self, checkout=None):
+        """
+        :param checkout: None(default):默认不勾选最后两项
+                        1：勾选“反向三角面片”
+                        2：勾选“相交三角面片”
+                        3、同时勾选“反向三角面片”和“相交三角面片”
+        :return: 检测结果 {'坏边': '0', '孔洞': '0', '壳体': '1', '反向三角面片': '-', '相交三角面片': '-'}
+        """
+        testing_chil = self.testing_parent().children()
+        testing_result_dict = {}
+        if checkout:
+            if checkout == 1:
+                reverse = testing_chil[14]
+                reverse_status = reverse.get_toggle_state()
+                if reverse_status == 0:
+                    self.click(control=reverse)
+                else:
+                    LogRoot.error("反向三角已经是勾选状态，无需勾选")
+            elif checkout == 2:
+                intersect = testing_chil[17]
+                reverse_status = intersect.get_toggle_state()
+                if reverse_status == 0:
+                    self.click(control=intersect)
+                else:
+                    LogRoot.error("相交三角已经是勾选状态，无需勾选")
+            elif checkout == 3:
+                reverse = testing_chil[14]
+                reverse_status = reverse.get_toggle_state()
+                if reverse_status == 0:
+                    self.click(control=reverse)
+                intersect = testing_chil[17]
+                reverse_status = intersect.get_toggle_state()
+                if reverse_status == 0:
+                    self.click(control=intersect)
+
+        for i in testing_chil[5:19:3]:
+            testing_result_dict[i.texts()[0]] = testing_chil[testing_chil.index(i) + 2].texts()[0]
+        return testing_result_dict
+
+
+    #检测按钮
+    def testing_button(self):
+        testing_button = self.repair_parent().children()[20]
+        self.click(control=testing_button)
+
+    #修复按钮
+    def repair_button(self):
+        repair_button = self.repair_parent().children()[21]
+        self.click(control=repair_button)
 
 class CopyFrame(Main):
     # 复制弹框
