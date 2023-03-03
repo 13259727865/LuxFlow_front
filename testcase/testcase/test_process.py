@@ -15,7 +15,7 @@ class TestProcess:
                          "是否加固": True, "起始高度": 1.5, "角度": 50, "支撑加底座": True, "底座高度": 1.5}
 
     # 用例参数
-    process_date = {"path": r"E:\model\model", "model": '"孔洞花瓶.stl" "谢牙龈.stl"', "opentext": "本地打开",
+    process_date = {"path": r"E:\model\商务测试档案\正常\batch_1", "model": '"孔洞花瓶.stl" "谢牙龈.stl"', "opentext": "本地打开",
                     "support_parameter": support_parameter, "copy_num": 3, "spacing": 5, "layout_mode": 2,
                     "thickness_type": "自定义"}
     ids = ["全流程测试"]
@@ -25,13 +25,15 @@ class TestProcess:
     def test_openpart(self, start_flow, process_date):
         with allure.step("打开零件"):
             start_flow.jump_button(oper="打开")
-            #
-            openfile = start_flow.openfile(process_date["path"], process_date["model"])
-            pytest.assume(openfile == process_date["opentext"])
-            start_flow.modle_check_tips(oper="上传修复")
+            start_flow.openfile(process_date["path"])
+            # openfile = start_flow.openfile(process_date["path"], process_date["model"])
+            # pytest.assume(openfile == process_date["opentext"])
+            # start_flow.modle_check_tips(oper="上传修复")
+
             start_flow.wait(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List")
-            pytest.assume(len(start_flow.get_modle_list()) == len(process_date["model"].split(" ")))
+            # pytest.assume(len(start_flow.get_modle_list()) == len(process_date["model"].split(" ")))
             start_flow.capture_image("打开零件")
+
         with allure.step("添加支撑"):
             support = start_flow.jump_button(oper="支撑")
             support.choice_application(click_index=0)

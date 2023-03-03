@@ -1,0 +1,20 @@
+[2022-03-15 16:12:12,426][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-03-15 16:12:27,890][main.py 219][INFO]: 已保存截图至E:\LuxFlow_front\picture\进入LuxFlow_20220315161226.png
+[2022-03-15 16:12:29,955][main_page.py 261][INFO]: 点击本地打开按钮
+[2022-03-15 16:12:33,139][main.py 62][INFO]: 孔洞花瓶.stl已打开
+[2022-03-15 16:12:34,227][main_page.py 38][INFO]: 发现检测修复弹框,是否修复
+[2022-03-15 16:12:34,227][main_page.py 50][INFO]: 忽略
+[2022-03-15 16:12:36,144][main.py 219][INFO]: 已保存截图至E:\LuxFlow_front\picture\导入模型_20220315161235.png
+[2022-03-15 16:12:44,927][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-03-15 16:12:56,714][main.py 219][INFO]: 已保存截图至E:\LuxFlow_front\picture\进入LuxFlow_20220315161256.png
+[2022-03-15 16:12:58,512][main_page.py 261][INFO]: 点击本地打开按钮
+[2022-03-15 16:13:04,593][main.py 219][INFO]: 已保存截图至E:\LuxFlow_front\picture\进入LuxFlow_20220315161304.png
+[2022-03-15 16:13:06,526][main_page.py 261][INFO]: 点击本地打开按钮
+[2022-03-15 16:13:11,768][conftest.py 17][INFO]: 用例执行完毕，关闭软件！！！
+[2022-03-15 16:19:03,097][main_page.py 96][INFO]: (默认设备iLux Pro 8.9)
+[2022-03-15 16:20:34,564][main_page.py 96][INFO]: (默认设备iLux Pro 8.9)
+[2022-03-15 16:22:52,324][main_page.py 96][INFO]: (默认设备iLux Pro 8.9)
+[2022-03-15 16:23:43,577][main_page.py 96][INFO]: (默认设备iLux Pro 8.9)
+[2022-03-15 16:25:46,566][main_page.py 96][INFO]: (默认设备iLux Pro 8.9)
+[2022-03-15 16:30:00,962][main_page.py 96][INFO]: (默认设备iLux Pro 8.9)
+[2022-03-15 16:30:17,638][main_page.py 96][INFO]: (默认设备iLux Pro 8.9)

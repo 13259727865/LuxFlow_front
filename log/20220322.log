@@ -1,0 +1,23 @@
+[2022-03-22 15:43:28,474][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-03-22 15:43:46,183][main.py 219][INFO]: 已保存截图至E:\LuxFlow_front\picture\进入LuxFlow_20220322154344.png
+[2022-03-22 15:44:49,338][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-03-22 15:44:50,052][main.py 219][INFO]: 已保存截图至E:\LuxFlow_front\picture\进入LuxFlow_20220322154449.png
+[2022-03-22 15:44:52,805][main_page.py 282][INFO]: 点击本地打开按钮
+[2022-03-22 15:44:56,975][main.py 62][INFO]: "孔洞花瓶.stl" "孔洞花瓶.stl"已打开
+[2022-03-22 15:44:58,077][main_page.py 59][INFO]: 发现检测修复弹框,是否修复
+[2022-03-22 15:44:58,078][main_page.py 71][INFO]: 忽略
+[2022-03-22 15:45:06,939][main.py 219][INFO]: 已保存截图至E:\LuxFlow_front\picture\未选择模型_20220322154506.png
+[2022-03-22 15:47:06,587][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-03-22 15:47:07,346][main.py 219][INFO]: 已保存截图至E:\LuxFlow_front\picture\进入LuxFlow_20220322154706.png
+[2022-03-22 15:47:09,961][main_page.py 282][INFO]: 点击本地打开按钮
+[2022-03-22 15:47:13,337][main.py 62][INFO]: "孔洞花瓶.stl" "孔洞花瓶.stl"已打开
+[2022-03-22 15:47:14,364][main_page.py 59][INFO]: 发现检测修复弹框,是否修复
+[2022-03-22 15:47:14,364][main_page.py 71][INFO]: 忽略
+[2022-03-22 15:47:21,591][main.py 219][INFO]: 已保存截图至E:\LuxFlow_front\picture\未选择模型_20220322154720.png
+[2022-03-22 15:48:15,441][conftest.py 14][INFO]: 打开（连接）LuxFlow，开始执行测试用例！！！
+[2022-03-22 15:48:16,181][main.py 219][INFO]: 已保存截图至E:\LuxFlow_front\picture\进入LuxFlow_20220322154815.png
+[2022-03-22 15:48:18,722][main_page.py 282][INFO]: 点击本地打开按钮
+[2022-03-22 15:48:22,060][main.py 62][INFO]: "孔洞花瓶.stl" "孔洞花瓶.stl"已打开
+[2022-03-22 15:48:22,995][main_page.py 59][INFO]: 发现检测修复弹框,是否修复
+[2022-03-22 15:48:22,995][main_page.py 71][INFO]: 忽略
+[2022-03-22 15:48:30,225][main.py 219][INFO]: 已保存截图至E:\LuxFlow_front\picture\未选择模型_20220322154829.png

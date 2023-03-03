@@ -136,10 +136,20 @@ class RepairModle(Main):
     def repair_parent(self):
         repir_parent = self.find(title="Form", auto_id="FormMain.openGLWidget.FormVDFix",
                                control_type="Window")
+
         return repir_parent
 
     # 检测结果
-    def testing_result(self, checkout=None):
+    def testing_result(self):
+        testing_result_dict = {}
+        testing_chil = self.repair_parent().children()
+        for i in testing_chil[5:19:3]:
+            testing_result_dict[i.texts()[0]] = testing_chil[testing_chil.index(i) + 2].texts()[0]
+        return testing_result_dict
+
+
+    #检测按钮,可勾选三角面片
+    def testing_button(self, checkout=None):
         """
         :param checkout: None(default):默认不勾选最后两项
                         1：勾选“反向三角面片”
@@ -147,8 +157,7 @@ class RepairModle(Main):
                         3、同时勾选“反向三角面片”和“相交三角面片”
         :return: 检测结果 {'坏边': '0', '孔洞': '0', '壳体': '1', '反向三角面片': '-', '相交三角面片': '-'}
         """
-        testing_chil = self.testing_parent().children()
-        testing_result_dict = {}
+        testing_chil = self.repair_parent().children()
         if checkout:
             if checkout == 1:
                 reverse = testing_chil[14]
@@ -173,21 +182,49 @@ class RepairModle(Main):
                 reverse_status = intersect.get_toggle_state()
                 if reverse_status == 0:
                     self.click(control=intersect)
-
-        for i in testing_chil[5:19:3]:
-            testing_result_dict[i.texts()[0]] = testing_chil[testing_chil.index(i) + 2].texts()[0]
-        return testing_result_dict
-
-
-    #检测按钮
-    def testing_button(self):
         testing_button = self.repair_parent().children()[20]
         self.click(control=testing_button)
+        self.wait_time(auto_id="FormMain.openGLWidget.CProgress.widgetTitle", control_type="Group")
+
 
     #修复按钮
     def repair_button(self):
         repair_button = self.repair_parent().children()[21]
         self.click(control=repair_button)
+        self.wait_time(auto_id="FormMain.openGLWidget.CProgress.widgetTitle", control_type="Group")
+
+        # child_window(title="旋转", auto_id="FormMain.openGLWidget.CProgress", control_type="Window")
+        # | |
+        # | | GroupBox - ''(L2560, T428, R3200, B474)
+        # | | ['GroupBox', '检测中，请等待GroupBox', 'GroupBox0', 'GroupBox1']
+        # | | child_window(auto_id="FormMain.openGLWidget.CProgress.widgetTitle", control_type="Group")
+        # | | |
+        # | | | Static - '检测中，请等待'(L2590, T428, R2745, B474)
+        # | | | ['检测中，请等待Static', '检测中，请等待', 'Static', 'Static0', 'Static1']
+        # | | | child_window(title="检测中，请等待", auto_id="FormMain.openGLWidget.CProgress.widgetTitle.popTitle",
+        #                    control_type="Text")
+        # | | |
+        # | | | Button - ''(L3140, T431, R3180, B471)
+        # | | | ['检测中，请等待Button', 'Button', 'Button0', 'Button1']
+        # | | | child_window(auto_id="FormMain.openGLWidget.CProgress.widgetTitle.pbPopClose", control_type="Button")
+        # | |
+        # | | Progress - ''(L2590, T514, R3170, B530)
+        # | | ['Progress', '检测中，请等待Progress']
+        # | | child_window(auto_id="FormMain.openGLWidget.CProgress.progressBar", control_type="ProgressBar")
+        # | |
+        # | | Static - '已用时：00:00:03'(L2590, T540, R3170, B562)
+        # | | ['已用时：00:00:03', '已用时：00:00:03Static', 'Static2']
+        # | | child_window(title="已用时：00:00:03", auto_id="FormMain.openGLWidget.CProgress.labelProcessTime",
+        #                  control_type="Text")
+        # | |
+        # | | CheckBox - '取消'(L3050, T572, R3170, B612)
+        # | | ['取消', 'CheckBox', '取消CheckBox', 'CheckBox0', 'CheckBox1']
+        # | | child_window(title="取消", auto_id="FormMain.openGLWidget.CProgress.pbCancel", control_type="CheckBox")
+
+    #关闭修复弹框
+    def close_repair(self):
+        close_button = self.repair_parent().children()[0].children()[1]
+        self.click(control=close_button)
 
 class CopyFrame(Main):
     # 复制弹框

@@ -38,6 +38,8 @@ class MainPage(Main):
     #点击修复打开弹框
     def click_repair(self):
         self.click(control=self.repair_button())
+        self.wait(title="Form", auto_id="FormMain.openGLWidget.FormVDFix",
+                               control_type="Window")
         return RepairModle(self._dlg)
 
 
@@ -147,6 +149,7 @@ class MainPage(Main):
         """
         :return: 列表lcon，列表名称，列表内容列表
         """
+        # auto_id = "FormMain.splitter.partListUi.listModels", control_type = "List"
         try:
             modle_parent = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels",
                                      control_type="List")
@@ -268,7 +271,7 @@ class MainPage(Main):
             LogRoot.error("报错处理", e)
 
     # 打开零件
-    def openfile(self, path, model):
+    def openfile(self, path,model="all"):
         """
         :param path: 模型路径
         :param model: 模型名称，多模型例 '"格子收纳盒.stl""heart.stl"'
@@ -280,7 +283,7 @@ class MainPage(Main):
             self.click(title="本地打开", auto_id="FormMain.rightwidget.stackedWidget.FormLoad.pbLocal",
                        control_type="Button")
             LogRoot.info("点击本地打开按钮")
-            self.win_desktop(win_title="打开文件", path_bar="Toolbar4", path=path, filename=model)
+            self.win_desktop(win_title="打开文件", path_bar="Toolbar4", path=path,filename=model)
             self.wait_not(auto_id="FormMain.openGLWidget.CProgress.widgetTitle")
             return openfile_text
         except Exception as e:
@@ -315,9 +318,9 @@ class MainPage(Main):
             LogRoot.error("报错处理", e)
 
     # 下方跳转按钮
-    def jump_button(self, oper="切片"):
+    def jump_button(self, oper="打开"):
         try:
-            button_parent = self.find(auto_id="FormMain.openGLWidget.FormWizard.buttonWidget",
+            button_parent = self.find(auto_id="FormMain.splitter.openGLWidget.FormWizard.buttonWidget",
                                       control_type="Group").children()
             if oper == "打开":
                 # 打开
@@ -328,41 +331,46 @@ class MainPage(Main):
                 self.click(control=button_parent[2])
                 LogRoot.info("进入支撑页")
                 return Support(self._dlg)
-            elif oper == "布局":
-                # 布局
-                self.click(control=button_parent[4])
-                LogRoot.info("进入布局页")
-                return Batch(self._dlg)
-            elif oper == "编码":
-                # 编码
-                self.click(control=button_parent[6])
-                LogRoot.info("进入编码页")
-                return Marking(self._dlg)
+            # elif oper == "布局":
+            #     # 布局
+            #     self.click(control=button_parent[4])
+            #     LogRoot.info("进入布局页")
+            #     return Batch(self._dlg)
+            # elif oper == "编码":
+            #     # 编码
+            #     self.click(control=button_parent[6])
+            #     LogRoot.info("进入编码页")
+            #     return Marking(self._dlg)
             elif oper == "切片":
                 # 切片
-                self.click(control=button_parent[8])
+                self.click(control=button_parent[4])
                 LogRoot.info("进入切片页")
                 return Slice(self._dlg)
         except Exception as e:
             LogRoot.error("报错处理,oper有误！", e)
 
-    #删除模型
-    def del_model(self,dele="all"):
-
-        mate=self.find(auto_id="FormMain.toolWidgte.labeMaterial",isall=False)
-        merge=self.find(auto_id= "FormMain.leftWidget.FormPartList.pushButtonPartsMarge",isall=False)
+    #选中全部或某个模型
+    def choice_model(self,model_sum="all"):
+        mate = self.find(auto_id="FormMain.toolWidgte.labeMaterial", isall=False)
+        merge = self.find(auto_id="FormMain.leftWidget.FormPartList.pushButtonPartsMarge", isall=False)
         mate_rect = mate.rectangle()
         merge_rect = merge.rectangle()
         click_x = mate_rect.right
         click_y = merge_rect.bottom
-        mouse.click(coords=(click_x,click_y))
-        if dele is "all":
-            send_keys("^a""{DELETE}")
-        elif type(dele) is int:
-            self.click_modle(model_code=dele)
-            send_keys("{DELETE}")
+        mouse.click(coords=(click_x, click_y))
+        if model_sum is "all":
+            send_keys("^a")
+        elif type(model_sum) is int:
+            self.click_modle(model_code=model_sum)
         else:
             LogRoot.error("参数错误")
+
+
+    #删除模型
+    def del_model(self,dele="all"):
+        self.choice_model(model_sum=dele)
+        send_keys("{DELETE}")
+
 
 
     def print_dlg(self):
@@ -394,5 +402,9 @@ if __name__ == '__main__':
     # time.sleep(5)
     # print(main.find(index="修复"))
     # print(main.find(title="修复", auto_id="qtooltip_label", control_type="Window"))
-    # main._dlg.child_window(title="LuxCreo", auto_id="FormMain", control_type="Window").print_control_identifiers()
-    main.click_repair().repir_result(checkout=1)
+    # main.print_dlg()
+    # path = r"E:\model\商务测试档案\正常\batch_1"
+    # main.openfile(path=path)
+    a = main.click(title="项目视图", control_type="List")
+
+    print(a)

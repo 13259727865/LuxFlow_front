@@ -41,7 +41,7 @@ class Main:
             self._dlg = dlg
 
     # 打开windows弹框
-    def win_desktop(self, win_title,path, filename, path_bar=None):
+    def win_desktop(self, win_title,path, filename="all", path_bar=None):
         """
         :param win_title: 弹框title
         :param path_bar: path输入框index
@@ -55,9 +55,13 @@ class Main:
         openconf[path_bar].click()
         send_keys(path)
         send_keys("{VK_RETURN}")
-        file = openconf.child_window(class_name="Edit")
-        file.click()
-        send_keys(filename)
+        if filename is "all":
+            self.click(title="项目视图", control_type="List")
+            send_keys("^a")
+        else:
+            file = openconf.child_window(class_name="Edit")
+            file.click()
+            send_keys(filename)
         self.click(openconf["打开"])
         LogRoot.info(f"{filename}已打开")
 

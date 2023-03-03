@@ -27,7 +27,18 @@ class SupportFrame(Main):
     # 保存
     def save_button(self):
         self.click(auto_id="FormSupportCfgSaveName.pushButtonSave", control_type="Button", isall=False)
+        self.wait(title="Dialog", auto_id="FormSupportCfgSaveName.MyMessageBox", control_type="Window")
+        text = self.find(title="Dialog", auto_id="FormSupportCfgSaveName.MyMessageBox", control_type="Window").children()[2]
         LogRoot.info("保存")
+        return text
+
+    #保存后续操作
+    def save_follow(self,oper="ok"):
+        self.find(title="Dialog", auto_id="FormSupportCfgSaveName.MyMessageBox", control_type="Window").children()
+
+
+
+
 
     # 取消
     def cancel_button(self):
