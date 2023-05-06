@@ -62,3 +62,13 @@ class SliceFrame(Main):
         self.capture_image(img_doc="切片后截图")
         LogRoot.info("准备跳转进入上传页")
         return Upload(self._dlg).slice_results()
+
+    def save_file(self,filename,path):
+        self.click(auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.pbExportSlice", control_type="Button",isall=False)
+        self.win_desktop(win_title="保存", path_bar="Toolbar4",filename=filename, path=path)
+        self.wait_not(auto_id="FormMain.splitter.openGLWidget.CProgress.widgetTitle", control_type="Group")
+
+    def save_frame(self):
+        ok_button = self.find(auto_id="FormMain.splitter.openGLWidget.MyMessageBox.pbConfirm", control_type="CheckBox",isall=False)
+        self.wait(title="保存成功", auto_id="FormMain.splitter.openGLWidget.MyMessageBox.labelMessageText", control_type="Text")
+        self.click(ok_button)

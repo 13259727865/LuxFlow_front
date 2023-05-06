@@ -3,7 +3,8 @@
 # @author:Gemini
 # @time:  2022/1/13:15:29
 # @email: 13259727865@163.com
-
+import os
+from datetime import datetime
 
 import allure
 import pytest
@@ -18,42 +19,41 @@ class TestProcess:
     process_date = {"path": r"E:\model\商务测试档案\正常\batch_1", "model": '"孔洞花瓶.stl" "谢牙龈.stl"', "opentext": "本地打开",
                     "support_parameter": support_parameter, "copy_num": 3, "spacing": 5, "layout_mode": 2,
                     "thickness_type": "自定义"}
+    path = process_date["path"]+r"\save"
     ids = ["全流程测试"]
 
     @allure.story("全流程测试")
     @pytest.mark.parametrize("process_date", [process_date], ids=ids)
     def test_openpart(self, start_flow, process_date):
-        with allure.step("打开零件"):
-            start_flow.jump_button(oper="打开")
-            start_flow.openfile(process_date["path"])
-            # openfile = start_flow.openfile(process_date["path"], process_date["model"])
-            # pytest.assume(openfile == process_date["opentext"])
-            # start_flow.modle_check_tips(oper="上传修复")
+        Path = 'E:\\model\\auto_test\\'
+        for i in os.listdir(Path):
 
-            start_flow.wait(auto_id="FormMain.leftWidget.FormPartList.listModels", control_type="List")
-            # pytest.assume(len(start_flow.get_modle_list()) == len(process_date["model"].split(" ")))
-            start_flow.capture_image("打开零件")
-
-        with allure.step("添加支撑"):
-            support = start_flow.jump_button(oper="支撑")
-            support.choice_application(click_index=0)
-            support.input_parameter(process_date["support_parameter"])
-            # 选中列表中第1个模型
-            start_flow.click(control=start_flow.click_modle(1))
-            support_frame = support.support_oper()
-            support_frame.support_time()
-        with allure.step("复制零件"):
-            copy = start_flow.copy_file()
-            copy.copy_num(process_date["copy_num"])
-            copy.copy()
-            copy.copyFrame_close()
-        with allure.step("布局"):
-            batch = support.next_step()
-            batch.set_spacing(spacing=process_date["spacing"])
-            batch.layout_mode(mode=process_date["layout_mode"])
-            batch.layout().batch_times()
-            slice = start_flow.jump_button()
-        with allure.step("切片"):
-            slice.choice_thickness_type(type=process_date["thickness_type"])
-            pytest.assume(slice.slice().slice_time() is not False)
-            # assert slice.slice().slice_time() is not False
+            filepath = Path + i + '\\'
+            with allure.step("打开零件"):
+                start_flow.jump_button(oper="open")
+                start_flow.all_model(delet=True)
+                start_flow.openfile(filepath)
+                # openfile = start_flow.openfile(process_date["path"], process_date["model"])
+                # pytest.assume(openfile == process_date["opentext"])
+                # start_flow.modle_check_tips(oper="上传修复")
+                start_flow.wait(auto_id="FormMain.splitter.partListUi", control_type="Group")
+                # pytest.assume(len(start_flow.get_modle_list()) == len(process_date["model"].split(" ")))
+                start_flow.capture_image("open_model")
+            with allure.step("添加辅助支撑、整齐布局"):
+                orientation = start_flow.auxiliary_support(all=True)
+                orientation=start_flow.toolWidgte_button(409)
+                orientation.orientation(0)
+                orientation.add()
+                orientation.layout()
+                orientation.close()
+            with allure.step("切片"):
+                start_flow.jump_button(oper="slice")
+                slice = start_flow.slice()
+            with allure.step("导出切片"):
+                filename = datetime.now().strftime('%Y%m%d')
+                os.chdir(filepath)
+                if (filename in os.listdir()) is False:
+                    print(filename in os.listdir())
+                    os.mkdir(filename)
+                slice.save_file(filename="test001", path=filepath+filename)
+                slice.save_frame()

@@ -3,6 +3,7 @@
 # @author:Gemini
 # @time:  2021/11/9:10:10
 # @email: 13259727865@163.com
+import threading
 import time
 import os
 
@@ -27,6 +28,7 @@ class Main:
     _page_process = _jsonio["process"]
 
     def __init__(self, dlg: WindowSpecification = None):
+
         if dlg is None:
             self._app = application.Application(backend='uia')
             if self._page_path != "":
@@ -36,9 +38,21 @@ class Main:
                 elif self._jsonio["action"] == "connect":
                     self._app.connect(process=self._page_process)
                 self._dlg = self._app["Dialog"]
-
+                process_online = threading.Thread(target=self.process_online)
+                process_online.start()
         else:
             self._dlg = dlg
+
+    def process_online(self):
+        LogRoot.info("进程已开启,开启新新线程监控运行状况")
+        while self._app.is_process_running():
+            time.sleep(3)
+        if self._app.is_process_running() is False:
+            LogRoot.info("进程非正常关闭！！！")
+            LogRoot.info("进程非正常关闭！！！")
+            LogRoot.info("进程非正常关闭！！！")
+            return
+
 
     # 打开windows弹框
     def win_desktop(self, win_title,path, filename="all", path_bar=None):
@@ -55,20 +69,29 @@ class Main:
         openconf[path_bar].click()
         send_keys(path)
         send_keys("{VK_RETURN}")
-        if filename is "all":
-            self.click(title="项目视图", control_type="List")
-            send_keys("^a")
-        else:
+        if win_title == "保存":
             file = openconf.child_window(class_name="Edit")
             file.click()
             send_keys(filename)
-        self.click(openconf["打开"])
-        LogRoot.info(f"{filename}已打开")
+            send_keys("{VK_RETURN}")
+            LogRoot.info(f"{filename}已保存")
+        else:
+            if filename is "all":
+                self.click(title="项目视图", control_type="List")
+                send_keys("^a")
+            else:
+                file = openconf.child_window(class_name="Edit")
+                file.click()
+                send_keys(filename)
+            self.click(openconf["打开"])
+            LogRoot.info(f"{filename}已打开")
+
+
 
     def find(self, index=None, isall=True, text=False, **kwargs):
         """
         :param index: 随机序列名，部分控件容易变化
-        :param isall: True and False，判断kwargs是否是想查找的全部，False会对未填字段至 ”“
+        :param isall: True and False，判断kwargs是否是想查找的全部，False会对未填字段至 ”“,刻意少字段选False
         :param text :是否返回text
         :param kwargs: child_window内容
         :return: pywinauto.application控件
@@ -139,6 +162,25 @@ class Main:
         self.click(**kwargs)
         send_keys("^a")
         send_keys(str(value))
+
+
+    def model_shift(self):
+        #零件信息中长的坐标，取竖坐标
+        long = self.find(auto_id="FormMain.splitter.partListUi.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelLenth", control_type="Text",isall=False).rectangle()
+        model_top = long.top
+        #下方按钮第一个小三角，取横坐标
+        shu = self.find(auto_id="FormMain.splitter.openGLWidget.FormWizard.buttonWidget.loadWizardLabel", control_type="Image").rectangle()
+        model_left = shu.left
+        print(model_left)
+        pywinauto.mouse.press(button="right",coords=(model_left,model_top))
+        for i in range(10):
+            i =+ 100
+            pywinauto.mouse.press(button="right",coords=(model_left,model_top+i))
+        pywinauto.mouse.release(button="right", coords=(model_left,model_top))
+        for i in range(10):
+            i = + 100
+            pywinauto.mouse.release(button="right", coords=(model_left - i, model_top + i))
+        pywinauto.mouse.release(button="right", coords=(model_left, model_top))
 
     #在空间内滚动
     def scroll(self,control,dist):
@@ -278,3 +320,31 @@ class Main:
         outside_y = rect.top +(rect.bottom - rect.top)//2
         print(control_x,outside_y)
         mouse.move(coords=(control_x,outside_y))
+
+    def select_model(self,select="all",delet=False):
+        # long = self.find(
+        #     auto_id="FormMain.splitter.partListUi.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.labelLenth",
+        #     control_type="Text", isall=False).rectangle()
+        # model_top = long.top
+        if select == "all":
+            # 下方按钮第一个小三角，取横坐标
+            shu = self.find(auto_id="FormMain.splitter.openGLWidget.FormWizard.buttonWidget.loadWizardLabel",
+                            control_type="Image").rectangle()
+            model_left = shu.left
+            pywinauto.mouse.double_click(button="left", coords=(model_left, model_left-200))
+            send_keys("^a")
+            LogRoot.info("模型全选")
+        elif type(select) is int:
+            pass
+        if delet is True:
+            send_keys('{VK_DELETE}')
+
+
+    def add_model_file(self):
+        filename = datetime.now().strftime('%Y%m%d')
+        os.mkdir(filename)
+
+
+if __name__ == '__main__':
+    a = Main()
+    a.add_model_file()

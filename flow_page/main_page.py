@@ -3,14 +3,19 @@
 # @author:Gemini
 # @time:  2021/11/9:11:00
 # @email: 13259727865@163.com
+import os
 import time
+from datetime import datetime
+from multiprocessing import Process
 
+import pywinauto
 from pywinauto import mouse
 from pywinauto.keyboard import send_keys
 
 from common.io import JsonIO
 from base.main import Main
 from common.logger import LogRoot
+from flow_frame.buttons_frame import ToolWidgteButton
 from flow_frame.main_frame import TerminalFrame, MaterialFrame, FrameSet, CopyFrame, RepairModle
 from flow_frame.slice_frame import SliceFrame
 from flow_page.batch import Batch
@@ -22,26 +27,24 @@ from flow_page.support import Support
 class MainPage(Main):
     _page_path = JsonIO().read_json()["path"]
 
-    #上排控件父项
+    # 上排控件父项
     def button_parent(self):
-        button_parent=self.find(auto_id="FormMain.toolWidgte", control_type="Group")
+        button_parent = self.find(auto_id="FormMain.toolWidgte", control_type="Group")
         # buttons = button_parent.children()
         return button_parent
 
-
-    #修复按钮
+    # 修复按钮
     def repair_button(self):
         # self._dlg.print_control_identifiers()
         repair_button = self.button_parent().children()[12]
         return repair_button
 
-    #点击修复打开弹框
+    # 点击修复打开弹框
     def click_repair(self):
         self.click(control=self.repair_button())
         self.wait(title="Form", auto_id="FormMain.openGLWidget.FormVDFix",
-                               control_type="Window")
+                  control_type="Window")
         return RepairModle(self._dlg)
-
 
     # 零件破损检测提示
     def modle_check_tips(self, oper="忽略"):
@@ -119,7 +122,6 @@ class MainPage(Main):
         LogRoot.info(f"(默认设备{default_terminal})")
         return TerminalFrame(self._dlg)
 
-
     def material(self):
         # 材料图标
         material_lcon = self.find(auto_id="FormMain.toolWidgte.labeMaterial", control_type="Text")
@@ -154,7 +156,7 @@ class MainPage(Main):
             modle_parent = self.find(auto_id="FormMain.leftWidget.FormPartList.listModels",
                                      control_type="List")
             modle_list = []
-            if len(modle_parent.children())==0:
+            if len(modle_parent.children()) == 0:
                 LogRoot.error("零件列表为空")
                 return modle_list
             # 循环上滚，直到第一个序号为1
@@ -248,6 +250,18 @@ class MainPage(Main):
             self.click(auto_id="FormMain.toolWidgte.pushButtonCopyParts", control_type="Button")
             return CopyFrame(self._dlg)
 
+    def button_parents(self):
+        button_parent = self.find(auto_id="FormMain.toolWidgte.widgetButton", control_type="Group")
+        button_auto = button_parent.children()
+        return button_auto
+
+    def auxiliary_support(self, all=False):
+        if all is True:
+            # 零件信息中长的坐标，取竖坐标
+            self.select_model()
+        self.click(self.button_parents()[7])
+        return ToolWidgteButton(self._dlg)
+
     # 获取模型参数
     def model_info(self):
         """
@@ -271,7 +285,7 @@ class MainPage(Main):
             LogRoot.error("报错处理", e)
 
     # 打开零件
-    def openfile(self, path,model="all"):
+    def openfile(self, path, model="all"):
         """
         :param path: 模型路径
         :param model: 模型名称，多模型例 '"格子收纳盒.stl""heart.stl"'
@@ -283,7 +297,7 @@ class MainPage(Main):
             self.click(title="本地打开", auto_id="FormMain.rightwidget.stackedWidget.FormLoad.pbLocal",
                        control_type="Button")
             LogRoot.info("点击本地打开按钮")
-            self.win_desktop(win_title="打开文件", path_bar="Toolbar4", path=path,filename=model)
+            self.win_desktop(win_title="打开文件", path_bar="Toolbar4", path=path, filename=model)
             self.wait_not(auto_id="FormMain.openGLWidget.CProgress.widgetTitle")
             return openfile_text
         except Exception as e:
@@ -318,11 +332,11 @@ class MainPage(Main):
             LogRoot.error("报错处理", e)
 
     # 下方跳转按钮
-    def jump_button(self, oper="打开"):
+    def jump_button(self, oper="open"):
         try:
             button_parent = self.find(auto_id="FormMain.splitter.openGLWidget.FormWizard.buttonWidget",
                                       control_type="Group").children()
-            if oper == "打开":
+            if oper == "open":
                 # 打开
                 self.click(control=button_parent[0])
                 LogRoot.info("进入打开页")
@@ -341,7 +355,7 @@ class MainPage(Main):
             #     self.click(control=button_parent[6])
             #     LogRoot.info("进入编码页")
             #     return Marking(self._dlg)
-            elif oper == "切片":
+            elif oper == "slice":
                 # 切片
                 self.click(control=button_parent[4])
                 LogRoot.info("进入切片页")
@@ -349,8 +363,8 @@ class MainPage(Main):
         except Exception as e:
             LogRoot.error("报错处理,oper有误！", e)
 
-    #选中全部或某个模型
-    def choice_model(self,model_sum="all"):
+    # 选中全部或某个模型
+    def choice_model(self, model_sum="all"):
         mate = self.find(auto_id="FormMain.toolWidgte.labeMaterial", isall=False)
         merge = self.find(auto_id="FormMain.leftWidget.FormPartList.pushButtonPartsMarge", isall=False)
         mate_rect = mate.rectangle()
@@ -365,46 +379,55 @@ class MainPage(Main):
         else:
             LogRoot.error("参数错误")
 
-
-    #删除模型
-    def del_model(self,dele="all"):
+    # 删除模型
+    def del_model(self, dele="all"):
         self.choice_model(model_sum=dele)
         send_keys("{DELETE}")
 
+    # 切片按钮
+    def slice(self):
+        self.click(auto_id="FormMain.nextStepWidget.pbNextStep", control_type="Button", isall=False)
+        self.wait_not(auto_id="FormMain.splitter.openGLWidget.CProgress.widgetTitle", control_type="Group")
+        return SliceFrame(self._dlg)
 
+    def toolWidgte_button(self, index: int):
+        """
+        上方按钮入口
+        :param index:   0选择设备、1保存、2撤回、3取消撤回、
+                        400移动、401旋转、402缩放、403贴底、404底座构建、405底座增高、406镜像、407复制、409辅助支撑、410切割、411抽壳、412打洞、
+                        413修复、414测量、415布局、416编码、418合并拆分、419产生基本模型、420布尔、421相似度分析、422透视、423成型台、                        501正视图、502后视图、503左视图、504右视图、505俯视图、506仰视图
+        :return:
+        """
 
-    def print_dlg(self):
-        # print(type(self._dlg.print_control_identifiers()))
-        self._dlg.print_control_identifiers()
-        # self._dlg.capture_as_image().save("./111.png")
-        # 材料温度设置
-        # self._dlg.child_window(auto_id="FormMain.FormEditParameter").print_control_identifiers()
-        # self.click(control=self._dlg.child_window(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.deviceList", control_type="List").children()[2])
+        toolWidgte_autoid = "FormMain.toolWidgte"
+        ch = self.find(auto_id=toolWidgte_autoid, isall=False).children()
+        try:
+            if index <= 3:
+                self.click(ch[index])
 
-        # self._dlg.child_window(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.
-        # qt_scrollarea_viewport.scrollAreaWidgetContents.cbpara", control_type="ComboBox").texts()
-        # button = self.find(auto_id="FormMain.rightwidget.stackedWidget.FormSupports.scrollArea.qt_scrollarea_viewport.
-        # scrollAreaWidgetContents.widgetBarBase.pushButtonBase",
-        # auto_id="FormMain.FormEditParameter.FormSaveModel.widgetTitle.popTitle"
+            elif index // 100 == 5:
+                self.click(ch[index // 100].children()[index % 100])
+
+            elif index // 100 == 4:
+                ch[4].children()
+                self.click(ch[index // 100].children()[index % 100])
+            else:
+                LogRoot.error("报错处理", index, "error")
+                return
+            return ToolWidgteButton(self._dlg)
+        except Exception as e:
+            LogRoot.error("报错处理", e)
+
+    def print_dlg(self, name):
+        now = datetime.now()
+        print("hello, world")
+        print(now, 111, name)
+
+    def print_dlg2(self, name):
+        now = datetime.now()
+        print("hello, world")
+        print(now, 222, name)
 
 
 if __name__ == '__main__':
-    main = MainPage()
-    # a.is_isappear_outside(choice_index=7,outside=a.find(auto_id="FormMain.openGLWidget.FormDeviceTypeSelection.deviceList", control_type="List"))
-    # a.capture_image(img_doc="test")
-    # dict1 = {"X轴":100,"Y轴":100,"外轮廓":0.2654,"内轮廓":0.2654}
-    # support_parameter = {"抬升高度": 10, "支撑点直径": 1.5, "支撑头长度": 2.5, "支撑柱直径": 1.5, "支撑点间距": 4.5, "临界角": 75,
-    #                      "是否加固": True, "起始高度": 1.5, "角度": 50, "支撑加底座": True, "底座高度": 1.5}
-    # a.jump_button(oper="支撑").input_parameter(support_parameter)
-    # main._dlg.print_control_identifiers()
-    # main.click(auto_id="FormMain.rightwidget.stackedWidget.FormAnalyseResult.pbParameter",isall=False)
-    # main.terminal().choice_membrane1(membrane_code=1)
-    # time.sleep(5)
-    # print(main.find(index="修复"))
-    # print(main.find(title="修复", auto_id="qtooltip_label", control_type="Window"))
-    # main.print_dlg()
-    # path = r"E:\model\商务测试档案\正常\batch_1"
-    # main.openfile(path=path)
-    a = main.click(title="项目视图", control_type="List")
-
-    print(a)
+    pass
